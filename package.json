@@ -1,0 +1,19 @@
+{
+  "name": "playersclub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solracdelsol/playersclub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solracdelsol/playersclub/issues"
+  },
+  "homepage": "https://github.com/solracdelsol/playersclub#readme"
+}
