@@ -9,6 +9,18 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login')
 
+router.get(
+  "/current",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    res.json({
+      id: req.user.id,
+      username: req.user.username,
+      email: req.user.email,
+    });
+  }
+);
+
 
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -45,11 +57,11 @@ router.post("/register", (req, res) => {
               });
             })
             .catch(err => console.log(err));
-        });
-      });
+        })
+      })
     }
-  });
-});
+  })
+})
 
 
 router.post("/login", (req, res) => {
@@ -82,9 +94,9 @@ router.post("/login", (req, res) => {
         errors.password = "Incorrect password";
         return res.status(400).json(errors);
       }
-    });
-  });
-});
+    })
+  })
+})
 
 
 
