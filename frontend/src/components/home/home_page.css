@@ -1,0 +1,38 @@
+.homepage-background {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: teal;
+    justify-content: center;
+}
+
+.footer {
+    position: absolute;
+    font-size: 15px;
+    margin: 20px;
+    bottom: 0px;
+    right: 0px;
+}
+
+.logo-label {
+    position: relative;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 60px;
+    text-align: center;
+    margin: auto;
+    line-height: 75px;
+    width: 40%;
+    background-color: teal;
+    color: #FFFFFF;
+}
+
+.logo {
+    background-image: url('../../images/playersclub.jpg');
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
