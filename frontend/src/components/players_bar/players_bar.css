@@ -49,7 +49,7 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FFFFFF;
     -webkit-text-stroke: .5px #fd5901;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 400;
     animation-name: nav;
     animation-duration: 7s;
@@ -74,6 +74,7 @@
 
 .nav-btn {
     position: relative;
+    margin: auto;
     /* margin-left: auto;
     margin-right: auto; */
 }
