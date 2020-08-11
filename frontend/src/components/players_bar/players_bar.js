@@ -20,7 +20,7 @@ class PlayersBar extends React.Component {
                 placeholder="Search"
               ></input>
               <h5 className="nav-btn">
-                Sign In<i id="gear" className="fa fa-gear"></i>
+                Become a Player!<i id="gear" className="fa fa-gear"></i>
               </h5>
             </div>
           </>

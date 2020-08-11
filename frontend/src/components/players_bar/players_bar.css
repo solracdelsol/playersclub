@@ -23,7 +23,7 @@
     justify-content: space-evenly;
     border: 1.5px solid #005f60;
     border-radius: 10px;
-    animation-name: test;
+    animation-name: logo;
     animation-duration: 3s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
@@ -34,22 +34,22 @@
     margin-right: auto;
 }
 
-@keyframes test {
-    from { height: 100%;}
+@keyframes logo {
+    from { height: 1200%;}
     to { height: 15%;}
 }
 
 .nav-bar {
     position: relative;
     display: flex;
-    width: 60%;
+    width: 80%;
     height: 35px;
     top: 5px;
-    justify-content: center;
+    justify-content: space-evenly;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FFFFFF;
     -webkit-text-stroke: .5px #fd5901;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 400;
     animation-name: nav;
     animation-duration: 7s;
@@ -74,8 +74,7 @@
 
 .nav-btn {
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
 h5.nav-btn {
