@@ -9,9 +9,11 @@ class HomePage extends React.Component {
   render() {
     return (
       <>
-        <div className="homepage-background">
-          <PlayersBar />
-          <Footer />
+        <div className="homepage-container">
+          <div className="homepage-background">
+            <PlayersBar />
+            <Footer />
+          </div>
         </div>
       </>
     );

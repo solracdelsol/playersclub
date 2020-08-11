@@ -7,7 +7,7 @@
     margin: auto;
     line-height: 75px;
     width: 40%;
-    background-color: #005f60;
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
     color: #FFFFFF;
     border-radius: 20px;
     -webkit-text-stroke: 1px #fd5901;
@@ -24,11 +24,14 @@
     border: 1.5px solid #005f60;
     border-radius: 10px;
     animation-name: test;
-    animation-duration: 1s;
+    animation-duration: 3s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
+    animation-iteration-count: normal;
     z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @keyframes test {
@@ -37,15 +40,55 @@
 }
 
 .nav-bar {
-    position: absolute;
+    position: relative;
     display: flex;
     width: 60%;
     height: 35px;
-    top: 115px;
-    justify-content: space-evenly;
+    top: 5px;
+    justify-content: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FFFFFF;
     -webkit-text-stroke: .5px #fd5901;
     font-size: 30px;
     font-weight: 400;
+    animation-name: nav;
+    animation-duration: 7s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: normal;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes nav {
+    from { opacity: 0.0 }
+    to { opacity: 1;}
+}
+
+.search {
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid #fd5901;
+}
+
+.nav-btn {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h5.nav-btn {
+    position: relative;
+    margin-left: 15%;
+}
+
+#gear {
+    position: relative;
+    padding-left: 50px;
+}
+
+input {
+    position: relative;
+    width: 25%;
 }
