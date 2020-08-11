@@ -18,7 +18,6 @@ class Footer extends React.Component {
               <i className="fa fa-github fa-lg"></i>
               Miguel
             </a>
-
             <a className="github" href="https://github.com/espinalk212">
               <i className="fa fa-github fa-lg"></i>
               Kevin

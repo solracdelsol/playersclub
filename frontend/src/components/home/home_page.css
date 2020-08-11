@@ -2,8 +2,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     /* background-image: linear-gradient(to right, #f78104, #faab36, #249ea0, #008083); */
     background-image: linear-gradient(to right,#fd5901, #f78104, #faab36, #249ea0, #008083, #005f60);
     /* margin: auto; */
@@ -13,9 +13,21 @@
 .homepage-container {
     position: relative;
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     /* justify-content: center; */
+}
+
+.information-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* .footer {
