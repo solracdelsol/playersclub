@@ -1,22 +1,4 @@
-.homepage-background {
-    position: relative;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    background-image: radial-gradient( #f78104, #faab36, #249ea0, #008083);
-    justify-content: center;
-}
-
-/* .footer {
-    position: absolute;
-    font-size: 15px;
-    margin: 20px;
-    bottom: 0px;
-    right: 0px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-} */
-
-/* .logo-label {
+.logo-label {
     position: relative;
     display: inline-block;
     font-weight: 600;
@@ -66,4 +48,4 @@
     -webkit-text-stroke: .5px #fd5901;
     font-size: 30px;
     font-weight: 400;
-} */
+}

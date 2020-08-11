@@ -1,6 +1,8 @@
 import React from 'react';
 import './home_page.css';
 import '../../reset.css';
+import PlayersBar from '../players_bar/players_bar';
+import Footer from '../footer/footer';
 
 class HomePage extends React.Component {
   
@@ -8,16 +10,8 @@ class HomePage extends React.Component {
     return (
       <>
         <div className="homepage-background">
-          <div className="logo">
-            <h1 className="logo-label">PlayersClub</h1>
-          </div>
-          <div className="nav-bar">
-            <h2 className="nav-btn">Home</h2>
-            <h3 className="nav-btn">Sports</h3>
-            <h4 className="nav-btn">Teams</h4>
-            <h5 className="nav-btn">Sign In</h5>
-          </div>
-          <footer className="footer">Copyright 2020</footer>
+          <PlayersBar />
+          <Footer />
         </div>
       </>
     );

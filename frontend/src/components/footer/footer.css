@@ -1,0 +1,8 @@
+.footer {
+    position: absolute;
+    font-size: 15px;
+    margin: 20px;
+    bottom: 0px;
+    right: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
