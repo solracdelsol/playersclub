@@ -1,5 +1,6 @@
 .article-container {
     position: relative;
     width: 50%;
-    height: 100%
+    height: 100%;
+    text-align: center;
 }

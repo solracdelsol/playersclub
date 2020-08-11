@@ -6,7 +6,7 @@ class Score extends React.Component {
     render() {
         return (
             <div className="score-container">
-                
+                <p>SCORES POPULATED HERE</p>
             </div>
         )
     }

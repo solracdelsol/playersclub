@@ -42,10 +42,10 @@
 .nav-bar {
     position: relative;
     display: flex;
-    width: 60%;
+    width: 80%;
     height: 35px;
     top: 5px;
-    justify-content: center;
+    justify-content: space-evenly;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FFFFFF;
     -webkit-text-stroke: .5px #fd5901;
@@ -74,8 +74,8 @@
 
 .nav-btn {
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 h5.nav-btn {
