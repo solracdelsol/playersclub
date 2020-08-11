@@ -24,9 +24,9 @@
     border: 1.5px solid #005f60;
     border-radius: 10px;
     animation-name: logo;
-    animation-duration: 3s;
+    animation-duration: 2.5s;
     animation-delay: 0.5s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: none;
     animation-timing-function: ease;
     animation-iteration-count: normal;
     z-index: 1;
@@ -34,9 +34,10 @@
     margin-right: auto;
 }
 
+
 @keyframes logo {
-    from { height: 1200%;}
-    to { height: 15%;}
+    0% { height: 1200%;}
+    100% { height: 15%;}
 }
 
 .nav-bar {
@@ -52,9 +53,9 @@
     font-size: 25px;
     font-weight: 400;
     animation-name: nav;
-    animation-duration: 7s;
+    animation-duration: 6s;
     animation-delay: 0.5s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: none;
     animation-timing-function: ease;
     animation-iteration-count: normal;
     margin-left: auto;
@@ -90,4 +91,5 @@ h5.nav-btn {
 input {
     position: relative;
     width: 25%;
+    outline: none;
 }
