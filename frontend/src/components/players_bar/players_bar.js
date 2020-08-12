@@ -2,9 +2,13 @@ import React from 'react';
 import './players_bar.css';
 import '../../reset.css';
 
-
 class PlayersBar extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
     render() {
+      debugger;
         return (
           <>
             <div className="logo">
@@ -19,9 +23,12 @@ class PlayersBar extends React.Component {
                 className="search"
                 placeholder="Search"
               ></input>
-              <h5 className="nav-btn">
+              <button onClick={() => this.props.openModal('signup')} className="nav-btn">
                 Become a Player!<i id="gear" className="fa fa-gear"></i>
-              </h5>
+              </button>
+              
+              <button onClick={() => this.props.logout()} >Log out bruh</button>
+
             </div>
           </>
         );

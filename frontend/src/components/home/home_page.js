@@ -13,16 +13,16 @@ class HomePage extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-    this.props.openModal('signup');
-  }
+  // componentDidMount(){
+  //   this.props.openModal('signup');
+  // }
   
   render() {
     return (
       <>
         <div className="homepage-container">
           <div className="homepage-background">
-            <PlayersBar />
+            <PlayersBar openModal={this.props.openModal} logout={this.props.logout}/>
           <div className="information-container">
             <Article />
             <Score />
