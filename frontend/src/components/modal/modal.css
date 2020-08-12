@@ -12,6 +12,7 @@
   display: flex;
   width: 60%;
   height: 83%;
+  min-height: 480px;
   margin: auto;
   justify-content: center;
   text-align: center;
