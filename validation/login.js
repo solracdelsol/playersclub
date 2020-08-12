@@ -4,8 +4,13 @@ const validText = require('./valid-text');
 module.exports = function validateLoginInput(data) {
   let errors = {};
 
+  // data.username = validText(data.username) ? data.username : '';
   data.email = validText(data.email) ? data.email : '';
   data.password = validText(data.password) ? data.password : '';
+
+  // if(!Validator.equals(data.username, username)) {
+  //    errors.username = "username is invalid";
+  // }
 
   if (!Validator.isEmail(data.email)) {
     errors.email = 'Email is invalid';

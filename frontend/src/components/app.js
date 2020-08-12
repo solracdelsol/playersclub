@@ -1,13 +1,14 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
-import HomePage from './home/home_page';
+import HomePageContainer from './home/home_page_container';
+import Modal from './modal/modal.jsx'
 
 const App = () => (
   <div>
-    {/* <NavBarContainer /> */}
+    <Modal/>
     <Switch>
-        <AuthRoute path='/' component={HomePage} /> 
+        <AuthRoute path='/' component={HomePageContainer} /> 
     </Switch>
   </div>
 );

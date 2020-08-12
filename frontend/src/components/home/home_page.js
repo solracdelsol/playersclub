@@ -1,6 +1,15 @@
 import React from 'react';
 
+
+
 class HomePage extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    this.props.openModal('signup');
+  }
   
   render() {
     return (
@@ -11,4 +20,7 @@ class HomePage extends React.Component {
     );
   }
 }
+
 export default HomePage;
+
+
