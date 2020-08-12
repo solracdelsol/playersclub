@@ -8,7 +8,6 @@ import Score from '../score/score';
 
 
 
-
 class HomePage extends React.Component {
   constructor(props){
     super(props);

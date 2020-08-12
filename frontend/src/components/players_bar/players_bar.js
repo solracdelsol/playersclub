@@ -13,7 +13,7 @@ class PlayersBar extends React.Component {
     return (
       <>
         <div className="logo">
-          <h1 className="logo-label"><p className="test">PlayersClub</p></h1>
+          <h1 className="logo-label">PlayersClub</h1>
         </div>
         <div className="nav-bar">
           <h2 className="nav-btn">Home</h2>
