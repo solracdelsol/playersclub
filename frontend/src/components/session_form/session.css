@@ -41,9 +41,10 @@
     position: relative;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FFFFFF;
-    -webkit-text-stroke: 0.7px #fd5901;
+    -webkit-text-stroke: 0.8px #fd5901;
     font-weight: 600;
     margin-bottom: 5vh;
+    font-size: 17px;
 }
 
 .login-form {
@@ -66,7 +67,7 @@
     border: 1.5px solid #fd5901;
     width: 50%;
     outline: none;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.9);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
@@ -125,15 +126,20 @@
     right: 45px;
     cursor: pointer;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border: 2px solid black;
+    border: 1px solid #fd5901;
     padding: 15px;
     border-radius: 10px;
     color: white;
+    /* background-color: #005f60; */
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
+    font-weight: 700;
 }
 
 .errors {
     position: relative;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #fd5901;
+    color: white;
+    font-weight: 700;
     font-size: 1.8vh;
+    -webkit-text-stroke: 0.8px #fd5901;
 }
