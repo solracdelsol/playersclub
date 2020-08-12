@@ -3,6 +3,9 @@ import { withRouter } from "react-router-dom";
 import './session.css';
 import '../../reset.css';
 
+import { openModal } from "../../actions/modal_actions";
+
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +29,14 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(()=>this.props.closeModal,
+    this.props.processForm(user).then(()=>{
+      
+      if(this.props.formType === "signup"){
+        return this.props.openModal("preferences")
+      } else {
+        return this.props.closeModal;
+      }}
+      ,
       () => { if(!this.props.errors.session){ return this.props.closeModal}});
   }
 
@@ -41,7 +51,9 @@ class SessionForm extends React.Component {
     );
   }
 
-
+  // openPrefs(){
+  //   return (this.props.formType === 'signup' () => openModal('preferences') : null);
+  // }
 
   render() {
     return (
@@ -91,7 +103,9 @@ class SessionForm extends React.Component {
               />
             ) : null}
             <input
+
               className="login-final"
+
               type="submit"
               value={this.props.formType === 'signup' ? "Join the Club" : this.props.formType}
             />
