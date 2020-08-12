@@ -103,9 +103,7 @@ class SessionForm extends React.Component {
               />
             ) : null}
             <input
-
               className="login-final"
-
               type="submit"
               value={this.props.formType === 'signup' ? "Join the Club" : this.props.formType}
             />
