@@ -71,16 +71,26 @@ router.post("/login", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  const username = req.body.username;
+  const email = req.body.email;
+  // const username = req.body.username;
   const password = req.body.password;
 
-  User.findOne({ username }).then(user => {
+  User.findOne({ email }).then(user => {
     if (!user) {
-      errors.username = "This user does not exist";
+      errors.email = "Email does not exist";
       return res.status(400).json(errors);
     }
+  
+  // User.findOne({ username }).then(user => {
+  //   if (!user) {
+  //     errors.username = "This user does not exist";
+  //     return res.status(400).json(errors);
+  //   }
+
+  
 
     bcrypt.compare(password, user.password).then(isMatch => {
+
       if (isMatch) {
         const payload = { id: user.id, username: user.username };
 
