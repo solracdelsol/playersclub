@@ -50,7 +50,7 @@
     justify-content: space-evenly;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FFFFFF;
-    -webkit-text-stroke: .5px #fd5901;
+    /* -webkit-text-stroke: .5px #fd5901; */
     font-size: 25px;
     font-weight: 400;
     animation-name: nav;
@@ -88,6 +88,13 @@
 input.search {
     position: relative;
     margin-left: 5%;
+    background: rgba(255, 255, 255, 0.2);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+input::placeholder {
+    color: #fd5901;
 }
 
 button.nav-signup {
