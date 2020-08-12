@@ -23,7 +23,6 @@ class HomePage extends React.Component {
   }
   
   render() {
-    debugger;
     return (
       <>
         <div className="homepage-container">

@@ -12,7 +12,6 @@ function Modal({modal, closeModal}){
   }
 
   let component;
-  debugger;
   switch(modal) {
     case 'login':
       component = <LoginFormContainer/>;
@@ -21,7 +20,6 @@ function Modal({modal, closeModal}){
       component = <SignupFormContainer/>;
       break;
     case 'preferences':
-      debugger;
       component = <PreferencesContainer/>
       break;
     default:

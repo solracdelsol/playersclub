@@ -9,8 +9,6 @@ class PreferencesForm extends React.Component{
 
   render(){
 
-    debugger;
-
     return (
         <main className="fancy">
           <div className="box">
