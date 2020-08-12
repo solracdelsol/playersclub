@@ -13,6 +13,7 @@ class HomePage extends React.Component {
     super(props);
   }
 
+
   componentDidMount(){
     const trial = "mlb/trial/v6.6";
     // const date = 2020/08/12
@@ -21,6 +22,7 @@ class HomePage extends React.Component {
 
     this.props.fetchAll(trial, event_id, key);
   }
+
   
   render() {
     return (

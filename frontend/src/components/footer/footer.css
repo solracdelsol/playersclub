@@ -18,9 +18,9 @@
     font-weight: bolder;
     text-decoration: none;
     animation-name: github;
-    animation-duration: 5s;
+    animation-duration: 6s;
     animation-delay: 0.5s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: none;
     animation-timing-function: ease;
     animation-iteration-count: normal;
 }

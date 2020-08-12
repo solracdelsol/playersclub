@@ -1,6 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import './session.css';
+import '../../reset.css';
+
 import { openModal } from "../../actions/modal_actions";
+
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -39,11 +43,11 @@ class SessionForm extends React.Component {
   //MAKES THE ERRORS RENDER ON SCREEN
   renderErrors() {
     return (
-      <ul>
+      <div>
         {Object.values(this.props.errors).map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <div className="errors" key={`error-${i}`}>{error}</div>
         ))}
-      </ul>
+      </div>
     );
   }
 
@@ -54,13 +58,13 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
           <div onClick={this.props.closeModal} className="close-x">
             X
           </div>
+        <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="session-form-caption">Welcome to PlayersClub</div>
           <div className="session-form-subcaption">
-            Please {this.props.formType} or {this.props.otherForm()}
+            Please {this.props.formType} or <p>{this.props.otherForm()}</p>
           </div>
           {this.renderErrors()}
           <div className="login-form">
@@ -99,8 +103,9 @@ class SessionForm extends React.Component {
               />
             ) : null}
             <input
-              // onClick={this.openPrefs()}
-              className="session-submit"
+
+              className="login-final"
+
               type="submit"
               value={this.props.formType === 'signup' ? "Join the Club" : this.props.formType}
             />
