@@ -65,7 +65,6 @@ router.post("/register", (req, res) => {
 
 
 router.post("/login", (req, res) => {
-  debugger;
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {
@@ -78,14 +77,12 @@ router.post("/login", (req, res) => {
 
   User.findOne({ email }).then(user => {
     if (!user) {
-      debugger;
       errors.email = "Email does not exist";
       return res.status(400).json(errors);
     }
   
   // User.findOne({ username }).then(user => {
   //   if (!user) {
-  //     debugger;
   //     errors.username = "This user does not exist";
   //     return res.status(400).json(errors);
   //   }
@@ -93,7 +90,7 @@ router.post("/login", (req, res) => {
   
 
     bcrypt.compare(password, user.password).then(isMatch => {
-      debugger;
+
       if (isMatch) {
         const payload = { id: user.id, username: user.username };
 
