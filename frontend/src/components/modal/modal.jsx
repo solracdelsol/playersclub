@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import PreferencesContainer from '../../components/preferences/preferences_container';
 
 // Modal presentational and container component on same page
 function Modal({modal, closeModal}){
@@ -11,6 +12,7 @@ function Modal({modal, closeModal}){
   }
 
   let component;
+  debugger;
   switch(modal) {
     case 'login':
       component = <LoginFormContainer/>;
@@ -18,9 +20,11 @@ function Modal({modal, closeModal}){
     case 'signup':
       component = <SignupFormContainer/>;
       break;
-    // case 'prefrences'
-    //   component = <PrefrencesContainer/>
-    // default:
+    case 'preferences':
+      debugger;
+      component = <PreferencesContainer/>
+      break;
+    default:
       return null;
   }
 
