@@ -6,7 +6,16 @@ import Footer from '../footer/footer';
 import Article from '../article/article';
 import Score from '../score/score';
 
+
+
 class HomePage extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    this.props.openModal('signup');
+  }
   
   render() {
     return (
@@ -25,4 +34,7 @@ class HomePage extends React.Component {
     );
   }
 }
+
 export default HomePage;
+
+
