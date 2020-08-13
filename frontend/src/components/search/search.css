@@ -75,7 +75,7 @@
 select {
     position: relative;
     display: flex;
-    width: 5%;
+    width: 7%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 10px;
     border: 1px solid #fd5901;
@@ -83,5 +83,5 @@ select {
     outline: none;
     font-weight: 200;
     color: #fd5901;
-    padding-left: 15px;
+    padding-left: 25px;
 }

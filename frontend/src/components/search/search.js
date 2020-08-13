@@ -41,12 +41,15 @@ class Search extends React.Component {
           </div>
         <form className="search-form" onSubmit={this.handleSubmit}>
           <label className="search-btn">Choose a Sport:</label>
-            <select name="sport">
-              <option value="nba">NBA</option>
-              <option value="nhl">NHL</option>
-              <option value="mlb">MLB</option>
+            <select className="test">
+              <option value="" disabled selected hidden>Sports</option>
+              <option disabled value>Please select one</option>
+              <option value="0">All</option>
+              <option value="1">NBA</option>
+              <option value="2">NHL</option>
+              <option value="3">MLB</option>
             </select>
-          <label className="search-btn">Date:</label>
+          <label className="search-btn">Select Date:</label>
           <input type="date"></input>
           <input type="submit" value="Search"/>
         </form>
