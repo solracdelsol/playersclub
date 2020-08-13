@@ -21,12 +21,12 @@
 .box {
     position: relative;
     width: 100%;
-    height: 70%;
+    height: 100%;
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: auto;
-    margin-top: 60px;
+    margin-bottom: 30px;
+    margin-top: 30px;
     flex-direction: column;
 }
 
@@ -146,6 +146,26 @@ input {
     margin-bottom: 5vh;
     font-size: 25px;
     padding: 5px;
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
+    border-radius: 20px;
+    border: 2px solid #fd5901;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.subscribe {
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #fd5901;
+    font-weight: 600;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    padding: 5px;
+    justify-content: center;
+    width: 35%;
     background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
     border-radius: 20px;
     border: 2px solid #fd5901;

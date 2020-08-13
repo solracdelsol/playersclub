@@ -56,6 +56,7 @@ class PreferencesForm extends React.Component{
               </label>
             </p>
             </div>
+            <button className="subscribe">Subscribe</button>
           </div>
         </div>
         </>
