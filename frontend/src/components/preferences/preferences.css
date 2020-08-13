@@ -1,0 +1,173 @@
+.fancy {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+  /* // display: flex;
+  // justify-content: center;
+  .box{
+    // justify-content: center;
+  } */
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    flex-direction: column;
+}
+
+.subscribe-caption {
+    position: relative;
+    font-weight: 600;
+    font-size: 3.5vh;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 5px;
+    width: 80%;
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
+    color: #FFFFFF;
+    border-radius: 20px;
+    -webkit-text-stroke: 1px #fd5901;
+    border: 2px solid #fd5901;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1.5px #fd5901;
+    font-weight: 600;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 30px; */
+}
+
+/* .fancy label { */
+  /* // display: inline-flex;
+  // align-items: baseline;
+  // justify-content: center; */
+
+/* .fancy label input[type=checkbox] {
+    position: relative;
+    appearance: none;
+    font-size: inherit;
+    width: 1em;
+    margin: 0;
+    color: inherit;
+    outline: none;
+    font-family: 'Font Awesome 5 Pro';
+    transition: 300ms ease-out;
+}
+.fancy label input[type=radio] {
+    position: relative;
+    appearance: none;
+    font-size: inherit;
+    width: 1em;
+    margin: 0;
+    color: inherit;
+    outline: none;
+    font-family: 'Font Awesome 5 Pro';
+    transition: 300ms ease-out;
+}
+.fancy label input[type=radio]:checked::after {
+      font-weight: 900;
+}
+.fancy label input[type=radio]:active {
+      transform: scale(.6);
+}
+
+.fancy label input[type=radio] span {
+      margin-left: .35em;
+
+}
+  
+
+/* .fancy.square label {
+} */
+/* .fancy.square label input[type=checkbox]:after {
+  content: '\f0c8'; /* square */
+
+/* .fancy.square label input[type=checkbox]:checked::after {
+  content: '\f14a'; /* check-square */
+
+
+.close-x {
+    position: absolute;
+    top: 45px;
+    right: 45px;
+    cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 1px solid #fd5901;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    /* background-color: #005f60; */
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
+    font-weight: 700;
+}
+
+.preference-check {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    text-align: left;
+    margin: auto;
+}
+
+input {
+  position: relative;
+  bottom: 2px;
+}
+
+.check-box {
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #fd5901;
+    font-weight: 600;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 25px;
+    padding: 5px;
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
+    border-radius: 20px;
+    border: 2px solid #fd5901;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.subscribe {
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #fd5901;
+    font-weight: 600;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    padding: 5px;
+    justify-content: center;
+    width: 35%;
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
+    border-radius: 20px;
+    border: 2px solid #fd5901;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

@@ -1,5 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import './session.css';
+import '../../reset.css';
+
+import { openModal } from "../../actions/modal_actions";
+
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -24,35 +29,44 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(()=>this.props.closeModal,
+    this.props.processForm(user).then(()=>{
+      
+      if(this.props.formType === "signup"){
+        return this.props.openModal("preferences")
+      } else {
+        return this.props.closeModal;
+      }}
+      ,
       () => { if(!this.props.errors.session){ return this.props.closeModal}});
   }
 
   //MAKES THE ERRORS RENDER ON SCREEN
   renderErrors() {
     return (
-      <ul>
+      <div>
         {Object.values(this.props.errors).map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <div className="errors" key={`error-${i}`}>{error}</div>
         ))}
-      </ul>
+      </div>
     );
   }
 
-
+  // openPrefs(){
+  //   return (this.props.formType === 'signup' () => openModal('preferences') : null);
+  // }
 
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
           <div onClick={this.props.closeModal} className="close-x">
             X
           </div>
+        <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="session-form-caption">Welcome to PlayersClub</div>
           <div className="session-form-subcaption">
-            Please {this.props.formType} or {this.props.otherForm()}
+            Please {this.props.formType} or <p>{this.props.otherForm()}</p>
           </div>
-          {this.renderErrors()}
+          <div>{this.renderErrors()}</div>
           <div className="login-form">
             {this.props.formType === "signup" ? (
               <input
@@ -89,7 +103,7 @@ class SessionForm extends React.Component {
               />
             ) : null}
             <input
-              className="session-submit"
+              className="login-final"
               type="submit"
               value={this.props.formType === 'signup' ? "Join the Club" : this.props.formType}
             />

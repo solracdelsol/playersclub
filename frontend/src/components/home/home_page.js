@@ -9,11 +9,13 @@ import Score from '../score/score';
 
 
 
+
 class HomePage extends React.Component {
   constructor(props){
     super(props);
     this.getTodaysDate = this.getTodaysDate.bind(this);
   }
+
 
   componentDidMount(){
     if (Object.entries(this.props.sports).length === 0) {
@@ -28,6 +30,7 @@ class HomePage extends React.Component {
     var yyyy = today.getFullYear();
     return today = yyyy + "/" + mm + "/" + dd;
   }
+
   
   render() {
     return (
@@ -39,13 +42,15 @@ class HomePage extends React.Component {
               logout={this.props.logout}
             />
             <div className="information-container">
+              <Article />
               {Object.entries(this.props.sports).length !== 0 ? (
                 <Score
                   fetchGameScore={this.props.fetchGameScore}
                   sports={this.props.sports}
                 />
               ) : null}
-              <Article />
+            
+
             </div>
             <Footer />
           </div>
