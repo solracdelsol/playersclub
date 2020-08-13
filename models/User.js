@@ -15,6 +15,10 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    preferences: {
+      type: Map,
+      of: String
+    }
   },
   {
     timestamps: true,

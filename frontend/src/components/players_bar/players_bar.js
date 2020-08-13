@@ -20,7 +20,9 @@ class PlayersBar extends React.Component {
           <Link className='nav-btn' to='/'>Home</Link>
           <h3 className="nav-btn">Sports</h3>
           <h4 className="nav-btn">Teams</h4>
+          <Link to='/search'>
           <input type="text" className="search" placeholder="Search"></input>
+          </Link>
           <button
             onClick={() => this.props.openModal("signup")}
             className="nav-signup">
