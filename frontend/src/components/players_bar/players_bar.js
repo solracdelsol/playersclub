@@ -30,7 +30,7 @@ class PlayersBar extends React.Component {
             className="nav-signup">
               Join the Club!
           </button>
-          <button className="gear"><i className="fa fa-gear fa-lg"></i></button>
+          <button className="gear"><i className="fa fa-gear fa-2x"></i></button>
           <button className='nav-logout' onClick={() => this.props.logout()}>Exit Club</button>
         </div>
       </>
