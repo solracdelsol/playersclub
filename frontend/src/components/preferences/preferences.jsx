@@ -19,7 +19,7 @@ class PreferencesForm extends React.Component{
         <div className="fancy">
           <div className="box">
             <h3 className="subscribe-caption">
-              Subscribe to Sports Feeds
+              Subscribe to Sport Feeds
             </h3>
             <div className="preference-check">
             <p className="check-box">
@@ -27,14 +27,18 @@ class PreferencesForm extends React.Component{
                 <input
                   id="MLB"
                   type="checkbox"
-                  value="NBA"
+                  value="MLB"
                 />
                 <span>MLB</span>
               </label>
             </p>
             <p className="check-box">
               <label htmlFor="NBA">
-                <input id="NBA" type="checkbox" value="NBA" />
+                <input 
+                  id="NBA" 
+                  type="checkbox" 
+                  value="NBA"
+                />
                 <span>NBA</span>
               </label>
             </p>

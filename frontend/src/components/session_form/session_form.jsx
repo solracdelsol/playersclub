@@ -66,7 +66,7 @@ class SessionForm extends React.Component {
           <div className="session-form-subcaption">
             Please {this.props.formType} or <p>{this.props.otherForm()}</p>
           </div>
-          {this.renderErrors()}
+          <div>{this.renderErrors()}</div>
           <div className="login-form">
             {this.props.formType === "signup" ? (
               <input
