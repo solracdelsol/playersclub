@@ -4,10 +4,14 @@ import { Switch , Route} from 'react-router-dom';
 import HomePageContainer from './home/home_page_container';
 import Modal from './modal/modal.jsx';
 import SearchContainer from './search/search_container';
+import Modal from './modal/modal.jsx'
+import PreferencesContainer from '../components/preferences/preferences_container'
+
 
 const App = () => (
   <div>
     <Modal/>
+    {/* <PreferencesContainer/> */}
     <Switch>
         <Route path='/search' component={SearchContainer} />
         <Route path='/' component={HomePageContainer} />

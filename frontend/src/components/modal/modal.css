@@ -1,0 +1,24 @@
+.modal-background {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.modal-child {
+  position: relative;
+  display: flex;
+  width: 60%;
+  height: 83%;
+  min-height: 480px;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid black;
+  /* background-image: linear-gradient(to left, #249ea0, #008083, #005f60); */
+  background-image: url('../../images/modal-background.jpg');
+  background-size: contain;
+  border-radius: 150px;
+}

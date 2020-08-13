@@ -6,13 +6,13 @@ import SessionForm from './session_form';
 
 const msp = state =>({
   errors: state.errors.session,
-  formType: 'login'
+  formType: 'Enter'
 })
 
 const mdp = (dispatch) => ({
   processForm: (user) => dispatch(login(user)),
   otherForm: () => { 
-     return (<button onClick={() => {dispatch(clearErrors()); return dispatch(openModal("signup"))}}>Join The Club</button>
+     return (<button className="session-btn" onClick={() => {dispatch(clearErrors()); return dispatch(openModal("signup"))}}>Join The Club</button>
 )},
   closeModal: () => dispatch(closeModal()),
   clearErrors: () => dispatch(clearErrors()),

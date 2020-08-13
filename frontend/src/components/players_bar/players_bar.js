@@ -8,6 +8,8 @@ class PlayersBar extends React.Component {
     super(props);
   }
 
+
+
   render() {
     return (
       <>
@@ -15,7 +17,7 @@ class PlayersBar extends React.Component {
           <h1 className="logo-label">PlayersClub</h1>
         </div>
         <div className="nav-bar">
-          <h2 className="nav-btn">Home</h2>
+          <Link className='nav-btn' to='/'>Home</Link>
           <h3 className="nav-btn">Sports</h3>
           <h4 className="nav-btn">Teams</h4>
           <Link to='/search'>
@@ -23,12 +25,11 @@ class PlayersBar extends React.Component {
           </Link>
           <button
             onClick={() => this.props.openModal("signup")}
-            className="nav-btn"
-          >
-            Become a Player!<i id="gear" className="fa fa-gear"></i>
+            className="nav-signup">
+              Join the Club!
           </button>
-
-          <button onClick={() => this.props.logout()}>Log out bruh</button>
+          <button className="gear"><i className="fa fa-gear fa-lg"></i></button>
+          <button className='nav-logout' onClick={() => this.props.logout()}>Exit Club</button>
         </div>
       </>
     );
