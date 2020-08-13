@@ -1,4 +1,6 @@
 import React from 'react';
+import './search.css';
+import '../../reset.css';
 
 
 class Search extends React.Component {
@@ -32,50 +34,27 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="homepage-container">
+        <div className="homepage-background">
+          <div className="search-logo">
+            <h1 className="search-logo-label">PlayersClub</h1>
+          </div>
         <form className="search-form" onSubmit={this.handleSubmit}>
-          <h1>search</h1>
-          <input
-            placeholder="trial"
-            className="sports-search"
-            type="search"
-            onChange={this.update("trial")}
-          />
-          <input
-            placeholder="eventId"
-            className="sports-search"
-            type="search"
-            onChange={this.update("eventId")}
-          />
-          <input
-            placeholder="key"
-            className="sports-search"
-            type="search"
-            onChange={this.update("key")}
-          />
-
-          <br></br>
-          <br></br>
-          <br></br>
-
-          <label>Choose a sport:
-            <select name="sport">
-              <option value="nba">NBA</option>
-              <option value="nhl">NHL</option>
-              <option value="mlb">MLB</option>
+          <label className="search-btn">Choose a Sport:</label>
+            <select className="test">
+              <option value="" disabled selected hidden>Sports</option>
+              <option disabled value>Please select one</option>
+              <option value="0">All</option>
+              <option value="1">NBA</option>
+              <option value="2">NHL</option>
+              <option value="3">MLB</option>
             </select>
-          </label>
-
-          <br></br>
-
-          <label>
-            Date:
-            <input type="date"></input>
-          </label>
-
-          <input type="submit" />
+          <label className="search-btn">Select Date:</label>
+          <input type="date"></input>
+          <input type="submit" value="Search"/>
         </form>
       </div>
+    </div>
     );
   }
 }
