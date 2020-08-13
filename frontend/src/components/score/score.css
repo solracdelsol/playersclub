@@ -1,0 +1,20 @@
+.score-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255,  0.2);
+    border: 1.5px solid #fd5901;
+    border-radius: 10px;
+    margin-left: 10px;
+    /* animation-name: score;
+    animation-duration: 7s;
+    animation-delay: 3s;
+    animation-fill-mode: forward;
+    animation-play-state: ease-in-out; */
+}
+
+/* @keyframes score {
+    from { transform: translate(100vw, 0px);}
+    to { transform: translate(0px, 0px)}
+} */

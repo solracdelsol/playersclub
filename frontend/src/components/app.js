@@ -1,16 +1,16 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch } from 'react-router-dom';
-import HomePage from './home/home_page';
+import { Switch , Route} from 'react-router-dom';
+import HomePageContainer from './home/home_page_container';
+import Modal from './modal/modal.jsx';
 import SearchContainer from './search/search_container';
 
 const App = () => (
   <div>
-    {/* <NavBarContainer /> */}
+    <Modal/>
     <Switch>
-        <AuthRoute path='/search' component={SearchContainer} />
-        <AuthRoute path='/' component={HomePage} /> 
-        
+        <Route path='/search' component={SearchContainer} />
+        <Route path='/' component={HomePageContainer} />
     </Switch>
   </div>
 );
