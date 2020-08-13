@@ -8,10 +8,15 @@ import SearchContainer from './search/search_container';
 import PreferencesContainer from '../components/preferences/preferences_container'
 
 
+
 const App = () => (
   <div>
     <Modal/>
+
+    {/* // will render the first component to match */}
+
     {/* <PreferencesContainer/> */}
+
     <Switch>
         <Route path='/search' component={SearchContainer} />
         <Route path='/' component={HomePageContainer} />
