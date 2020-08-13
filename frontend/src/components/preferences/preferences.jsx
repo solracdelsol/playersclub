@@ -1,4 +1,6 @@
 import React from 'react';
+import './preferences.css'
+import '../../reset.css';
 // import { withRouter } from "react-router-dom";
 
 class PreferencesForm extends React.Component{
@@ -10,12 +12,17 @@ class PreferencesForm extends React.Component{
   render(){
 
     return (
-        <main className="fancy">
+      <>
+      <div onClick={this.props.closeModal} className="close-x">
+        X
+      </div>
+        <div className="fancy">
           <div className="box">
             <h3 className="subscribe-caption">
               Subscribe to Sports Feeds
             </h3>
-            <p>
+            <div className="preference-check">
+            <p className="check-box">
               <label htmlFor="MLB">
                 <input
                   id="MLB"
@@ -25,27 +32,29 @@ class PreferencesForm extends React.Component{
                 <span>MLB</span>
               </label>
             </p>
-            <p>
+            <p className="check-box">
               <label htmlFor="NBA">
                 <input id="NBA" type="checkbox" value="NBA" />
                 <span>NBA</span>
               </label>
             </p>
 
-            <p>
-              <label htmlFor="Other">
+            <p className="check-box">
+              <label htmlFor="NHL">
                 <input
-                  id="NFL"
+                  id="NHL"
                   type="checkbox"
-                  value="NFL"
+                  value="NHL"
                 />
                 <span>
-                  NFL
+                  NHL
                 </span>
               </label>
             </p>
+            </div>
           </div>
-        </main>
+        </div>
+        </>
     );
   }
 }
