@@ -37,9 +37,9 @@ class HomePage extends React.Component {
             />
             <div className="information-container">
               {Object.entries(this.props.sports).length !== 0 ? (
-               <Article />,
                 <Score data={this.props.sports.data} />
               ) : null}
+                <Article />
             </div>
             <Footer />
           </div>

@@ -4,6 +4,7 @@ import { Switch , Route} from 'react-router-dom';
 import HomePageContainer from './home/home_page_container';
 import Modal from './modal/modal.jsx';
 import SearchContainer from './search/search_container';
+
 import PreferencesContainer from '../components/preferences/preferences_container'
 
 
