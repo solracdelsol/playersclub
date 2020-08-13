@@ -7,6 +7,7 @@ class Article extends React.Component {
         return (
             <div className="article-container">
                 <p>ARTICLES POPULATED HERE</p>
+                
             </div>
         )
     }

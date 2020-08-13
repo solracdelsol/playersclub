@@ -8,6 +8,8 @@ import Score from '../score/score';
 
 
 
+
+
 class HomePage extends React.Component {
   constructor(props){
     super(props);
@@ -29,15 +31,16 @@ class HomePage extends React.Component {
       <>
         <div className="homepage-container">
           <div className="homepage-background">
-            <PlayersBar openModal={this.props.openModal} logout={this.props.logout}/>
-          <div className="information-container">
-            {
-              Object.entries(this.props.sports).length !== 0 ? 
-              // <Article />,
-              (<Score data={this.props.sports.data}  />) : null
-       
-            }
-          </div>
+            <PlayersBar
+              openModal={this.props.openModal}
+              logout={this.props.logout}
+            />
+            <div className="information-container">
+              {Object.entries(this.props.sports).length !== 0 ? (
+               <Article />,
+                <Score data={this.props.sports.data} />
+              ) : null}
+            </div>
             <Footer />
           </div>
         </div>
