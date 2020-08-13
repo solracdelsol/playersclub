@@ -36,10 +36,10 @@ class HomePage extends React.Component {
               logout={this.props.logout}
             />
             <div className="information-container">
+              <Article />
               {Object.entries(this.props.sports).length !== 0 ? (
                 <Score data={this.props.sports.data} />
               ) : null}
-                <Article />
             </div>
             <Footer />
           </div>
