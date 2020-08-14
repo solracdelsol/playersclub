@@ -58,18 +58,20 @@
     justify-content: center;
     font-weight: 200;
     color: #fd5901;
+    margin-top: 4px;
 }
 
 
 .search-btn {
     position: relative;
-    /* margin: auto; */
     text-decoration: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FFFFFF;
     -webkit-text-stroke: 1px #005f60;
     font-weight: 400;
     font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 select {
@@ -84,9 +86,11 @@ select {
     font-weight: 200;
     color: #fd5901;
     padding-left: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
-.nav-btn-test {
+.nav-btn-home {
     position: relative;
     /* margin: auto; */
     margin-top: auto;
