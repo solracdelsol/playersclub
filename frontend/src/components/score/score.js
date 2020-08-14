@@ -54,12 +54,21 @@ render() {
         });
       } else {
         return (
-        <div className="score-container">
-          <div>{this.mlbGameContainer()}</div>
-          <div>{this.gameContainer(this.props.sports.NBA)}</div>
-          <div>{this.gameContainer(this.props.sports.NHL)}</div>
-        </div>
-      );
+
+            <div className="score-container">
+                <div className="scores">
+                    <p className="score-header">Latest Scores</p>
+                    <object
+                        className="score"
+                        type="text/html"
+                        data="https://www.scoreboard.com/en/#live-table">
+                    </object>
+                </div>
+                {/* <p>Players: 10 App Academy: -10</p> */}
+                {/* {this.props.data.game.away.name} */}
+            </div>
+        )
+
     }
   }
 }

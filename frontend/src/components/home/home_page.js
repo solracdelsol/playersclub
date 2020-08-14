@@ -40,16 +40,15 @@ class HomePage extends React.Component {
             <PlayersBar
               openModal={this.props.openModal}
               logout={this.props.logout}
+              currentUser={this.props.currentUser}
             />
             <div className="information-container">
               <Article />
-              {Object.entries(this.props.sports).length !== 0 ? (
-                <Score
-                  fetchGameScore={this.props.fetchGameScore}
-                  sports={this.props.sports}
-                />
-              ) : null}
-            
+
+              {/* {Object.entries(this.props.sports).length !== 0 ? (
+                <Score data={this.props.sports.data} />
+              ) : null} */}
+              <Score />
 
             </div>
             <Footer />

@@ -12,10 +12,12 @@ import {
   NHLkey,
 } from "../../src_keys";
 
-const msp = state => { 
-  return {
-  sports: state.sports
-} };
+
+const msp = state => ({
+  sports: state.sports,
+  currentUser: state.session.isAuthenticated
+});
+
 
 
 const mdp = (dispatch) =>  {

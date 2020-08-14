@@ -56,7 +56,7 @@ class PreferencesForm extends React.Component{
               </label>
             </p>
             </div>
-            <button className="subscribe">Subscribe</button>
+            <button onClick={this.props.closeModal} className="subscribe">Subscribe</button>
           </div>
         </div>
         </>
