@@ -5,7 +5,10 @@ import HomePage from './home_page';
 import { fetchAll } from '../../actions/sport_actions'
 
 const msp = state => ({
-  sports: state.sports
+  sport:state.sports,
+  mlb: state.sports.mlb,
+  nba: state.sports.nba,
+  nhl: state.sports.nhl,
 });
 
 

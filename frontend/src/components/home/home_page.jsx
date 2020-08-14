@@ -8,7 +8,7 @@ import Score from '../score/score';
 
 
 
-class HomePage extends React.Component {
+export default class HomePage extends React.Component {
   constructor(props){
     super(props);
   }
@@ -25,27 +25,28 @@ class HomePage extends React.Component {
 
   
   render() {
+
+    const sportCard = () => {if (Object.entries(this.props.sports).length !== 0){ // gather all games and return them in SportsCard components
+                Object.entries(this.props.sports).map( sport => {
+                  return (<Score sports={sport}  />) })}}
+
     return (
-      <>
+      <div>
         <div className="homepage-container">
           <div className="homepage-background">
             <PlayersBar openModal={this.props.openModal} logout={this.props.logout}/>
           <div className="information-container">
-            {
-              Object.entries(this.props.sports).length !== 0 ? 
-              // <Article />,
-              (<Score data={this.props.sports.data}  />) : null
-       
-            }
+              
+                  
+                  
+                {/* // <Article />, */}
           </div>
             <Footer />
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
 
-export default HomePage;
-
-
+// export default HomePage;
