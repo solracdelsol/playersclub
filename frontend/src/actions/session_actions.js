@@ -5,7 +5,7 @@ import { closeModal } from './modal_actions'
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const RECEIVE_USER_LOGOUT = 'RECEIVE_USER_LOGOUT';
-export const RECEIVE_USER_SIGN_IN = 'RECEIVE_USER_SIGN_IN';
+// export const RECEIVE_USER_SIGN_IN = 'RECEIVE_USER_SIGN_IN';
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 
@@ -14,10 +14,10 @@ export const receiveCurrentUser = currentUser => ({
   currentUser
 });
 
-export const receiveUserSignIn = currentUser => ({
-  type: RECEIVE_USER_SIGN_IN,
-  currentUser
-});
+// export const receiveUserSignIn = currentUser => ({
+//   type: RECEIVE_USER_SIGN_IN,
+//   currentUser
+// });
 
 export const receiveErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
@@ -61,10 +61,10 @@ export const login = user => dispatch => (
     const decoded = jwt_decode(token); 
     dispatch(receiveCurrentUser(decoded))
   })
+  .then(() => dispatch(closeModal()))
   .catch(err => {
     dispatch(receiveErrors(err.response.data));
   })
-  .catch(() => dispatch(closeModal()))
 )
 
 export const logout = () => dispatch => {

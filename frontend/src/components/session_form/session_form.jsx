@@ -23,9 +23,9 @@ class SessionForm extends React.Component {
       });
   }
 
-  componentDidMount() {
-    this.props.clearErrors();
-  }
+  // componentDidMount() {
+  //   this.props.clearErrors();
+  // }
 
   //IF NO ERRORS, SHOULD CLOSE MODAL, KEEP OPEN IF ERROR
   handleSubmit(e) {
@@ -37,11 +37,15 @@ class SessionForm extends React.Component {
         return this.props.openModal("preferences")
       // } else {
         // return this.props.closeModal;
-      }}
+      }
+
+      // if(this.props.formType === "Enter") {
+      //   this.props.processForm(user)
+      // }}
       // ,
       // () => { if(!this.props.errors.session){ return this.props.closeModal}});
-  )}
-
+  })}
+    
   //MAKES THE ERRORS RENDER ON SCREEN
   renderErrors() {
     return (
