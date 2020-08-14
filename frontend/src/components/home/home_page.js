@@ -38,9 +38,10 @@ class HomePage extends React.Component {
             />
             <div className="information-container">
               <Article />
-              {Object.entries(this.props.sports).length !== 0 ? (
+              {/* {Object.entries(this.props.sports).length !== 0 ? (
                 <Score data={this.props.sports.data} />
-              ) : null}
+              ) : null} */}
+              <Score />
             </div>
             <Footer />
           </div>

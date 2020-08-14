@@ -85,3 +85,22 @@ select {
     color: #fd5901;
     padding-left: 25px;
 }
+
+.nav-btn-test {
+    position: relative;
+    /* margin: auto; */
+    margin-top: auto;
+    margin-bottom: auto;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFFFFF;
+    -webkit-text-stroke: .5px #fd5901;
+    font-weight: 400;
+    width: 5%;
+    padding: 5px;
+    text-align: center;
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
+    color: #FFFFFF;
+    border-radius: 20px;
+    border: 2px solid #fd5901;
+}

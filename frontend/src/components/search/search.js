@@ -1,6 +1,7 @@
 import React from 'react';
 import './search.css';
 import '../../reset.css';
+import { Link } from 'react-router-dom';
 
 
 class Search extends React.Component {
@@ -40,6 +41,7 @@ class Search extends React.Component {
             <h1 className="search-logo-label">PlayersClub</h1>
           </div>
         <form className="search-form" onSubmit={this.handleSubmit}>
+            <Link className='nav-btn-test' to='/'>Home</Link>
           <label className="search-btn">Choose a Sport:</label>
             <select className="test">
               <option value="" disabled selected hidden>Sports</option>

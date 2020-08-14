@@ -27,7 +27,16 @@ class Score extends React.Component {
 
         return (
             <div className="score-container">
-                {this.props.data.game.away.name}
+                <div className="scores">
+                    <p className="score-header">Latest Scores</p>
+                    <object
+                        className="score"
+                        type="text/html"
+                        data="https://www.scoreboard.com/en/#live-table">
+                    </object>
+                </div>
+                {/* <p>Players: 10 App Academy: -10</p> */}
+                {/* {this.props.data.game.away.name} */}
             </div>
         )
     }
