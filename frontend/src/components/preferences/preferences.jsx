@@ -1,6 +1,7 @@
 import React from 'react';
 import './preferences.css'
 import '../../reset.css';
+import { closeModal } from '../../actions/modal_actions';
 // import { withRouter } from "react-router-dom";
 
 class PreferencesForm extends React.Component{
@@ -56,7 +57,7 @@ class PreferencesForm extends React.Component{
               </label>
             </p>
             </div>
-            <button className="subscribe">Subscribe</button>
+            <button onClick={this.props.closeModal} className="subscribe">Subscribe</button>
           </div>
         </div>
         </>

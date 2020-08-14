@@ -34,6 +34,7 @@ class HomePage extends React.Component {
             <PlayersBar
               openModal={this.props.openModal}
               logout={this.props.logout}
+              currentUser={this.props.currentUser}
             />
             <div className="information-container">
               <Article />

@@ -5,7 +5,8 @@ import HomePage from './home_page';
 import { fetchAll } from '../../actions/sport_actions'
 
 const msp = state => ({
-  sports: state.sports
+  sports: state.sports,
+  currentUser: state.session.isAuthenticated
 });
 
 

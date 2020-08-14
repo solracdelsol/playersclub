@@ -3,8 +3,6 @@ import { withRouter } from "react-router-dom";
 import './session.css';
 import '../../reset.css';
 
-import { openModal } from "../../actions/modal_actions";
-
 
 class SessionForm extends React.Component {
   constructor(props) {

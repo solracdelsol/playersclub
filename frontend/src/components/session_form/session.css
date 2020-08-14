@@ -91,6 +91,7 @@
     -webkit-text-stroke: 0.5px #fd5901;
     border: 2px solid #fd5901;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .session-btn {
