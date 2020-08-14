@@ -23,20 +23,24 @@ class SessionForm extends React.Component {
       });
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   //IF NO ERRORS, SHOULD CLOSE MODAL, KEEP OPEN IF ERROR
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(()=>{
       
-      if(this.props.formType === "signup"){
+      if(this.props.formType === "signup" && this.props.errors.length === 0){
         return this.props.openModal("preferences")
-      } else {
-        return this.props.closeModal;
+      // } else {
+        // return this.props.closeModal;
       }}
-      ,
-      () => { if(!this.props.errors.session){ return this.props.closeModal}});
-  }
+      // ,
+      // () => { if(!this.props.errors.session){ return this.props.closeModal}});
+  )}
 
   //MAKES THE ERRORS RENDER ON SCREEN
   renderErrors() {

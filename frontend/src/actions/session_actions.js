@@ -51,7 +51,6 @@ export const signup = user => dispatch => (
     .catch(err => {
       dispatch(receiveErrors(err.response.data));
     })
-    .then(() => dispatch(closeModal()))
 )
 
 export const login = user => dispatch => (
@@ -65,7 +64,7 @@ export const login = user => dispatch => (
   .catch(err => {
     dispatch(receiveErrors(err.response.data));
   })
-  .then(() => dispatch(closeModal()))
+  .catch(() => dispatch(closeModal()))
 )
 
 export const logout = () => dispatch => {

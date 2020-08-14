@@ -95,6 +95,23 @@ input::placeholder {
 }
 
 button.nav-signup {
+    visibility: hidden;
+    position: relative;
+    margin-left: 15%;
+    display: inline-block;
+    text-align: center;
+    color: #fd5901;
+    width: 15%;
+    border-radius: 15px;
+    border: 1px solid #fd5901;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+    font-size: 15px;
+    outline: none;
+}
+
+button.nav-signup2 {
+    visibility: visible;
     position: relative;
     margin-left: 15%;
     display: inline-block;
