@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(()=>{
       
-      if(this.props.formType === "signup" && this.props.errors.length === 0){
+      if (this.props.formType === "Join the Club" && this.props.errors.length === 0){
         return this.props.openModal("preferences")
       // } else {
         // return this.props.closeModal;
@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div>{this.renderErrors()}</div>
           <div className="login-form">
-            {this.props.formType === "signup" ? (
+            {this.props.formType === "Join the Club" ? (
               <input
                 type="text"
                 value={this.state.username}
@@ -98,7 +98,7 @@ class SessionForm extends React.Component {
               placeholder="Password"
             />
            
-            {this.props.formType === "signup" ? (
+            {this.props.formType === "Join the Club" ? (
              
               <input
                 type="password"
@@ -111,7 +111,7 @@ class SessionForm extends React.Component {
             <input
               className="login-final"
               type="submit"
-              value={this.props.formType === 'signup' ? "Join the Club" : this.props.formType}
+              value={this.props.formType === 'Join the Club' ? "Join the Club" : this.props.formType}
             />
           </div>
         </form>

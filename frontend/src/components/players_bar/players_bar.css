@@ -24,12 +24,12 @@
     justify-content: space-evenly;
     border: 1.5px solid #005f60;
     border-radius: 10px;
-    animation-name: logo;
+    /* animation-name: logo;
     animation-duration: 2.5s;
     animation-fill-mode: none;
     animation-timing-function: ease;
     animation-iteration-count: normal;
-    z-index: 1;
+    z-index: 1; */
     margin-left: auto;
     margin-right: auto;
 }
@@ -195,11 +195,13 @@ input {
     visibility: visible;
     position: relative;
     margin: auto;
+    left: 25%;
     text-decoration: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FFFFFF;
     -webkit-text-stroke: .5px #fd5901;
     font-weight: 400;
+    
 }
 
 .welcome-player1 {
