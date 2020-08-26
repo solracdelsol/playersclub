@@ -25,6 +25,9 @@ class PlayersBar extends React.Component {
           <input className="search" type="text" placeholder="Search the Club"></input>
           </Link>
           </h5>
+          <h6 className={this.props.currentUser ? "welcome-player" : "welcome-player1"}>
+            Welcome to the Club, {this.props.user.username === 'undefined' ? "" : this.props.user.username}!
+          </h6>
           <button
             onClick={() => this.props.openModal("signup")}
             className={this.props.currentUser ? "nav-signup" : "nav-signup2"}>

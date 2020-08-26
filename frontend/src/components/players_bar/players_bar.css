@@ -190,3 +190,25 @@ input {
     width: 25%;
     outline: none;
 }
+
+.welcome-player {
+    visibility: visible;
+    position: relative;
+    margin: auto;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFFFFF;
+    -webkit-text-stroke: .5px #fd5901;
+    font-weight: 400;
+}
+
+.welcome-player1 {
+    visibility: hidden;
+    position: relative;
+    margin: auto;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFFFFF;
+    -webkit-text-stroke: .5px #fd5901;
+    font-weight: 400;
+}

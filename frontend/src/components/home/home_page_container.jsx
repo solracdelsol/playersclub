@@ -6,7 +6,8 @@ import { fetchAll } from '../../actions/sport_actions'
 
 const msp = state => ({
   sports: state.sports,
-  currentUser: state.session.isAuthenticated
+  currentUser: state.session.isAuthenticated,
+  user: state.session.user
 });
 
 

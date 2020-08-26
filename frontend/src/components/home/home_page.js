@@ -35,13 +35,14 @@ class HomePage extends React.Component {
               openModal={this.props.openModal}
               logout={this.props.logout}
               currentUser={this.props.currentUser}
+              user={this.props.user}
             />
             <div className="information-container">
-              <Article />
+              {/* <Article /> */}
               {/* {Object.entries(this.props.sports).length !== 0 ? (
                 <Score data={this.props.sports.data} />
               ) : null} */}
-              <Score />
+              {/* <Score /> */}
             </div>
             <Footer />
           </div>
