@@ -67,11 +67,11 @@ class SessionForm extends React.Component {
           <div onClick={this.props.closeModal} className="close-x">
             X
           </div>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="session-form-caption">Welcome to PlayersClub</div>
           <div className="session-form-subcaption">
-            Please {this.props.formType} or <p>{this.props.otherForm()}</p>
+            {this.props.formType} or <p>{this.props.otherForm()}</p>
           </div>
+        <form onSubmit={this.handleSubmit} className="login-form-box">
           <div>{this.renderErrors()}</div>
           <div className="login-form">
             {this.props.formType === "signup" ? (
