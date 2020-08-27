@@ -1,6 +1,11 @@
 import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 
-const nhlReducer = (oldState = {}, action) => { // MAKE DEFAULT OLD STATE IN THE SHAPE RECEIVE_ALL format, USE THIS TEMPLATE FOR REFACTOR vvv
+const initialState = { // will be using this as new default state instead of {}
+  gamedata: {}, // INITIAL GAMEDATA OBJECT
+  games: [], // INITIAL ARRAY OF GAME OBJECTS
+}
+
+const nhlReducer = (oldState = initialState, action) => { // MAKE DEFAULT OLD STATE IN THE SHAPE RECEIVE_ALL format, USE THIS TEMPLATE FOR REFACTOR vvv
   Object.freeze(oldState);
 
   switch (action.type) { 
