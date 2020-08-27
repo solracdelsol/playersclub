@@ -2,16 +2,17 @@ import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 
 const initialState = { // will be using this as new default state instead of {}
   gamedata: {}, // INITIAL GAMEDATA OBJECT
-  games: [], // INITIAL ARRAY OF GAME OBJECTS
-}
+  games: [], // INITIAL ARRAY OF GAME OBJECT ELEMENTS
+} 
 
 const nhlReducer = (oldState = initialState, action) => { // MAKE DEFAULT OLD STATE IN THE SHAPE RECEIVE_ALL format, USE THIS TEMPLATE FOR REFACTOR vvv
   Object.freeze(oldState);
 
   switch (action.type) { 
     case RECEIVE_ONE:
-      if (action.sport.headers["x-final-url"].split("/")[3] === "nhl") {
-        return Object.assign({}, oldState, action.sport);
+      if (action.sport.headers["x-final-url"].split("/")[3] === "nhl") { 
+        return Object.assign({}, oldState, //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIX THIS WITH THE SQUAD
+          action.sport);
       } else {
         return oldState;
       }
