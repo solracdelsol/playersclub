@@ -3,7 +3,10 @@ import { withRouter } from "react-router-dom";
 import "./session.css";
 import "../../reset.css";
 
+<<<<<<< HEAD
 import { openModal } from "../../actions/modal_actions";
+=======
+>>>>>>> 7e2f8da0f3bc26cd2b845248d291d9f5baa0394b
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -25,6 +28,7 @@ class SessionForm extends React.Component {
       });
   }
 
+<<<<<<< HEAD
   
   isEmpty(obj) {
     // Speed up calls to hasOwnProperty
@@ -52,11 +56,17 @@ class SessionForm extends React.Component {
 
     return true;
   }
+=======
+  // componentDidMount() {
+  //   this.props.clearErrors();
+  // }
+>>>>>>> 7e2f8da0f3bc26cd2b845248d291d9f5baa0394b
 
   //IF NO ERRORS, SHOULD CLOSE MODAL, KEEP OPEN IF ERROR
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+<<<<<<< HEAD
     this.props.processForm(user).then(
       () => {
         if (this.props.formType === "signup" && this.isEmpty(this.props.errors.session)) {
@@ -72,7 +82,23 @@ class SessionForm extends React.Component {
       }
     );
   }
+=======
+    this.props.processForm(user).then(()=>{
+      
+      if(this.props.formType === "signup" && this.props.errors.length === 0){
+        return this.props.openModal("preferences")
+      // } else {
+        // return this.props.closeModal;
+      }
+>>>>>>> 7e2f8da0f3bc26cd2b845248d291d9f5baa0394b
 
+      // if(this.props.formType === "Enter") {
+      //   this.props.processForm(user)
+      // }}
+      // ,
+      // () => { if(!this.props.errors.session){ return this.props.closeModal}});
+  })}
+    
   //MAKES THE ERRORS RENDER ON SCREEN
   renderErrors() {
     return (
@@ -101,7 +127,7 @@ class SessionForm extends React.Component {
           <div className="session-form-subcaption">
             Please {this.props.formType} or <p>{this.props.otherForm()}</p>
           </div>
-          {this.renderErrors()}
+          <div>{this.renderErrors()}</div>
           <div className="login-form">
             {this.props.formType === "signup" ? (
               <input

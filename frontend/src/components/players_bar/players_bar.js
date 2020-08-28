@@ -20,14 +20,18 @@ class PlayersBar extends React.Component {
           <Link className='nav-btn' to='/'>Home</Link>
           <h3 className="nav-btn">Sports</h3>
           <h4 className="nav-btn">Teams</h4>
-          <input type="text" className="search" placeholder="Search"></input>
+          <h5 className="nav-btn">
+          <Link to='/search'>
+          <input className="search" type="text" placeholder="Search the Club"></input>
+          </Link>
+          </h5>
           <button
             onClick={() => this.props.openModal("signup")}
-            className="nav-signup">
+            className={this.props.currentUser ? "nav-signup" : "nav-signup2"}>
               Join the Club!
           </button>
-          <button className="gear"><i className="fa fa-gear fa-lg"></i></button>
-          <button className='nav-logout' onClick={() => this.props.logout()}>Exit Club</button>
+          <button onClick={() => this.props.openModal("preferences")} className={this.props.currentUser ? "gear2" : "gear"}><i className="fa fa-gear fa-2x"></i></button>
+          <button className={this.props.currentUser ? "nav-logout2" : "nav-logout"} onClick={() => this.props.logout()}>Exit Club</button>
         </div>
       </>
     );
