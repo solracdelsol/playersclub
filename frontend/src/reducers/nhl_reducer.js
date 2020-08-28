@@ -1,44 +1,37 @@
 import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 
-const initialState = { // will be using this as new default state instead of {}
-  gamedata: {}, // INITIAL GAMEDATA OBJECT
-  games: [], // INITIAL ARRAY OF GAME OBJECT ELEMENTS
-} 
 
-const nhlReducer = (oldState = initialState, action) => { // MAKE DEFAULT OLD STATE IN THE SHAPE RECEIVE_ALL format, USE THIS TEMPLATE FOR REFACTOR vvv
-  Object.freeze(oldState);
-
+const nhlReducer = (oldState = [], action) => {
+  // Object.freeze(oldState); // dont need this if we are using array default state
+  let newState = oldState.slice(); //preserves oldState by making a copy we manipulate
   switch (action.type) { 
     case RECEIVE_ONE:
       if (action.sport.headers["x-final-url"].split("/")[3] === "nhl") { 
-        return Object.assign({}, oldState, //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIX THIS WITH THE SQUAD
-          action.sport);
+        newState.push({
+          home: action.sport.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE 
+          away: action.sport.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
+          scores: [action.sport.home.points, action.sport.away.points] }) // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
+
+        return newState;
       } else {
         return oldState;
       }
     case RECEIVE_ALL:
-      if (action.sports.headers["x-final-url"].split("/")[3] === "nhl") {
-        //ALL THESE WORK FOR ALL SPORTS NOW
-        return Object.assign(
-          {},
-          oldState, // NOW NORMALIZE THE STATE
-          {
-            gamedata: action.sports, // GENERAL JSON INFO HERE
-            games: action.sports.games.map(game =>{ // ALL GAMES STORED IN THIS OBJECT, AN ARRAY OF GAME OBJECTS------------------------ ^^^
-              return  {  
-                         
-                home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
-                away: game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-                scores: [game.home.points, game.away.points], // ARRAY OF POINTS
-              }
-             //----------------------------------------------------------------------------------
-          })}
-        );
+      if (action.sports.headers["x-final-url"].split("/")[3] === "nhl") {        //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
+
+        action.sports.games.forEach(game => (
+          newState.push({
+            home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
+            away: game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
+            scores: [game.home.points, game.away.points], // ARRAY OF POINTS
+        })))
+
+        return newState; 
       } else {
         return oldState;
       }
     case CLEAR_ALL:
-      return {};
+      return [];
 
     default:
       return oldState;

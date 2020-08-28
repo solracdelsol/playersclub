@@ -1,40 +1,43 @@
 import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 
+
 const mlbReducer = (oldState = [], action) => {
-  debugger;
-  Object.freeze(oldState);
-  let copy = oldState.slice();
+  // Object.freeze(oldState); // dont need this if we are using array default state
+  let newState = oldState.slice(); //preserves oldState by making a copy we manipulate
   switch (action.type) {
     case RECEIVE_ONE:
       if (action.sport.headers["x-final-url"].split("/")[3] === "mlb") {
-        return Object.assign({}, oldState, action.sport);
+        newState.push({
+          home: action.sport.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE 
+          away: action.sport.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
+          scores: [action.sports.data.game.home.runs, action.sports.data.game.away.runs]
+        }) // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
+
+        return newState;
       } else {
-        return copy;
+        return oldState;
       }
-    case RECEIVE_ALL: //SEE NHL TEMPLATE 
-      if (action.sports.headers["x-final-url"].split("/")[3] === "mlb") {
-        //ALL THESE WORK FOR ALL SPORTS NOW
-        copy.push(// NOW NORMALIZE THE STATE
-          {
-            gamedata: action.sports, // GENERAL JSON INFO HERE, THIS IS VERY DIFFERENT FORMAT FROM THE OTHER TWO
-            games:[// ALL GAMES STORED IN THIS ARRAY, AN ARRAY OF GAME OBJECTS------------------------------------
-              {               
-                home: action.sports.data.game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
-                away: action.sports.data.game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-                scores: [action.sports.data.game.home.runs,action.sports.data.game.away.runs,], // ARRAY OF POINTS
-              },
-            ],//------------------------------------------------------------------------------------------------------
-          }
-        );
-        return copy; // this is a copy with the new object pushed to the end of the array, if you return a copy.push(), it will return the length of the new array
+    case RECEIVE_ALL:
+      if (action.sports.headers["x-final-url"].split("/")[3] === "mlb") {        //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
+
+        action.sports.games.forEach(game => (
+          newState.push({
+            home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
+            away: game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
+            scores: [action.sports.data.game.home.runs, action.sports.data.game.away.runs], // ARRAY OF POINTS
+          })))
+
+        return newState;
       } else {
-        return copy; // else, return original array without pushing
+        return oldState;
       }
     case CLEAR_ALL:
-      return {};
+      return [];
+
     default:
       return oldState;
   }
 };
+
 
 export default mlbReducer;
