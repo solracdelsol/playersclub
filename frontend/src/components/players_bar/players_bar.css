@@ -84,10 +84,10 @@
     color: #FFFFFF;
     -webkit-text-stroke: .5px #fd5901;
     font-weight: 400;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 25px;
+    padding-right: 25px;
     border-radius: 15px;
     border: 1px solid #fd5901;
     cursor: pointer;
@@ -96,7 +96,7 @@
     font-weight: 200;
     background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 input.search {
@@ -116,7 +116,7 @@ input.search {
     font-size: 15px;
 }
 
-input::placeholder {
+h5 input::placeholder {
     color: #FFFFFF;
     position: relative;
     /* margin: auto; */
@@ -152,6 +152,11 @@ button.nav-signup {
     cursor: pointer;
     font-size: 15px;
     outline: none;
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
+    color: #FFFFFF;
+    -webkit-text-stroke: .5px #fd5901;
+    border-radius: 20px;
+    font-size: 15px;
 }
 
 button.nav-logout {

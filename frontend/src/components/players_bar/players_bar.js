@@ -20,13 +20,15 @@ class PlayersBar extends React.Component {
           <Link className='nav-btn' to='/'>Home</Link>
           <h3 className="nav-btn">Sports</h3>
           <h4 className="nav-btn">Teams</h4>
+          <h5>
           <Link to='/search'>
           <input className="search" type="text" placeholder="Search the Club"></input>
           </Link>
+          </h5>
           {this.props.currentUser ? (
-            <h5 className="welcome-player">
+            <h6 className="welcome-player">
               Welcome to the Club, {Object.keys(this.props.user).length === 0 ? "" : this.props.user.username}!
-            </h5>
+            </h6>
           ) : (
             ""
           )}
