@@ -53,7 +53,7 @@ class Search extends React.Component {
             </select>
           <label className="search-btn">Select Date:</label>
           <input type="date"></input>
-          <input type="submit" value="Search"/>
+          <input className="submit" type="submit" value="Search"/>
         </form>
       </div>
     </div>
