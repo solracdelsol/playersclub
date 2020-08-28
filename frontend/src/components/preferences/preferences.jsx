@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-import React from "react";
-=======
 import React from 'react';
 import './preferences.css'
 import '../../reset.css';
->>>>>>> 7e2f8da0f3bc26cd2b845248d291d9f5baa0394b
 // import { withRouter } from "react-router-dom";
 
 class PreferencesForm extends React.Component {
@@ -14,32 +10,6 @@ class PreferencesForm extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <main className="fancy">
-        <div className="box">
-          <h3 className="subscribe-caption">Subscribe to Sports Feeds</h3>
-          <p>
-            <label htmlFor="MLB">
-              <input id="MLB" type="checkbox" value="NBA" />
-              <span>MLB</span>
-            </label>
-          </p>
-          <p>
-            <label htmlFor="NBA">
-              <input id="NBA" type="checkbox" value="NBA" />
-              <span>NBA</span>
-            </label>
-          </p>
-
-          <p>
-            <label htmlFor="Other">
-              <input id="NFL" type="checkbox" value="NFL" />
-              <span>NFL</span>
-            </label>
-          </p>
-        </div>
-      </main>
-=======
       <>
       <div onClick={this.props.closeModal} className="close-x">
         X
@@ -88,7 +58,6 @@ class PreferencesForm extends React.Component {
           </div>
         </div>
         </>
->>>>>>> 7e2f8da0f3bc26cd2b845248d291d9f5baa0394b
     );
   }
 }

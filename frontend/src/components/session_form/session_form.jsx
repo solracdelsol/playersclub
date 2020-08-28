@@ -3,10 +3,7 @@ import { withRouter } from "react-router-dom";
 import "./session.css";
 import "../../reset.css";
 
-<<<<<<< HEAD
 import { openModal } from "../../actions/modal_actions";
-=======
->>>>>>> 7e2f8da0f3bc26cd2b845248d291d9f5baa0394b
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -18,7 +15,6 @@ class SessionForm extends React.Component {
       password2: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.isEmpty = this.isEmpty.bind(this);
   }
 
   update(field) {
@@ -28,69 +24,21 @@ class SessionForm extends React.Component {
       });
   }
 
-<<<<<<< HEAD
-  
-  isEmpty(obj) {
-    // Speed up calls to hasOwnProperty
-    const hasOwnProperty = Object.prototype.hasOwnProperty;
-
-      // null and undefined are "empty"
-      if (obj == null) return true;
-
-      // Assume if it has a length property with a non-zero value
-      // that that property is correct.
-      if (obj.length > 0)    return false;
-      if (obj.length === 0)  return true;
-
-      // If it isn't an object at this point
-      // it is empty, but it can't be anything *but* empty
-      // Is it empty?  Depends on your application.
-      if (typeof obj !== "object") return true;
-
-      // Otherwise, does it have any properties of its own?
-      // Note that this doesn't handle
-      // toString and valueOf enumeration bugs in IE < 9
-      for (var key in obj) {
-          if (hasOwnProperty.call(obj, key)) return false;
-      }
-
-    return true;
-  }
-=======
   // componentDidMount() {
   //   this.props.clearErrors();
   // }
->>>>>>> 7e2f8da0f3bc26cd2b845248d291d9f5baa0394b
 
   //IF NO ERRORS, SHOULD CLOSE MODAL, KEEP OPEN IF ERROR
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-<<<<<<< HEAD
-    this.props.processForm(user).then(
-      () => {
-        if (this.props.formType === "signup" && this.isEmpty(this.props.errors.session)) {
-          return this.props.openModal("preferences");
-        } else {
-          return this.props.closeModal;
-        }
-      },
-      () => {
-        if (!this.props.errors.session) {
-          return this.props.closeModal;
-        }
-      }
-    );
-  }
-=======
     this.props.processForm(user).then(()=>{
       
-      if(this.props.formType === "signup" && this.props.errors.length === 0){
+      if (this.props.formType === "Join the Club" && this.props.errors.length === 0){
         return this.props.openModal("preferences")
       // } else {
         // return this.props.closeModal;
       }
->>>>>>> 7e2f8da0f3bc26cd2b845248d291d9f5baa0394b
 
       // if(this.props.formType === "Enter") {
       //   this.props.processForm(user)
@@ -119,17 +67,17 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <div onClick={this.props.closeModal} className="close-x">
-          X
-        </div>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+          <div onClick={this.props.closeModal} className="close-x">
+            X
+          </div>
           <div className="session-form-caption">Welcome to PlayersClub</div>
           <div className="session-form-subcaption">
-            Please {this.props.formType} or <p>{this.props.otherForm()}</p>
+            {this.props.formType} or <p>{this.props.otherForm()}</p>
           </div>
+        <form onSubmit={this.handleSubmit} className="login-form-box">
           <div>{this.renderErrors()}</div>
           <div className="login-form">
-            {this.props.formType === "signup" ? (
+            {this.props.formType === "Join the Club" ? (
               <input
                 type="text"
                 value={this.state.username}
@@ -139,7 +87,7 @@ class SessionForm extends React.Component {
               />
             ) : null}
             <input
-              type="text"
+              type="email"
               value={this.state.email}
               onChange={this.update("email")}
               className="login-input"
@@ -152,10 +100,11 @@ class SessionForm extends React.Component {
               className="login-input"
               placeholder="Password"
             />
-
-            {this.props.formType === "signup" ? (
+           
+            {this.props.formType === "Join the Club" ? (
+             
               <input
-                type="password2"
+                type="password"
                 value={this.state.password2}
                 onChange={this.update("password2")}
                 className="login-input"
@@ -165,11 +114,7 @@ class SessionForm extends React.Component {
             <input
               className="login-final"
               type="submit"
-              value={
-                this.props.formType === "signup"
-                  ? "Join the Club"
-                  : this.props.formType
-              }
+              value={this.props.formType === 'Join the Club' ? "Join the Club" : this.props.formType}
             />
           </div>
         </form>

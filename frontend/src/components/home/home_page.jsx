@@ -8,32 +8,28 @@ import Score from '../score/score';
 
 
 
-<<<<<<< HEAD:frontend/src/components/home/home_page.jsx
-export default class HomePage extends React.Component {
-=======
 
 
 class HomePage extends React.Component {
->>>>>>> 7e2f8da0f3bc26cd2b845248d291d9f5baa0394b:frontend/src/components/home/home_page.js
   constructor(props){
     super(props);
-    this.getTodaysDate = this.getTodaysDate.bind(this);
+    // this.getTodaysDate = this.getTodaysDate.bind(this);
   }
 
 
-  componentDidMount(){
-    if (Object.entries(this.props.sports).length === 0) {
-      this.props.mlbScheduleObj(this.getTodaysDate())
-     }
-  }
+  // componentDidMount(){
+  //   if (Object.entries(this.props.sports).length === 0) {
+  //     this.props.mlbScheduleObj(this.getTodaysDate())
+  //    }
+  // }
 
-  getTodaysDate() {
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, "0");
-    var mm = String(today.getMonth() + 1).padStart(2, "0");
-    var yyyy = today.getFullYear();
-    return today = yyyy + "/" + mm + "/" + dd;
-  }
+  // getTodaysDate() {
+  //   var today = new Date();
+  //   var dd = String(today.getDate()).padStart(2, "0");
+  //   var mm = String(today.getMonth() + 1).padStart(2, "0");
+  //   var yyyy = today.getFullYear();
+  //   return today = yyyy + "/" + mm + "/" + dd;
+  // }
 
   
   render() {
@@ -46,30 +42,19 @@ class HomePage extends React.Component {
       <div>
         <div className="homepage-container">
           <div className="homepage-background">
-<<<<<<< HEAD:frontend/src/components/home/home_page.jsx
-            <PlayersBar openModal={this.props.openModal} logout={this.props.logout}/>
-          <div className="information-container">
-              
-                  
-                  
-                {/* // <Article />, */}
-          </div>
-=======
             <PlayersBar
               openModal={this.props.openModal}
               logout={this.props.logout}
               currentUser={this.props.currentUser}
+              user={this.props.user}
             />
             <div className="information-container">
-              <Article />
-
+              {/* <Article /> */}
               {/* {Object.entries(this.props.sports).length !== 0 ? (
                 <Score data={this.props.sports.data} />
               ) : null} */}
-              <Score />
-
+              {/* <Score /> */}
             </div>
->>>>>>> 7e2f8da0f3bc26cd2b845248d291d9f5baa0394b:frontend/src/components/home/home_page.js
             <Footer />
           </div>
         </div>
@@ -78,4 +63,4 @@ class HomePage extends React.Component {
   }
 }
 
-// export default HomePage;
+export default HomePage;
