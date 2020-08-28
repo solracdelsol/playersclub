@@ -1,8 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import './session.css';
-import '../../reset.css';
+import "./session.css";
+import "../../reset.css";
 
+import { openModal } from "../../actions/modal_actions";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class SessionForm extends React.Component {
       email: "",
       username: "",
       password: "",
-      password2: ""
+      password2: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -51,7 +52,9 @@ class SessionForm extends React.Component {
     return (
       <div>
         {Object.values(this.props.errors).map((error, i) => (
-          <div className="errors" key={`error-${i}`}>{error}</div>
+          <div className="errors" key={`error-${i}`}>
+            {error}
+          </div>
         ))}
       </div>
     );
@@ -82,7 +85,7 @@ class SessionForm extends React.Component {
                 className="login-input"
                 placeholder="Username"
               />
-              ) : null} 
+            ) : null}
             <input
               type="email"
               value={this.state.email}

@@ -33,8 +33,13 @@ class HomePage extends React.Component {
 
   
   render() {
+
+    const sportCard = () => {if (Object.entries(this.props.sports).length !== 0){ // gather all games and return them in SportsCard components
+                Object.entries(this.props.sports).map( sport => {
+                  return (<Score sports={sport}  />) })}}
+
     return (
-      <>
+      <div>
         <div className="homepage-container">
           <div className="homepage-background">
             <PlayersBar
@@ -53,11 +58,9 @@ class HomePage extends React.Component {
             <Footer />
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
 
 export default HomePage;
-
-

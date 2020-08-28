@@ -14,6 +14,10 @@ import { fetchGameScore, fetchGameSchedule } from '../../actions/sport_actions';
 
 
 const msp = state => ({
+
+  mlb: state.sports.mlb,
+  nba: state.sports.nba,
+  nhl: state.sports.nhl,
   sports: state.sports,
   currentUser: state.session.isAuthenticated,
   user: state.session.user
