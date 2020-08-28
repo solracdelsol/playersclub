@@ -43,8 +43,8 @@ class Search extends React.Component {
         <form className="search-form" onSubmit={this.handleSubmit}>
             <Link className='nav-btn-home' to='/'>Home</Link>
           <label className="search-btn">Choose a Sport:</label>
-            <select>
-              <option value="" disabled selected hidden>Sports</option>
+            <select defaultValue={'DEFAULT'}>
+              <option value="DEFAULT" disabled hidden>Sports</option>
               <option disabled value>Please select one</option>
               <option value="0">All</option>
               <option value="1">NBA</option>
