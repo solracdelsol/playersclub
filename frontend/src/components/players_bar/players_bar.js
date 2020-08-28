@@ -26,7 +26,7 @@ class PlayersBar extends React.Component {
           </Link>
           </h5>
           <h6 className={this.props.currentUser ? "welcome-player" : "welcome-player1"}>
-            Welcome to the Club, {this.props.user.username === 'undefined' ? "" : this.props.user.username}!
+            Welcome to the Club, {Object.keys(this.props.user).length === 0 ? "" : this.props.user.username}!
           </h6>
           <button
             onClick={() => this.props.openModal("signup")}
