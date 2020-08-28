@@ -19,14 +19,14 @@ class Search extends React.Component {
     // const date = 2020/08/12
     const eventId = "364c14ac-4862-42f0-a86c-4c78a366421d";
     const key = "tsnfm7psc9gpakapew4v3wby";
-    this.props.fetchAll(trial, eventId, key);
+    // this.props.fetchAll(trial, eventId, key);
   }
 
   //mlb/trial/v6.6, 364c14ac-4862-42f0-a86c-4c78a366421d, tsnfm7psc9gpakapew4v3wby
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.fetchAll(this.state.trial, this.state.eventId, this.state.key);
+    // this.props.fetchAll(this.state.trial, this.state.eventId, this.state.key);
   }
 
   update(field) {
