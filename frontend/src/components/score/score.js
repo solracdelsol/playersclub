@@ -1,63 +1,95 @@
 import React from 'react';
 import './score.css';
 import '../../reset.css';
-import { MLBkey, MLBTrial, NBATrial, NBAkey, NHLTrial, NHLkey  } from '../../src_keys';
+import { MLBkey, MLBTrial, NBATrial, NBAkey, NHLTrial, NHLkey  } from '../../config/src_keys';
 
 
 class Score extends React.Component {
   constructor(props) {
     super(props);
     this.mlbGameContainer = this.mlbGameContainer.bind(this);
-    this.gameContainer = this.gameContainer.bind(this);
+    this.nhlGameContainer = this.nhlGameContainer.bind(this);
+    this.nbaGameContainer = this.nbaGameContainer.bind(this);
+    this.fetchGame = this.fetchGame.bind(this);
   }
 
   mlbGameContainer() {
-
-    return this.props.sports.mlb.map((gm,idx) => {
-    return (
-      <ul>
-        <li>{this.props.sports.mlb[idx].data.game.home.name}</li>
-        <li>{this.props.sports.mlb[idx].data.game.home.runs}</li>
-        <li>{this.props.sports.mlb[idx].data.game.away.name}</li>
-        <li>{this.props.sports.mlb[idx].data.game.away.runs}</li>
-        <li>{this.props.sports.mlb[idx].data.game.venue.name}</li>
-      </ul>
-    );});
-  };
-
-  gameContainer(gameObject) { 
-    return gameObject.map(game => {
-    return (
-      <ul>
-        <li>{game.data.game.home.name}</li>
-        <li>{game.data.game.home.points}</li>
-        <li>{game.data.game.away.name}</li>
-        <li>{game.data.game.away.points}</li>
-      </ul>
-    )});
-  };
+    
+    return this.props.sports.mlb.map(gm => {
+      return (
+        <ul>
+          <li>{gm.data.game.home.name}</li>
+          <li>{gm.data.game.home.runs}</li>
+          <li>{gm.data.game.away.name}</li>
+          <li>{gm.data.game.away.runs}</li>
+          <li>{gm.data.game.venue.name}</li>
+        </ul>
+      );
+    });
+  }
 
 
-render() {
-    // const gameObject2 = this.props.sports.NBA.data.games.map( game =>
-    //   this.props.fetchGameScore(NBATrial, game.id, NBAkey)
-    // );
-    // const gameObject3 = this.props.sports.NHL.data.games.map( game =>
-    //   this.props.fetchGameScore(NHLTrial, game.id, NHLkey)
-    // );
-    if (typeof this.props.sports.mlb !== Array) {
-        return this.props.sports.MLB.data.games.map( game => 
-            {
-            return null;
+  nbaGameContainer() {
+    debugger;
+    return this.props.sports.nba.map(gm => {
+      return (
+        <ul>
+          <li>{gm.data.home.name}</li>
+          <li>{gm.data.home.points}</li>
+          <li>{gm.data.away.name}</li>
+          <li>{gm.data.away.points}</li>
+        </ul>
+      );
+    });
+  }
 
-            // setInterval(() => this.props.fetchGameScore(MLBTrial, game.id, MLBkey), 30000)
-        });
-      } else {
-        return (
+  nhlGameContainer() {
+    return this.props.sports.nhl.map(gm => {
+      return (
+        <ul>
+          <li>{gm.data.game.home.name}</li>
+          <li>{gm.data.game.home.points}</li>
+          <li>{gm.data.game.away.name}</li>
+          <li>{gm.data.game.away.points}</li>
+        </ul>
+      );
+    });
+  }
+
+  componentDidMount() {
+    this.fetchGame()
+    
+  }
+
+  fetchGame() {
+ 
+    // this.props.sports.MLB.data.games.map((game, idx) => {
+    //   setTimeout(() => (this.props.fetchGameScore(MLBTrial, game.id, MLBkey)), 1200 * idx)
+    // });
+
+    this.props.sports.NHL.data.games.map((game, idx) => {
+      setTimeout(() => (this.props.fetchGameScore(NHLTrial, game.id, NHLkey)), 1200 * idx)
+    });
+    
+    this.props.sports.NBA.data.games.map((game, idx) => {
+      setTimeout(() => (this.props.fetchGameScore(NBATrial, game.id, NBAkey)), 1200 * idx)
+    });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+
+    if (this.props.sports.nba === undefined || this.props.sports.nhl === undefined ) {
+      return null;
+    } else {
+      return (
         <div className="score-container">
-          <div>{this.mlbGameContainer()}</div>
-          <div>{this.gameContainer(this.props.sports.NBA)}</div>
-          <div>{this.gameContainer(this.props.sports.NHL)}</div>
+          {/* <div>{this.mlbGameContainer()}</div> */}
+          <div>{this.nbaGameContainer()}</div>
+         <div>{this.nhlGameContainer()}</div>
         </div>
       );
     }

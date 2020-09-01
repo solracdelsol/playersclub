@@ -8,7 +8,6 @@ import Score from '../score/score';
 
 
 
-
 class HomePage extends React.Component {
   constructor(props){
     super(props);
@@ -17,8 +16,11 @@ class HomePage extends React.Component {
 
   componentDidMount(){
     if (Object.entries(this.props.sports).length === 0) {
-      this.props.mlbScheduleObj(this.getTodaysDate())
-     }
+
+      // this.props.mlbScheduleObj(this.getTodaysDate())
+      setTimeout(() => (this.props.nhlScheduleObj(this.getTodaysDate())), 1200)
+      setTimeout(() => (this.props.nbaScheduleObj(this.getTodaysDate())), 2400)
+    }
   }
 
   getTodaysDate() {
@@ -39,7 +41,7 @@ class HomePage extends React.Component {
               logout={this.props.logout}
             />
             <div className="information-container">
-              {Object.entries(this.props.sports).length !== 0 ? (
+              {Object.entries(this.props.sports).length > 1 ? (
                 <Score
                   fetchGameScore={this.props.fetchGameScore}
                   sports={this.props.sports}

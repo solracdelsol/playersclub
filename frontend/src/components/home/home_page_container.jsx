@@ -10,7 +10,7 @@ import {
   NBAkey,
   NHLTrial,
   NHLkey,
-} from "../../src_keys";
+} from "../../config/src_keys";
 
 const msp = state => { 
   return {
