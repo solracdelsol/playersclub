@@ -3,14 +3,12 @@ import './preferences.css'
 import '../../reset.css';
 // import { withRouter } from "react-router-dom";
 
-class PreferencesForm extends React.Component{
-  constructor(props){
-    super(props)
+class PreferencesForm extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
-
-  render(){
-
+  render() {
     return (
       <>
       <div onClick={this.props.closeModal} className="close-x">
@@ -56,7 +54,7 @@ class PreferencesForm extends React.Component{
               </label>
             </p>
             </div>
-            <button className="subscribe">Subscribe</button>
+            <button onClick={this.props.closeModal} className="subscribe">Subscribe</button>
           </div>
         </div>
         </>

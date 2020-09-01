@@ -170,4 +170,6 @@ input {
     border-radius: 20px;
     border: 2px solid #fd5901;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    outline: none;
+    cursor: pointer;
 }

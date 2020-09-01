@@ -1,6 +1,7 @@
 import React from 'react';
 import './search.css';
 import '../../reset.css';
+import { Link } from 'react-router-dom';
 
 
 class Search extends React.Component {
@@ -18,14 +19,14 @@ class Search extends React.Component {
     // const date = 2020/08/12
     const eventId = "364c14ac-4862-42f0-a86c-4c78a366421d";
     const key = "tsnfm7psc9gpakapew4v3wby";
-    this.props.fetchAll(trial, eventId, key);
+    // this.props.fetchAll(trial, eventId, key);
   }
 
   //mlb/trial/v6.6, 364c14ac-4862-42f0-a86c-4c78a366421d, tsnfm7psc9gpakapew4v3wby
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.fetchAll(this.state.trial, this.state.eventId, this.state.key);
+    // this.props.fetchAll(this.state.trial, this.state.eventId, this.state.key);
   }
 
   update(field) {
@@ -40,9 +41,10 @@ class Search extends React.Component {
             <h1 className="search-logo-label">PlayersClub</h1>
           </div>
         <form className="search-form" onSubmit={this.handleSubmit}>
+            <Link className='nav-btn-home' to='/'>Home</Link>
           <label className="search-btn">Choose a Sport:</label>
-            <select className="test">
-              <option value="" disabled selected hidden>Sports</option>
+            <select defaultValue={'DEFAULT'}>
+              <option value="DEFAULT" disabled hidden>Sports</option>
               <option disabled value>Please select one</option>
               <option value="0">All</option>
               <option value="1">NBA</option>

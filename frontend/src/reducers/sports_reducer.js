@@ -1,32 +1,33 @@
-import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from '../actions/sport_actions';
-import { urlencoded } from 'body-parser';
+// import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from '../actions/sport_actions';
+import { combineReducers } from "redux";
+import nhl from './nhl_reducer';
+import nba from './nba_reducer';
+import mlb from './mlb_reducer';
 
 
-let gamesArr = [];
-
-export default function SportsReducer (oldState = {}, action) {
-  Object.freeze(oldState) 
+// export default function SportsReducer (oldState = {}, action) {
+//   Object.freeze(oldState) 
   
-  
-  
-  switch (action.type) {
+//   switch (action.type) {
     
-    case RECEIVE_ONE:
-      
-      let newState = Object.assign({}, oldState, { [action.sport.headers["x-final-url"].split("/")[3]]: gamesArr } ); 
-      newState[action.sport.headers["x-final-url"].split("/")[3]].push(
-        action.sport
-      );
-      return newState;
-
-    case RECEIVE_ALL: 
-      return Object.assign( {}, oldState, { [action.sports.data.league.alias]: action.sports });
+//     case RECEIVE_ONE:
+//       return Object.assign({}, oldState, { [action.sport.id]: action.sport });
     
-    case CLEAR_ALL: 
-      return {};
+//     case RECEIVE_ALL: 
+//       return action.sports;
+    
+//     case CLEAR_ALL: 
+//       return {};
 
-    default:
-      return oldState;
-  }
-}
+//     default:
+//       return oldState;
+//   }
+// }
 
+const SportsReducer = combineReducers({
+  mlb,
+  nba,
+  nhl,
+});
+
+export default SportsReducer;

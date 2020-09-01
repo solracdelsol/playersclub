@@ -3,7 +3,7 @@
     width: 50%;
     height: 100%;
     text-align: center;
-    background: rgba(255, 255, 255,  0.2);
+    background: rgba(0, 0, 0, 0.2);
     border: 1.5px solid #fd5901;
     border-radius: 10px;
     margin-left: 10px;
@@ -18,3 +18,59 @@
     from { transform: translate(100vw, 0px);}
     to { transform: translate(0px, 0px)}
 } */
+
+/* @keyframes article {
+    from { transform: translate(-100vw, 0px);}
+    to { transform: translate(0px, 0px)}
+} */
+
+.scores {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: 99%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+}
+
+.score {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    animation-name: article;
+    animation-duration: 6s;
+    animation-fill-mode: none;
+    animation-timing-function: linear;
+    animation-iteration-count: normal;
+}
+
+@keyframes article {
+    0% { opacity: 0.0;}
+    50% { opacity: 0.5;}
+    100% { opacity: 1;}
+}
+
+.score-header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    justify-content: center;
+    width: 35%;
+    font-weight: 600;
+    font-size: 25px;
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
+    color: #FFFFFF;
+    border-radius: 20px;
+    -webkit-text-stroke: 0.5px #fd5901;
+    border: 2px solid #fd5901;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

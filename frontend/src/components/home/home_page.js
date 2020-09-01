@@ -8,11 +8,8 @@ import Score from '../score/score';
 
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 4a787362bc47b54eed32140abb80a11c3a7bcba7
 class HomePage extends React.Component {
   constructor(props){
     super(props);
