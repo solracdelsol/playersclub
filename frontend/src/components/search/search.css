@@ -1,0 +1,87 @@
+.search-logo-label {
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 5vh;
+    justify-content: center;
+    margin: auto;
+    width: 35%;
+    background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
+    color: #FFFFFF;
+    border-radius: 20px;
+    padding: 5px;
+    -webkit-text-stroke: 1px #fd5901;
+    border: 2px solid #fd5901;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.search-logo {
+    position: relative;
+    background-image: url('../../images/playersclub.jpg');
+    width: 80%;
+    height: 11.1%;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1.5px solid #005f60;
+    border-radius: 10px;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 10px;
+    justify-content: space-evenly;
+    animation-name: nav;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: normal;
+}
+
+.search-form input {
+    position: relative;
+    display: flex;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 10px;
+    border: 1px solid #fd5901;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    justify-content: center;
+    font-weight: 200;
+    color: #fd5901;
+}
+
+
+.search-btn {
+    position: relative;
+    /* margin: auto; */
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #005f60;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+select {
+    position: relative;
+    display: flex;
+    width: 7%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 10px;
+    border: 1px solid #fd5901;
+    cursor: pointer;
+    outline: none;
+    font-weight: 200;
+    color: #fd5901;
+    padding-left: 25px;
+}
