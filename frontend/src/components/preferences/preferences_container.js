@@ -1,16 +1,16 @@
-import { connect } from 'react-redux';
-import React from 'react';
-import {openModal, closeModal} from '../../actions/modal_actions';
-import PreferencesForm from './preferences';
+import { connect } from "react-redux";
+import React from "react";
+import { openModal, closeModal } from "../../actions/modal_actions";
+import PreferencesForm from "./preferences";
 
-const msp = state => ({
+const msp = (state) => ({
   errors: state.errors.session,
-  formType: "preferences"
-})
+  formType: "preferences",
+});
 
 const mdp = (dispatch) => ({
   openModal: (modal) => dispatch(openModal(modal)),
-  closeModal: () => dispatch(closeModal())
-})
+  closeModal: () => dispatch(closeModal()),
+});
 
 export default connect(msp, mdp)(PreferencesForm);

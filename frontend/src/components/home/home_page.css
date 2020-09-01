@@ -4,6 +4,7 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    min-height: 600px;
     background-image: linear-gradient(to right,#fd5901, #f78104, #faab36, #249ea0, #008083, #005f60);
     overflow: hidden;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './score.css';
 import '../../reset.css';
-import { MLBkey, MLBTrial, NBATrial, NBAkey, NHLTrial, NHLkey  } from '../../config/src_keys';
+// import { MLBkey, MLBTrial, NBATrial, NBAkey, NHLTrial, NHLkey  } from '../../src_keys';
 
 
 class Score extends React.Component {
@@ -30,7 +30,6 @@ class Score extends React.Component {
 
 
   nbaGameContainer() {
-    debugger;
     return this.props.sports.nba.map(gm => {
       return (
         <ul>
