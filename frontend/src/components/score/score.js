@@ -15,9 +15,9 @@ class Score extends React.Component {
 
   mlbGameContainer() {
     
-    return this.props.sports.mlb.map(gm => {
+    return this.props.sports.mlb.map((gm, idx) => {
       return (
-        <ul>
+        <ul key={idx}>
           <li>{gm.game.home.name}</li>
           <li>{gm.scores[0] === undefined ? "pending" : gm.scores[0]}</li>
           <li>{gm.game.away.name}</li>
@@ -29,9 +29,9 @@ class Score extends React.Component {
 
 
   nbaGameContainer() {
-    return this.props.sports.nba.map(gm => {
+    return this.props.sports.nba.map((gm,idx) => {
       return (
-        <ul>
+        <ul key={idx}>
           <li>{gm.home.name}</li>
           <li>{gm.scores[0] === undefined ? "pending" : gm.scores[0]}</li>
           <li>{gm.away.name}</li>
@@ -42,9 +42,9 @@ class Score extends React.Component {
   }
 
   nhlGameContainer() {
-    return this.props.sports.nhl.map(gm => { 
+    return this.props.sports.nhl.map((gm, idx) => { 
       return (
-        <ul>
+        <ul key={idx}>
           <li>{gm.home.name}</li>
           <li>{gm.scores[0] === undefined ? 'pending' : gm.scores[0]}</li>
           <li>{gm.away.name}</li>
@@ -79,7 +79,7 @@ class Score extends React.Component {
   }
 
   render() {
-    debugger;
+    
     
     if (this.props.sports.nba === undefined || this.props.sports.nhl === undefined ) {
       return null;
