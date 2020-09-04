@@ -13,23 +13,25 @@ import Score from '../score/score';
 class HomePage extends React.Component {
   constructor(props){
     super(props);
-    // this.getTodaysDate = this.getTodaysDate.bind(this);
+    this.getTodaysDate = this.getTodaysDate.bind(this);
   }
 
 
-  // componentDidMount(){
-  //   if (Object.entries(this.props.sports).length === 0) {
-  //     this.props.mlbScheduleObj(this.getTodaysDate())
-  //    }
-  // }
+  componentDidMount(){
+    if (Object.entries(this.props.sports.mlb).length === 0) {
+      // this.props.mlbScheduleObj(this.getTodaysDate());
+      setTimeout(() => this.props.nhlScheduleObj(this.getTodaysDate()), 1200);
+      setTimeout(() => this.props.nbaScheduleObj(this.getTodaysDate()), 2400);
+     }
+  }
 
-  // getTodaysDate() {
-  //   var today = new Date();
-  //   var dd = String(today.getDate()).padStart(2, "0");
-  //   var mm = String(today.getMonth() + 1).padStart(2, "0");
-  //   var yyyy = today.getFullYear();
-  //   return today = yyyy + "/" + mm + "/" + dd;
-  // }
+  getTodaysDate() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0");
+    var yyyy = today.getFullYear();
+    return today = yyyy + "/" + mm + "/" + dd;
+  }
 
   
   render() {
@@ -50,9 +52,9 @@ class HomePage extends React.Component {
             />
             <div className="information-container">
               {/* <Article /> */}
-              {/* {Object.entries(this.props.sports).length !== 0 ? (
-                <Score data={this.props.sports.data} />
-              ) : null} */}
+              {Object.entries(this.props.sports).length !== 0 ? (
+                <Score sports={this.props.sports} />
+              ) : null}
               {/* <Score /> */}
             </div>
             <Footer />
