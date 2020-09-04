@@ -1,7 +1,7 @@
 import React from 'react';
 import './score.css';
 import '../../reset.css';
-// import { MLBkey, MLBTrial, NBATrial, NBAkey, NHLTrial, NHLkey  } from '../../src_keys';
+import { MLBkey, MLBTrial, NBATrial, NBAkey, NHLTrial, NHLkey  } from '../../config/src_keys';
 
 
 class Score extends React.Component {
@@ -18,11 +18,11 @@ class Score extends React.Component {
     return this.props.sports.mlb.map(gm => {
       return (
         <ul>
-          <li>{gm.data.game.home.name}</li>
-          <li>{gm.data.game.home.runs}</li>
-          <li>{gm.data.game.away.name}</li>
-          <li>{gm.data.game.away.runs}</li>
-          <li>{gm.data.game.venue.name}</li>
+          <li>{gm.game.home.name}</li>
+          <li>{gm.game.home.runs}</li>
+          <li>{gm.game.away.name}</li>
+          <li>{gm.game.away.runs}</li>
+          <li>{gm.game.venue.name}</li>
         </ul>
       );
     });
@@ -33,10 +33,10 @@ class Score extends React.Component {
     return this.props.sports.nba.map(gm => {
       return (
         <ul>
-          <li>{gm.data.home.name}</li>
-          <li>{gm.data.home.points}</li>
-          <li>{gm.data.away.name}</li>
-          <li>{gm.data.away.points}</li>
+          <li>{gm.home.name}</li>
+          <li>{gm.home.points}</li>
+          <li>{gm.away.name}</li>
+          <li>{gm.away.points}</li>
         </ul>
       );
     });
@@ -46,10 +46,10 @@ class Score extends React.Component {
     return this.props.sports.nhl.map(gm => {
       return (
         <ul>
-          <li>{gm.data.game.home.name}</li>
-          <li>{gm.data.game.home.points}</li>
-          <li>{gm.data.game.away.name}</li>
-          <li>{gm.data.game.away.points}</li>
+          <li>{gm.home.name}</li>
+          <li>{gm.home.points}</li>
+          <li>{gm.away.name}</li>
+          <li>{gm.away.points}</li>
         </ul>
       );
     });
@@ -62,15 +62,15 @@ class Score extends React.Component {
 
   fetchGame() {
  
-    // this.props.sports.MLB.data.games.map((game, idx) => {
-    //   setTimeout(() => (this.props.fetchGameScore(MLBTrial, game.id, MLBkey)), 1200 * idx)
-    // });
+    this.props.sports.mlb.map((game, idx) => {
+      setTimeout(() => (this.props.fetchGameScore(MLBTrial, game.id, MLBkey)), 1200 * idx)
+    });
 
-    this.props.sports.NHL.data.games.map((game, idx) => {
+    this.props.sports.nhl.map((game, idx) => {
       setTimeout(() => (this.props.fetchGameScore(NHLTrial, game.id, NHLkey)), 1200 * idx)
     });
     
-    this.props.sports.NBA.data.games.map((game, idx) => {
+    this.props.sports.nba.map((game, idx) => {
       setTimeout(() => (this.props.fetchGameScore(NBATrial, game.id, NBAkey)), 1200 * idx)
     });
   }
@@ -80,13 +80,13 @@ class Score extends React.Component {
   }
 
   render() {
-
-    if (this.props.sports.nba === undefined || this.props.sports.nhl === undefined ) {
+    debugger;
+    if (this.props.data.sports.nba === undefined || this.props.data.sports.nhl === undefined ) {
       return null;
     } else {
       return (
         <div className="score-container">
-          {/* <div>{this.mlbGameContainer()}</div> */}
+          <div>{this.mlbGameContainer()}</div>
           <div>{this.nbaGameContainer()}</div>
          <div>{this.nhlGameContainer()}</div>
         </div>
