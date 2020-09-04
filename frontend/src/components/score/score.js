@@ -7,7 +7,7 @@ import { MLBkey, MLBTrial, NBATrial, NBAkey, NHLTrial, NHLkey  } from '../../con
 class Score extends React.Component {
   constructor(props) {
     super(props);
-    this.mlbGameContainer = this.mlbGameContainer.bind(this);
+    // this.mlbGameContainer = this.mlbGameContainer.bind(this);
     this.nhlGameContainer = this.nhlGameContainer.bind(this);
     this.nbaGameContainer = this.nbaGameContainer.bind(this);
     this.fetchGame = this.fetchGame.bind(this);
@@ -19,10 +19,9 @@ class Score extends React.Component {
       return (
         <ul>
           <li>{gm.game.home.name}</li>
-          <li>{gm.game.home.runs}</li>
+          <li>{gm.scores[0] === undefined ? "pending" : gm.scores[0]}</li>
           <li>{gm.game.away.name}</li>
-          <li>{gm.game.away.runs}</li>
-          <li>{gm.game.venue.name}</li>
+          <li>{gm.scores[1] === undefined ? "pending" : gm.scores[1]}</li>
         </ul>
       );
     });
@@ -34,22 +33,22 @@ class Score extends React.Component {
       return (
         <ul>
           <li>{gm.home.name}</li>
-          <li>{gm.home.points}</li>
+          <li>{gm.scores[0] === undefined ? "pending" : gm.scores[0]}</li>
           <li>{gm.away.name}</li>
-          <li>{gm.away.points}</li>
+          <li>{gm.scores[1] === undefined ? "pending" : gm.scores[1]}</li>
         </ul>
       );
     });
   }
 
   nhlGameContainer() {
-    return this.props.sports.nhl.map(gm => {
+    return this.props.sports.nhl.map(gm => { 
       return (
         <ul>
           <li>{gm.home.name}</li>
-          <li>{gm.home.points}</li>
+          <li>{gm.scores[0] === undefined ? 'pending' : gm.scores[0]}</li>
           <li>{gm.away.name}</li>
-          <li>{gm.away.points}</li>
+          <li>{gm.scores[1] === undefined ? 'pending' : gm.scores[1]}</li>
         </ul>
       );
     });
@@ -62,9 +61,9 @@ class Score extends React.Component {
 
   fetchGame() {
  
-    this.props.sports.mlb.map((game, idx) => {
-      setTimeout(() => (this.props.fetchGameScore(MLBTrial, game.id, MLBkey)), 1200 * idx)
-    });
+    // this.props.sports.mlb.map((game, idx) => {
+    //   setTimeout(() => (this.props.fetchGameScore(MLBTrial, game.id, MLBkey)), 1200 * idx)
+    // });
 
     this.props.sports.nhl.map((game, idx) => {
       setTimeout(() => (this.props.fetchGameScore(NHLTrial, game.id, NHLkey)), 1200 * idx)
@@ -81,12 +80,13 @@ class Score extends React.Component {
 
   render() {
     debugger;
-    if (this.props.data.sports.nba === undefined || this.props.data.sports.nhl === undefined ) {
+    
+    if (this.props.sports.nba === undefined || this.props.sports.nhl === undefined ) {
       return null;
     } else {
       return (
         <div className="score-container">
-          <div>{this.mlbGameContainer()}</div>
+          {/* <div>{this.mlbGameContainer()}</div> */}
           <div>{this.nbaGameContainer()}</div>
          <div>{this.nhlGameContainer()}</div>
         </div>

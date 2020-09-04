@@ -10,7 +10,7 @@ const mlbReducer = (oldState = [], action) => {
         newState.push({
           home: action.sport.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE 
           away: action.sport.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-          scores: [action.sports.data.game.home.runs, action.sports.data.game.away.runs]
+          scores: [action.sports.data.game.home_runs, action.sports.data.game.away_runs]
         }) // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
 
         return newState;
@@ -20,11 +20,11 @@ const mlbReducer = (oldState = [], action) => {
     case RECEIVE_ALL:
       if (action.sports.headers["x-final-url"].split("/")[3] === "mlb") {        //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
 
-        action.sports.games.forEach(game => (
+        action.sports.data.games.forEach(game => (
           newState.push({
             home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
             away: game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-            scores: [action.sports.data.game.home.runs, action.sports.data.game.away.runs], // ARRAY OF POINTS
+            scores: [action.sports.data.game.home_runs, action.sports.data.game.away_runs], // ARRAY OF POINTS
           })))
 
         return newState;
