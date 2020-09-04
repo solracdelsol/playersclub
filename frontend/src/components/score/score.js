@@ -10,7 +10,7 @@ class Score extends React.Component {
     // this.mlbGameContainer = this.mlbGameContainer.bind(this);
     this.nhlGameContainer = this.nhlGameContainer.bind(this);
     this.nbaGameContainer = this.nbaGameContainer.bind(this);
-    this.fetchGame = this.fetchGame.bind(this);
+    // this.fetchGame = this.fetchGame.bind(this);
   }
 
   mlbGameContainer() {
@@ -54,25 +54,25 @@ class Score extends React.Component {
     });
   }
 
-  componentDidMount() {
-    this.fetchGame()
+  // componentDidMount() {
+  //   this.fetchGame()
     
-  }
+  // }
 
-  fetchGame() {
+  // fetchGame() {
  
-    // this.props.sports.mlb.map((game, idx) => {
-    //   setTimeout(() => (this.props.fetchGameScore(MLBTrial, game.id, MLBkey)), 1200 * idx)
-    // });
+  //   // this.props.sports.mlb.map((game, idx) => {
+  //   //   setTimeout(() => (this.props.fetchGameScore(MLBTrial, game.id, MLBkey)), 1200 * idx)
+  //   // });
 
-    this.props.sports.nhl.map((game, idx) => {
-      setTimeout(() => (this.props.fetchGameScore(NHLTrial, game.id, NHLkey)), 1200 * idx)
-    });
+  //   this.props.sports.nhl.map((game, idx) => {
+  //     setTimeout(() => (this.props.fetchGameScore(NHLTrial, game.id, NHLkey)), 1200 * idx)
+  //   });
     
-    this.props.sports.nba.map((game, idx) => {
-      setTimeout(() => (this.props.fetchGameScore(NBATrial, game.id, NBAkey)), 1200 * idx)
-    });
-  }
+  //   this.props.sports.nba.map((game, idx) => {
+  //     setTimeout(() => (this.props.fetchGameScore(NBATrial, game.id, NBAkey)), 1200 * idx)
+  //   });
+  // }
 
   componentWillUnmount() {
     clearInterval(this.interval);
