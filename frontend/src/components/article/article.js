@@ -8,11 +8,11 @@ class Article extends React.Component {
           <div className="article-container">
             <div className="articles">
               <p className="article-header">Latest Article</p>
-              <object
+              {/* <object
                 className="article"
                 type="text/html"
                 data="https://theathletic.com/mlb/#game-59835">
-              </object>
+              </object> */}
               {/* <object
                 className="article"
                 type="text/html"
