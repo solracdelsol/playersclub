@@ -7,7 +7,7 @@ import { MLBkey, MLBTrial, NBATrial, NBAkey, NHLTrial, NHLkey  } from "../../con
 class Score extends React.Component {
   constructor(props) {
     super(props);
-    // this.mlbGameContainer = this.mlbGameContainer.bind(this);
+    this.mlbGameContainer = this.mlbGameContainer.bind(this);
     this.nhlGameContainer = this.nhlGameContainer.bind(this);
     this.nbaGameContainer = this.nbaGameContainer.bind(this);
     // this.fetchGame = this.fetchGame.bind(this);
