@@ -76,8 +76,86 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.nba {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 40%;
+    flex-direction: row;
+}
+
+.nba-home-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+.nba-home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.nba-home-team {
+    position: relative;
+    display: flex;
+}
+
+.nba-home-score {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.nba-away-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+
+.nba-away {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.nba-away-team {
+    position: relative;
+    display: flex;
+}
+
+.nba-away-score {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* 
 .nba-teams {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
+
+.gm-team {
+    position: relative;
+    display: flex;
+    margin: auto;
+}
+
+.nba-scores {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.gm-score {
+    position: relative;
+    display: flex;
+    margin: auto;
+} */
