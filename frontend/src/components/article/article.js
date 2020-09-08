@@ -3,9 +3,6 @@ import './article.css';
 import '../../reset.css';
 
 class Article extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   componentDidMount() {
     this.props.fetchArticles();
@@ -14,10 +11,12 @@ class Article extends React.Component {
     if (Object.entries(this.props.articles).length === 0) 
     { return null 
     } else {
-      const articleCard = this.props.articles.data.articles.map((article,idx) => {
+      const articleCard = this.props.articles.map((article,idx) => {
         return (
           <>
-          <a href={article.url} >{article.title}</a>
+            <img src={article.urlToImage} height='320' width='480'/>
+            <a href={article.url}>{article.title}</a>
+            <p>{article.description}</p>
           </>
         );
       })
