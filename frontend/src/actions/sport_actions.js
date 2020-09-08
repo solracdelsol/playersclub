@@ -4,15 +4,17 @@ export const RECEIVE_ONE = 'RECEIVE_ONE';
 export const RECEIVE_ALL = "RECEIVE_ALL";
 export const CLEAR_ALL = 'CLEAR_ALL';
 
-export const recieveOne = sport => ({
+export const receiveOne = sport => ({
   type: RECEIVE_ONE,
   sport
 });
 
-export const recieveAll = sports => ({
+export const receiveAll = sports => ({
   type: RECEIVE_ALL,
   sports
 });
+
+
 
 export const clearAll = () => ({
   type: CLEAR_ALL,
@@ -20,10 +22,11 @@ export const clearAll = () => ({
 
 export const fetchGameSchedule = (sportTrial, date, key) => dispatch => (
   APIUTIL.fetchGameSchedule(sportTrial, date, key)
-    .then(sports => dispatch(recieveAll(sports)))
+    .then(sports => dispatch(receiveAll(sports)))
 );
 
 export const fetchGameScore = (sportTrial, event_id, key) => dispatch => (
   APIUTIL.fetchGameScore(sportTrial, event_id, key)
-    .then(sport => dispatch(recieveOne(sport)))
+    .then(sport => dispatch(receiveOne(sport)))
 )
+
