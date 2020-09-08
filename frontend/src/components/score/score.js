@@ -29,6 +29,7 @@ class Score extends React.Component {
 
   nbaGameContainer() {
     return this.props.sports.nba.map((gm,idx) => {
+
       return (
         <ul key={idx}>
           <li>{gm.home.name}</li>
@@ -78,8 +79,7 @@ class Score extends React.Component {
   }
 
   render() {
-    
-    
+
     if (this.props.sports.nba === undefined || this.props.sports.nhl === undefined ) {
       return null;
     } else {
