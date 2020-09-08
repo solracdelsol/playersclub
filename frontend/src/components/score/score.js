@@ -29,14 +29,15 @@ class Score extends React.Component {
 
 
   nbaGameContainer() {
-    return this.props.sports.nba.map((gm, idx) => {
+    return this.props.sports.nba.map((gm,idx) => {
+
       return (
-        <ul key={idx}>
-          <li>{gm.home.name}</li>
-          <li>{gm.scores[0] === undefined ? "pending" : gm.scores[0]}</li>
-          <li>{gm.away.name}</li>
-          <li>{gm.scores[1] === undefined ? "pending" : gm.scores[1]}</li>
-        </ul>
+        <div className="nba-teams" key={idx}>
+          <div>{gm.home.name}</div>
+          <div>{gm.scores[0] === undefined ? "pending" : gm.scores[0]}</div>
+          <div>{gm.away.name}</div>
+          <div>{gm.scores[1] === undefined ? "pending" : gm.scores[1]}</div>
+        </div>
       );
     });
   }
@@ -79,16 +80,18 @@ class Score extends React.Component {
   }
 
   render() {
-    // debugger;
-    
+
     if (this.props.sports.nba === undefined || this.props.sports.nhl === undefined ) {
       return null;
     } else {
       return (
         <div className="score-container">
-          {/* <div>{this.mlbGameContainer()}</div> */}
-          <div>{this.nbaGameContainer()}</div>
-         <div>{this.nhlGameContainer()}</div>
+          <div className="scores">
+            <p className="score-header">Latest Scores</p>
+            <div>{this.mlbGameContainer()}</div>
+            <div>{this.nbaGameContainer()}</div>
+            <div>{this.nhlGameContainer()}</div>
+          </div>
         </div>
       );
     }

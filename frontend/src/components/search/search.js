@@ -2,6 +2,15 @@ import React from 'react';
 import './search.css';
 import '../../reset.css';
 import { Link } from 'react-router-dom';
+import {
+  MLBkey,
+  MLBTrial,
+  NBATrial,
+  NBAkey,
+  NHLTrial,
+  NHLkey,
+} from "../../config/src_keys";
+import Footer from "../footer/footer"
 
 
 class Search extends React.Component {
@@ -15,14 +24,10 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    const trial = "mlb/trial/v6.6";
-    // const date = 2020/08/12
-    const eventId = "364c14ac-4862-42f0-a86c-4c78a366421d";
-    const key = "tsnfm7psc9gpakapew4v3wby";
     // this.props.fetchAll(trial, eventId, key);
   }
 
-  //mlb/trial/v6.6, 364c14ac-4862-42f0-a86c-4c78a366421d, tsnfm7psc9gpakapew4v3wby
+  
 
   handleSubmit(e) {
     e.preventDefault();
@@ -55,6 +60,7 @@ class Search extends React.Component {
           <input type="date"></input>
           <input className="submit" type="submit" value="Search"/>
         </form>
+        <Footer />
       </div>
     </div>
     );

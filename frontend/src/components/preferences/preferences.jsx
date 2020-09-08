@@ -4,9 +4,6 @@ import '../../reset.css';
 // import { withRouter } from "react-router-dom";
 
 class PreferencesForm extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

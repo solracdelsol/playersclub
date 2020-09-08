@@ -51,7 +51,7 @@ class HomePage extends React.Component {
               user={this.props.user}
             />
             <div className="information-container">
-              {/* <Article /> */}
+              <Article fetchArticles={this.props.fetchArticles} articles={this.props.articles} />
               {Object.entries(this.props.sports).length !== 0 ? (
                 <Score sports={this.props.sports} />
               ) : null}
