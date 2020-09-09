@@ -10,6 +10,7 @@ import {
   NHLTrial,
   NHLkey,
 } from "../../config/src_keys";
+import Footer from "../footer/footer"
 
 
 class Search extends React.Component {
@@ -57,8 +58,9 @@ class Search extends React.Component {
             </select>
           <label className="search-btn">Select Date:</label>
           <input type="date"></input>
-          <input type="submit" value="Search"/>
+          <input className="submit" type="submit" value="Search"/>
         </form>
+        <Footer />
       </div>
     </div>
     );
