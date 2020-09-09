@@ -4,11 +4,6 @@ import "../../reset.css";
 import { Link } from 'react-router-dom';
 
 class PlayersBar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-
 
   render() {
     return (
