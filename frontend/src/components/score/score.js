@@ -34,16 +34,18 @@ class Score extends React.Component {
       return (
         <div className="nba" key={idx}>
           <div className="nba-home-container">
+            <div className={gm.home.name.split(" ").join("-")}></div>
             <div className="nba-home">
-              <p className="nba-home-team">{gm.home.name}</p>
+              <p className="nba-home-team">Home: {gm.home.name}</p>
               <p className="nba-home-score">
                 {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
               </p>
             </div>
           </div>
           <div className="nba-away-container">
+            <div className={gm.away.name.split(" ").join("-")}></div>
             <div className="nba-away">
-              <p className="nba-away-team">{gm.away.name}</p>
+              <p className="nba-away-team">Away: {gm.away.name}</p>
               <p className="nba-away-score">
                 {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
               </p>
@@ -109,5 +111,6 @@ class Score extends React.Component {
     }
   }
 }
+
 
 export default Score;
