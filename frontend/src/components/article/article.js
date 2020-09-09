@@ -13,11 +13,11 @@ class Article extends React.Component {
     } else {
       const articleCard = this.props.articles.map((article,idx) => {
         return (
-          <>
-            <img src={article.urlToImage} height='320' width='480'/>
-            <a href={article.url}>{article.title}</a>
-            <p>{article.description}</p>
-          </>
+          <div className="fetched-articles">
+            <a className="article-title" href={article.url}>{article.title}</a>
+            <img src={article.urlToImage} height='70%' width='100%'/>
+            <p className="article-description">{article.description}</p>
+          </div>
         );
       })
     return (
