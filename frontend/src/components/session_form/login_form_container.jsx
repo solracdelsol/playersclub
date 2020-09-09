@@ -9,8 +9,8 @@ const msp = state =>({
   formType: 'Enter'
 })
 
-const mdp = (dispatch) => ({
-  processForm: (user) => dispatch(login(user)),
+const mdp = dispatch => ({
+  processForm: user => dispatch(login(user)),
   otherForm: () => { 
      return (<button className="session-btn" onClick={() => {dispatch(clearErrors()); return dispatch(openModal("signup"))}}>Join The Club</button>
 )},

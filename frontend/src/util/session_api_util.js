@@ -16,3 +16,16 @@ export const login = userData => {
   return axios.post('/api/users/login', userData);
 };
 
+export const demoUserLogin = () =>
+  axios.post({
+    method: "POST",
+    url: "api/users/login",
+    data: {
+      user: {
+        username: "DemoUser",
+        password: "123456",
+        email: "DemoUser@demoemail.com",
+      },
+  },
+});
+
