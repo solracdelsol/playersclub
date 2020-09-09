@@ -76,15 +76,20 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.nba {
+.scores {
     position: relative;
     display: flex;
-    width: 100%;
+    width: 98%;
     height: 40%;
     flex-direction: row;
+    background: white;
+    border-radius: 10px;
+    border: 1.5px solid black;
+    margin-top: 24px;
+    margin-left: 3px;
 }
 
-.nba-home-container {
+.scores-home-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -92,26 +97,27 @@
     height: 100%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.nba-home {
+.scores-home {
     position: relative;
     display: flex;
     flex-direction: column;
     margin: auto;
 }
 
-.nba-home-team {
+.scores-home-team {
     position: relative;
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
 }
 
-.nba-home-score {
+.scores-home-score {
     position: relative;
     display: flex;
     justify-content: center;
+    margin-top: 5px;
 }
 
-.nba-away-container {
+.scores-away-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -120,94 +126,32 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.nba-away {
+.scores-away {
     position: relative;
     display: flex;
     flex-direction: column;
     margin: auto;
 }
 
-.nba-away-team {
+.scores-away-team {
     position: relative;
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
 }
 
-.nba-away-score {
+.scores-away-score {
     position: relative;
     display: flex;
     justify-content: center;
+    margin-top: 5px;
 }
 
-/* 
-.nba-teams {
-    position: relative;
+.vs {
+    position: absolute;
     display: flex;
-    justify-content: space-evenly;
-}
-
-.gm-team {
-    position: relative;
-    display: flex;
-    margin: auto;
-}
-
-.nba-scores {
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.gm-score {
-    position: relative;
-    display: flex;
-    margin: auto;
-} */
-
-.Milwaukee-Bucks {
-    position: relative;
-    display: flex;
-    background-image: url("../../images/milwaukee-bucks.svg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 50%;
-    height: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.Miami-Heat {
-    position: relative;
-    display: flex;
-    background-image: url("../../images/miami-heat.svg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 50%;
-    height: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.Houston-Rockets {
-    position: relative;
-    display: flex;
-    background-image: url("../../images/houston-rockets.svg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 50%;
-    height: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.Los-Angeles-Lakers {
-    position: relative;
-    display: flex;
-    background-image: url("../../images/los-angeles-lakers.svg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 50%;
-    height: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './score.css';
+import './team-logos.css'
 import '../../reset.css';
 import { MLBkey, MLBTrial, NBATrial, NBAkey, NHLTrial, NHLkey  } from "../../config/src_keys"
 
@@ -17,12 +18,33 @@ class Score extends React.Component {
     
     return this.props.sports.mlb.map((gm, idx) => {
       return (
-        <ul key={idx}>
-          <li>{gm.game.home.name}</li>
-          <li>{gm.scores[0] === undefined ? "pending" : gm.scores[0]}</li>
-          <li>{gm.game.away.name}</li>
-          <li>{gm.scores[1] === undefined ? "pending" : gm.scores[1]}</li>
-        </ul>
+        <div className="scores" key={idx}>
+          <p className="vs">VS</p>
+          <div className="scores-away-container">
+            <div className={gm.away.name.split(" ").join("-")}></div>
+            <div className="scores-away">
+              <p className="scores-away-team">Away: {gm.away.name}</p>
+              <p className="scores-away-score">
+                {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
+              </p>
+            </div>
+          </div>
+          <div className="scores-home-container">
+            <div className={gm.home.name.split(" ").join("-")}></div>
+            <div className="scores-home">
+              <p className="scores-home-team">Home: {gm.home.name}</p>
+              <p className="scores-home-score">
+                {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
+              </p>
+            </div>
+          </div>
+        </div>
+        // <ul key={idx}>
+        //   <li>{gm.game.home.name}</li>
+        //   <li>{gm.scores[0] === undefined ? "pending" : gm.scores[0]}</li>
+        //   <li>{gm.game.away.name}</li>
+        //   <li>{gm.scores[1] === undefined ? "pending" : gm.scores[1]}</li>
+        // </ul>
       );
     });
   }
@@ -32,22 +54,23 @@ class Score extends React.Component {
     return this.props.sports.nba.map((gm,idx) => {
 
       return (
-        <div className="nba" key={idx}>
-          <div className="nba-home-container">
-            <div className={gm.home.name.split(" ").join("-")}></div>
-            <div className="nba-home">
-              <p className="nba-home-team">Home: {gm.home.name}</p>
-              <p className="nba-home-score">
-                {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
+        <div className="scores" key={idx}>
+          <p className="vs">VS</p>
+          <div className="scores-away-container">
+            <div className={gm.away.name.split(" ").join("-")}></div>
+            <div className="scores-away">
+              <p className="scores-away-team">Away: {gm.away.name}</p>
+              <p className="scores-away-score">
+                {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
               </p>
             </div>
           </div>
-          <div className="nba-away-container">
-            <div className={gm.away.name.split(" ").join("-")}></div>
-            <div className="nba-away">
-              <p className="nba-away-team">Away: {gm.away.name}</p>
-              <p className="nba-away-score">
-                {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
+          <div className="scores-home-container">
+            <div className={gm.home.name.split(" ").join("-")}></div>
+            <div className="scores-home">
+              <p className="scores-home-team">Home: {gm.home.name}</p>
+              <p className="scores-home-score">
+                {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
               </p>
             </div>
           </div>
@@ -59,12 +82,33 @@ class Score extends React.Component {
   nhlGameContainer() {
     return this.props.sports.nhl.map((gm, idx) => { 
       return (
-        <ul key={idx}>
-          <li>{gm.home.name}</li>
-          <li>{gm.scores[0] === undefined ? 'pending' : gm.scores[0]}</li>
-          <li>{gm.away.name}</li>
-          <li>{gm.scores[1] === undefined ? 'pending' : gm.scores[1]}</li>
-        </ul>
+        <div className="scores" key={idx}>
+          <p className="vs">VS</p>
+          <div className="scores-away-container">
+            <div className={gm.away.name.split(" ").join("-")}></div>
+            <div className="scores-away">
+              <p className="scores-away-team">Away: {gm.away.name}</p>
+              <p className="scores-away-score">
+                {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
+              </p>
+            </div>
+          </div>
+          <div className="scores-home-container">
+            <div className={gm.home.name.split(" ").join("-")}></div>
+            <div className="scores-home">
+              <p className="scores-home-team">Home: {gm.home.name}</p>
+              <p className="scores-home-score">
+                {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
+              </p>
+            </div>
+          </div>
+        </div>
+        // <ul key={idx}>
+        //   <li>{gm.home.name}</li>
+        //   <li>{gm.scores[0] === undefined ? 'pending' : gm.scores[0]}</li>
+        //   <li>{gm.away.name}</li>
+        //   <li>{gm.scores[1] === undefined ? 'pending' : gm.scores[1]}</li>
+        // </ul>
       );
     });
   }
@@ -100,12 +144,10 @@ class Score extends React.Component {
     } else {
       return (
         <div className="score-container">
-          {/* <div className="scores"> */}
             <p className="score-header">Latest Scores</p>
             {/* <div>{this.mlbGameContainer()}</div> */}
             {this.nbaGameContainer()}
-            {/* <div>{this.nhlGameContainer()}</div> */}
-          {/* </div> */}
+            {this.nhlGameContainer()}
         </div>
       );
     }
