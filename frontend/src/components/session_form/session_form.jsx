@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
       password2: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -31,12 +32,17 @@ class SessionForm extends React.Component {
   //IF NO ERRORS, SHOULD CLOSE MODAL, KEEP OPEN IF ERROR
   handleSubmit(e) {
     e.preventDefault();
+    this.props
+      .demoUser()
+      .then(this.props.closeModal())
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(()=>{
-      
-      if (this.props.formType === "Join the Club" && this.props.errors.length === 0){
-        return this.props.openModal("preferences")
-      // } else {
+    this.props.processForm(user).then(() => {
+      if (
+        this.props.formType === "Join the Club" &&
+        this.props.errors.length === 0
+      ) {
+        return this.props.openModal("preferences");
+        // } else {
         // return this.props.closeModal;
       }
 
@@ -45,8 +51,19 @@ class SessionForm extends React.Component {
       // }}
       // ,
       // () => { if(!this.props.errors.session){ return this.props.closeModal}});
-  })}
-    
+    });
+  }
+
+  demoLogin(e) {
+    // const demo_user = { email: "demo@demo.com", password: "123456" };
+    e.preventDefault();
+    this.props.openModal('login')
+    this.state.password = '123456';
+    this.state.email = 'demo@demo.com';
+    const demo_user = Object.assign({}, this.state);
+    return this.props.login(demo_user);
+  }
+
   //MAKES THE ERRORS RENDER ON SCREEN
   renderErrors() {
     return (
@@ -67,13 +84,13 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-          <div onClick={this.props.closeModal} className="close-x">
-            X
-          </div>
-          <div className="session-form-caption">Welcome to PlayersClub</div>
-          <div className="session-form-subcaption">
-            {this.props.formType} or <p>{this.props.otherForm()}</p>
-          </div>
+        <div onClick={this.props.closeModal} className="close-x">
+          X
+        </div>
+        <div className="session-form-caption">Welcome to PlayersClub</div>
+        <div className="session-form-subcaption">
+          {this.props.formType} or <p>{this.props.otherForm()}</p>
+        </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div>{this.renderErrors()}</div>
           <div className="login-form">
@@ -100,9 +117,8 @@ class SessionForm extends React.Component {
               className="login-input"
               placeholder="Password"
             />
-           
+
             {this.props.formType === "Join the Club" ? (
-             
               <input
                 type="password"
                 value={this.state.password2}
@@ -114,8 +130,15 @@ class SessionForm extends React.Component {
             <input
               className="login-final"
               type="submit"
-              value={this.props.formType === 'Join the Club' ? "Join the Club" : this.props.formType}
+              value={
+                this.props.formType === "Join the Club"
+                  ? "Join the Club"
+                  : this.props.formType
+              }
             />
+            <button className="landing-demo-login" onClick={this.demoLogin}>
+              Demo Login
+            </button>
           </div>
         </form>
       </div>
