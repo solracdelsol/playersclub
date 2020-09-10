@@ -6,7 +6,7 @@ import SignupFormContainer from '../session_form/signup_form_container';
 import './modal.css';
 import '../../reset.css';
 import PreferencesContainer from '../../components/preferences/preferences_container';
-import { demoUser } from '../../actions/session_actions';
+
 
 
 // Modal presentational and container component on same page
@@ -47,8 +47,7 @@ const msp = state => ({
 })
 
 const mdp = dispatch => ({
-  closeModal: () => dispatch(closeModal()),
-  demoUser: () => dispatch(demoUser()),
+  closeModal: () => dispatch(closeModal()), 
 });
 
 export default connect(msp, mdp)(Modal);

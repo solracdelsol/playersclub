@@ -17,15 +17,14 @@ export const login = userData => {
 };
 
 export const demoUserLogin = () =>
-  axios.post({
-    method: "POST",
-    url: "api/users/login",
-    data: {
-      user: {
-        username: "DemoUser",
+  axios({
+    method: 'post',
+    url: "/api/users/login", 
+    data: { 
+        username: 'DemoUser',
         password: "123456",
         email: "DemoUser@demoemail.com",
-      },
-  },
-});
+      }
+    },
+);
 
