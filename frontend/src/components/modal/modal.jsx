@@ -8,6 +8,7 @@ import '../../reset.css';
 import PreferencesContainer from '../../components/preferences/preferences_container';
 
 
+
 // Modal presentational and container component on same page
 function Modal({modal, closeModal}){
   if(!modal){
@@ -46,7 +47,7 @@ const msp = state => ({
 })
 
 const mdp = dispatch => ({
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()), 
 });
 
 export default connect(msp, mdp)(Modal);

@@ -32,6 +32,9 @@ class SessionForm extends React.Component {
   //IF NO ERRORS, SHOULD CLOSE MODAL, KEEP OPEN IF ERROR
   handleSubmit(e) {
     e.preventDefault();
+    this.props
+      .demoUser()
+      .then(this.props.closeModal())
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
       if (

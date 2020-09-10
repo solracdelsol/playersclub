@@ -145,7 +145,7 @@ class Score extends React.Component {
       return (
         <div className="score-container">
             <p className="score-header">Latest Scores</p>
-            {/* <div>{this.mlbGameContainer()}</div> */}
+            <div>{this.mlbGameContainer()}</div>
             {this.nbaGameContainer()}
             {this.nhlGameContainer()}
         </div>
