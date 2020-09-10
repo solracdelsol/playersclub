@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
       password2: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -35,11 +36,13 @@ class SessionForm extends React.Component {
       .demoUser()
       .then(this.props.closeModal())
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(()=>{
-      
-      if (this.props.formType === "Join the Club" && this.props.errors.length === 0){
-        return this.props.openModal("preferences")
-      // } else {
+    this.props.processForm(user).then(() => {
+      if (
+        this.props.formType === "Join the Club" &&
+        this.props.errors.length === 0
+      ) {
+        return this.props.openModal("preferences");
+        // } else {
         // return this.props.closeModal;
       }
 
@@ -48,8 +51,19 @@ class SessionForm extends React.Component {
       // }}
       // ,
       // () => { if(!this.props.errors.session){ return this.props.closeModal}});
-  })}
-    
+    });
+  }
+
+  demoLogin(e) {
+    // const demo_user = { email: "demo@demo.com", password: "123456" };
+    e.preventDefault();
+    this.props.openModal('login')
+    this.state.password = '123456';
+    this.state.email = 'demo@demo.com';
+    const demo_user = Object.assign({}, this.state);
+    return this.props.login(demo_user);
+  }
+
   //MAKES THE ERRORS RENDER ON SCREEN
   renderErrors() {
     return (
@@ -103,9 +117,6 @@ class SessionForm extends React.Component {
               className="login-input"
               placeholder="Password"
             />
-            <button className="demo-login" onClick={this.handleDemoSubmit}>
-              Demo Signin
-            </button>
 
             {this.props.formType === "Join the Club" ? (
               <input
@@ -125,6 +136,9 @@ class SessionForm extends React.Component {
                   : this.props.formType
               }
             />
+            <button className="landing-demo-login" onClick={this.demoLogin}>
+              Demo Login
+            </button>
           </div>
         </form>
       </div>

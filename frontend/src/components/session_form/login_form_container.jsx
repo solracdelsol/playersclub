@@ -12,20 +12,12 @@ const msp = state =>({
 
 const mdp = (dispatch) => ({
   processForm: (user) => dispatch(login(user)),
-  otherForm: () => {
-    return (
-      <button
-        className="session-btn"
-        onClick={() => {
-          dispatch(clearErrors());
-          return dispatch(openModal("signup"));
-        }}
-      >
-        Join The Club
-      </button>
-    );
-  },
+  login: (user) => dispatch(login(user)), //added this
+  otherForm: () => { 
+     return (<button className="session-btn" onClick={() => {dispatch(clearErrors()); return dispatch(openModal("signup"))}}>Join The Club</button>
+)},
   closeModal: () => dispatch(closeModal()),
+  openModal: (modal) => dispatch(openModal(modal)),
   clearErrors: () => dispatch(clearErrors()),
   demoUser: () => dispatch(demoUser()),
 });
