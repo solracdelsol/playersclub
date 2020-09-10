@@ -52,9 +52,11 @@ class Score extends React.Component {
 
   nbaGameContainer() {
     return this.props.sports.nba.map((gm,idx) => {
-
+      if (gm.status === "scheduled") { // this is to check if the game is actually happening
       return (
         <div className="scores" key={idx}>
+          {/* <p>{gm.scheduled.toString()}</p> this is how we get the date and time the game is scheduled for */    }
+          {/* <p>{gm.title}</p> this is the game number */    }
           <p className="vs">VS</p>
           <div className="scores-away-container">
             <div className={gm.away.name.split(" ").join("-")}></div>
@@ -76,7 +78,8 @@ class Score extends React.Component {
           </div>
         </div>
       );
-    });
+    }}
+    );
   }
 
   nhlGameContainer() {

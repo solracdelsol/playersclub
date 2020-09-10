@@ -19,12 +19,16 @@ const nbaReducer = (oldState = [], action) => {
     case RECEIVE_ALL:
       if (action.sports.headers["x-final-url"].split("/")[3] === "nba") {        //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
 
-        action.sports.data.games.forEach(game => (
+        action.sports.data.games.forEach((game) =>
           newState.push({
+            scheduled: new Date(game.scheduled),
+            title: game.title, // "Game 4"
+            status: game.status, // CHECK OTHER SPORTS TO SEE IF GAMES ARE NECESSARY
             home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
             away: game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
             scores: [game.home_points, game.away_points], // ARRAY OF POINTS
-          })))
+          })
+        );
 
         return newState;
       } else {
