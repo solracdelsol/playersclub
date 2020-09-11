@@ -17,8 +17,13 @@ class Score extends React.Component {
   mlbGameContainer() {
     
     return this.props.sports.mlb.map((gm, idx) => {
+      if (gm.status !== "unnecessary") { // this is to check if the game is actually happening
       return (
         <div className="scores" key={idx}>
+          <div className="game-info">
+            <p className="game-time">{gm.scheduled.toString()}</p>
+            <p className="game-number">{gm.title}</p>
+          </div>
           <p className="vs">VS</p>
           <div className="scores-away-container">
             <div className={gm.away.name.split(" ").join("-")}></div>
@@ -39,24 +44,21 @@ class Score extends React.Component {
             </div>
           </div>
         </div>
-        // <ul key={idx}>
-        //   <li>{gm.game.home.name}</li>
-        //   <li>{gm.scores[0] === undefined ? "pending" : gm.scores[0]}</li>
-        //   <li>{gm.game.away.name}</li>
-        //   <li>{gm.scores[1] === undefined ? "pending" : gm.scores[1]}</li>
-        // </ul>
       );
-    });
+    }}
+    );
   }
 
 
   nbaGameContainer() {
     return this.props.sports.nba.map((gm,idx) => {
-      if (gm.status === "scheduled") { // this is to check if the game is actually happening
+      if (gm.status !== "unnecessary") { // this is to check if the game is actually happening
       return (
         <div className="scores" key={idx}>
-          {/* <p>{gm.scheduled.toString()}</p> this is how we get the date and time the game is scheduled for */    }
-          {/* <p>{gm.title}</p> this is the game number */    }
+          <div className="game-info">
+            <p className="game-time">{gm.scheduled.toString()}</p>
+            <p className="game-number">{gm.title}</p>
+          </div>
           <p className="vs">VS</p>
           <div className="scores-away-container">
             <div className={gm.away.name.split(" ").join("-")}></div>
@@ -84,8 +86,13 @@ class Score extends React.Component {
 
   nhlGameContainer() {
     return this.props.sports.nhl.map((gm, idx) => { 
+      if (gm.status !== "unnecessary") { // this is to check if the game is actually happening
       return (
         <div className="scores" key={idx}>
+          <div className="game-info">
+            <p className="game-time">{gm.scheduled.toString()}</p>
+            <p className="game-number">{gm.title}</p>
+          </div>
           <p className="vs">VS</p>
           <div className="scores-away-container">
             <div className={gm.away.name.split(" ").join("-")}></div>
@@ -106,14 +113,9 @@ class Score extends React.Component {
             </div>
           </div>
         </div>
-        // <ul key={idx}>
-        //   <li>{gm.home.name}</li>
-        //   <li>{gm.scores[0] === undefined ? 'pending' : gm.scores[0]}</li>
-        //   <li>{gm.away.name}</li>
-        //   <li>{gm.scores[1] === undefined ? 'pending' : gm.scores[1]}</li>
-        // </ul>
       );
-    });
+    }}
+    );
   }
 
   // componentDidMount() {
@@ -148,7 +150,7 @@ class Score extends React.Component {
       return (
         <div className="score-container">
             <p className="score-header">Latest Scores</p>
-            <div>{this.mlbGameContainer()}</div>
+            {this.mlbGameContainer()}
             {this.nbaGameContainer()}
             {this.nhlGameContainer()}
         </div>
