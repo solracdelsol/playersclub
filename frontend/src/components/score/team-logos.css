@@ -1,65 +1,65 @@
 .Milwaukee-Bucks {
     position: relative;
     display: flex;
-    background-image: url("../../images/milwaukee-bucks.svg");
+    background-image: url("../../images/team_logos/milwaukee-bucks.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 50%;
-    height: 40%;
+    height: 35%;
     margin: auto;
 }
 
 .Miami-Heat {
     position: relative;
     display: flex;
-    background-image: url("../../images/miami-heat.svg");
+    background-image: url("../../images/team_logos/miami-heat.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 50%;
-    height: 40%;
+    height: 35%;
     margin: auto;
 }
 
 .Houston-Rockets {
     position: relative;
     display: flex;
-    background-image: url("../../images/houston-rockets.svg");
+    background-image: url("../../images/team_logos/houston-rockets.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 50%;
-    height: 40%;
+    height: 35%;
     margin: auto;
 }
 
 .Los-Angeles-Lakers {
     position: relative;
     display: flex;
-    background-image: url("../../images/los-angeles-lakers.svg");
+    background-image: url("../../images/team_logos/los-angeles-lakers.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 50%;
-    height: 40%;
+    height: 35%;
     margin: auto;
 }
 
 .Vegas-Golden-Knights {
     position: relative;
     display: flex;
-    background-image: url("../../images/vegas-golden-knights.svg");
+    background-image: url("../../images/team_logos/vegas-golden-knights.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 50%;
-    height: 40%;
+    height: 35%;
     margin: auto;
 }
 
 .Dallas-Stars {
     position: relative;
     display: flex;
-    background-image: url("../../images/dallas-stars.svg");
+    background-image: url("../../images/team_logos/dallas-stars.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 50%;
-    height: 40%;
+    height: 35%;
     margin: auto;
 }

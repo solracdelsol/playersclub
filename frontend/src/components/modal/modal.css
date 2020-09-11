@@ -3,6 +3,7 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+  min-height: 620px;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.95);
 }

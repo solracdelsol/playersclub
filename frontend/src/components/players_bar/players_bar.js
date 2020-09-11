@@ -36,7 +36,7 @@ class PlayersBar extends React.Component {
             <button
               onClick={() => this.props.openModal("signup")}
               className="nav-signup">
-                Join the Club!
+                Join Club
             </button>
           )}
         </div>
