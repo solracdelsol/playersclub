@@ -24,7 +24,7 @@ class Article extends React.Component {
       
       <div className="article-container">
         <div className="articles">
-          <p className="article-header">Latest Article</p>
+          <p className="article-header">Latest Articles</p>
           {articleCard}
         </div>
       </div>
