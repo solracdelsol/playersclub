@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     font-weight: 600;
-    font-size: 5vh;
+    font-size: 30px;
     justify-content: center;
     margin: auto;
     width: 35%;
@@ -139,14 +139,12 @@ h5 input::placeholder {
 button.nav-signup {
     visibility: visible;
     position: relative;
-    /* margin-left: 15%; */
     padding: 8px;
     margin: auto;
-    display: inline-block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     color: #fd5901;
     width: 15%;
-    border-radius: 15px;
     border: 1px solid #fd5901;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     cursor: pointer;
@@ -157,13 +155,15 @@ button.nav-signup {
     -webkit-text-stroke: .5px #fd5901;
     border-radius: 20px;
     font-size: 15px;
+    left: 2%;
 }
 
 button.nav-logout {
     visibility: visible;
     position: relative;
-    display: inline-block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fd5901;
     border-radius: 15px;
     border: 1px solid #fd5901;
@@ -203,7 +203,7 @@ input {
 .welcome-player {
     position: relative;
     margin: auto;
-    left: 2%;
+    left: 3%;
     text-decoration: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FFFFFF;

@@ -22,7 +22,7 @@
     to { transform: translate(0px, 0px)}
 } */
 
-.articles {
+/* .articles {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1%;
-}
+} */
 
 .article-header {
     position: relative;
@@ -40,11 +40,13 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     justify-content: center;
     width: 35%;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 23px;
     background-image: linear-gradient(to left, #249ea0, #008083, #005f60);
     color: #FFFFFF;
     border-radius: 20px;
@@ -97,7 +99,8 @@ img {
     background: white;
     border-radius: 10px;
     border: 1.5px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding-top: 20px;
-    margin-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 35px;
 }
