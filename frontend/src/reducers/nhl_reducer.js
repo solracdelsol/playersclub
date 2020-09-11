@@ -21,6 +21,7 @@ const nhlReducer = (oldState = [], action) => {
 
         action.sports.data.games.forEach((game) =>
           newState.push({
+            // id: game.id, //will allow us to key into the individual games
             scheduled: new Date(game.scheduled),
             title: game.title, // "Game 4"
             status: game.status,

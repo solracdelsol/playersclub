@@ -18,11 +18,11 @@ class HomePage extends React.Component {
 
 
   componentDidMount(){
-    if (Object.entries(this.props.sports.mlb).length === 0) {
+    // if (Object.entries(this.props.sports.mlb).length === 0) {
       // this.props.mlbScheduleObj(this.getTodaysDate());
       setTimeout(() => this.props.nhlScheduleObj(this.getTodaysDate()), 1200);
       setTimeout(() => this.props.nbaScheduleObj(this.getTodaysDate()), 2400);
-     }
+    //  }
   }
 
   getTodaysDate() {
@@ -53,7 +53,7 @@ class HomePage extends React.Component {
             <div className="information-container">
               <Article fetchArticles={this.props.fetchArticles} articles={this.props.articles} />
               {Object.entries(this.props.sports).length !== 0 ? (
-                <Score sports={this.props.sports} />
+                <Score sports={this.props.sports} fetchGameScore={this.props.fetchGameScore}/>
               ) : null}
               {/* <Score /> */}
             </div>
