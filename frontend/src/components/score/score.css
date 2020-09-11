@@ -43,7 +43,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
     justify-content: center;
     width: 35%;
     font-weight: 600;
@@ -59,14 +59,15 @@
 .scores {
     position: relative;
     display: flex;
-    width: 98%;
+    width: 99%;
     height: 45%;
     flex-direction: row;
     background: white;
     border-radius: 10px;
     border: 1.5px solid black;
-    margin-top: 24px;
-    margin-left: 3px;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-left: 1px;
 }
 
 .scores-home-container {
