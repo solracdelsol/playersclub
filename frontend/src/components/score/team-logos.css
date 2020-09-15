@@ -1,65 +1,450 @@
 .Milwaukee-Bucks {
     position: relative;
     display: flex;
-    background-image: url("../../images/team_logos/milwaukee-bucks.svg");
+    background-image: url("../../images/team_logos/Milwaukee_Bucks.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 50%;
-    height: 35%;
+    width: 40%;
+    height: 40%;
     margin: auto;
 }
 
 .Miami-Heat {
     position: relative;
     display: flex;
-    background-image: url("../../images/team_logos/miami-heat.svg");
+    background-image: url("../../images/team_logos/Miami_Heat.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 50%;
-    height: 35%;
+    width: 40%;
+    height: 40%;
     margin: auto;
 }
 
 .Houston-Rockets {
     position: relative;
     display: flex;
-    background-image: url("../../images/team_logos/houston-rockets.svg");
+    background-image: url("../../images/team_logos/Houston_Rockets.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 50%;
-    height: 35%;
+    width: 40%;
+    height: 40%;
     margin: auto;
 }
 
 .Los-Angeles-Lakers {
     position: relative;
     display: flex;
-    background-image: url("../../images/team_logos/los-angeles-lakers.svg");
+    background-image: url("../../images/team_logos/Los_Angeles_Lakers.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 50%;
-    height: 35%;
+    width: 40%;
+    height: 40%;
     margin: auto;
 }
 
 .Vegas-Golden-Knights {
     position: relative;
     display: flex;
-    background-image: url("../../images/team_logos/vegas-golden-knights.svg");
+    background-image: url("../../images/team_logos/Vegas_Golden_Knights.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 50%;
-    height: 35%;
+    width: 40%;
+    height: 40%;
     margin: auto;
 }
 
 .Dallas-Stars {
     position: relative;
     display: flex;
-    background-image: url("../../images/team_logos/dallas-stars.svg");
+    background-image: url("../../images/team_logos/Dallas_Stars.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 50%;
-    height: 35%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Cardinals {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/St_Louis_Cardinals.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Brewers {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Milwaukee_Brewers.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Braves {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Atlanta_Braves.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Royals {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Kansas_City_Royals.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Orioles {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Baltimore_Orioles.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Nationals {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Washington_Nationals.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Rays {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Tampa_Bay_Rays.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Red-Sox {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Boston_Red_Sox.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Marlins {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Miami_Marlins.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Tigers {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Detroit_Tigers.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Dodgers {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Los_Angeles_Dodgers.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Padres {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/San_Diego_Padres.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Pirates {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Pittsburgh_Pirates.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Reds {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Cincinnati_Reds.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Mets {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/New_York_Mets.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Giants {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/San_Francisco_Giants.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Mariners {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Seattle_Mariners.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Indians {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Cleveland_Indians.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Cubs {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Chicago_Cubs.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Phillies {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Philadelphia_Phillies.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Rangers {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Texas_Rangers.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Astros {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Houston-Astros.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Diamondbacks {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Arizona_Diamondbacks.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Angels {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Los_Angeles_Angels.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Athletics {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Oakland_Athletics.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Rockies {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Colorado_Rockies.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Yankees {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/New_York_Yankees.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Twins {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Minnesota_Twins.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.White-Sox {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Chicago_White_Sox.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Boston-Celtics {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Boston_Celtics.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Denver-Nuggets {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Denver_Nuggets.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Los-Angeles-Clippers {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Los_Angeles_Clippers.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.New-York-Islanders {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/New_York_Islanders.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Tampa-Bay-Lightning {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Tampa_Bay_Lightning.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Blue-Jays {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Toronto_Blue_Jays.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
     margin: auto;
 }
