@@ -43,10 +43,10 @@ const mdp = (dispatch) =>  {
   openModal: (modal) => dispatch(openModal(modal)),
   logout: () => dispatch(logout()),
   fetchGameScore: (sportTrial, event_id, key) => dispatch(fetchGameScore(sportTrial, event_id, key)),
-  mlbScheduleObj: date => dispatch(fetchGameSchedule(MLBTrial, date, MLBkey)),
-  nbaScheduleObj: date => dispatch(fetchGameSchedule(NBATrial, date, NBAkey)),
-  nhlScheduleObj: date => dispatch(fetchGameSchedule(NHLTrial, date, NHLkey)),
-  fetchArticles: () => dispatch(fetchArticles(articleKey)),
+  mlbScheduleObj: date => dispatch(fetchGameSchedule(process.env.MLBTrial, date, process.env.MLBkey)),
+    nbaScheduleObj: date => dispatch(fetchGameSchedule(process.env.NBATrial, date, process.env.NBAkey)),
+    nhlScheduleObj: date => dispatch(fetchGameSchedule(process.env.NHLTrial, date, process.env.NHLkey)),
+    fetchArticles: () => dispatch(fetchArticles(process.env.articleKey)),
 }};
 
 export default connect(msp, mdp)(HomePage);
