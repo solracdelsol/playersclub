@@ -15,7 +15,7 @@ class Article extends React.Component {
         return (
           <div key={idx} className="fetched-articles">
             <a className="article-title" href={article.url} target="blank" >{article.title}</a>
-            <img src={article.urlToImage} alt="" height='70%' width='100%'/>
+            <img src={article.image} alt="" height='70%' width='100%'/>
             <p className="article-description">{article.description}</p>
           </div>
         );
