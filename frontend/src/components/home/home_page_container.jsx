@@ -4,16 +4,17 @@ import {logout} from '../../actions/session_actions';
 import HomePage from './home_page.jsx';
 import { fetchArticles } from '../../actions/article_actions'
 import { fetchGameScore, fetchGameSchedule } from '../../actions/sport_actions';
-import {
-  MLBTrial,
-  MLBkey,
-  NBATrial,
-  NBAkey,
-  NHLTrial,
-  NHLkey,
-  articleKey,
-} from "../../config/src_keys"
+import keys from "../../config/src_keys"
 
+// const {
+//   MLBTrial,
+//   MLBkey,
+//   NBATrial,
+//   NBAkey,
+//   NHLTrial,
+//   NHLkey,
+//   articleKey,
+// } = keys;
 
 const msp = state => ({
 
@@ -29,6 +30,15 @@ const msp = state => ({
 
 
 const mdp = (dispatch) =>  {
+  const {
+    MLBTrial,
+    MLBkey,
+    NBATrial,
+    NBAkey,
+    NHLTrial,
+    NHLkey,
+    articleKey,
+  } = keys;
   return {
   openModal: (modal) => dispatch(openModal(modal)),
   logout: () => dispatch(logout()),
