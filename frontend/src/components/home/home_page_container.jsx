@@ -30,23 +30,14 @@ const msp = state => ({
 
 
 const mdp = (dispatch) =>  {
-  const {
-    MLBTrial,
-    MLBkey,
-    NBATrial,
-    NBAkey,
-    NHLTrial,
-    NHLkey,
-    articleKey,
-  } = keys;
   return {
   openModal: (modal) => dispatch(openModal(modal)),
   logout: () => dispatch(logout()),
   fetchGameScore: (sportTrial, event_id, key) => dispatch(fetchGameScore(sportTrial, event_id, key)),
-  mlbScheduleObj: date => dispatch(fetchGameSchedule(process.env.MLBTrial, date, process.env.MLBkey)),
-    nbaScheduleObj: date => dispatch(fetchGameSchedule(process.env.NBATrial, date, process.env.NBAkey)),
-    nhlScheduleObj: date => dispatch(fetchGameSchedule(process.env.NHLTrial, date, process.env.NHLkey)),
-    fetchArticles: () => dispatch(fetchArticles(process.env.articleKey)),
+  mlbScheduleObj: date => dispatch(fetchGameSchedule(keys.MLBTrial, date, keys.MLBkey)),
+  nbaScheduleObj: date => dispatch(fetchGameSchedule(keys.NBATrial, date, keys.NBAkey)),
+  nhlScheduleObj: date => dispatch(fetchGameSchedule(keys.NHLTrial, date, keys.NHLkey)),
+  fetchArticles: () => dispatch(fetchArticles(keys.articleKey)),
 }};
 
 export default connect(msp, mdp)(HomePage);
