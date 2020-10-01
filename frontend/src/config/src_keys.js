@@ -1,5 +1,9 @@
+let keys;
+
 if (process.env.NODE_ENV === "production") {
-  module.exports = require("./src_keys_prod");
+  keys = require("./src_keys_prod");
 } else {
-  module.exports = require("./src_keys_dev");
+  keys = require("./src_keys_dev");
 }
+
+export default keys;

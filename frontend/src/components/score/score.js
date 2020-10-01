@@ -28,7 +28,7 @@ class Score extends React.Component {
           <div className="scores-away-container">
             <div className={gm.away.name.split(" ").join("-")}></div>
             <div className="scores-away">
-              <p className="scores-away-team">Away: {gm.away.name}</p>
+              <p className="scores-away-team">Away: {gm.away.market + " " + gm.away.name}</p>
               <p className="scores-away-score">
                 {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
               </p>
@@ -37,7 +37,7 @@ class Score extends React.Component {
           <div className="scores-home-container">
             <div className={gm.home.name.split(" ").join("-")}></div>
             <div className="scores-home">
-              <p className="scores-home-team">Home: {gm.home.name}</p>
+              <p className="scores-home-team">Home: {gm.home.market + " " + gm.home.name}</p>
               <p className="scores-home-score">
                 {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
               </p>

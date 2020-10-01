@@ -18,7 +18,7 @@ const UserSchema = new Schema(
     preferences: {
       type: Map,
       of: String
-    }
+    } //boolean instead, update REST call
   },
   {
     timestamps: true,

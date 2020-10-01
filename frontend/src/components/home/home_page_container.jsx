@@ -4,16 +4,17 @@ import {logout} from '../../actions/session_actions';
 import HomePage from './home_page.jsx';
 import { fetchArticles } from '../../actions/article_actions'
 import { fetchGameScore, fetchGameSchedule } from '../../actions/sport_actions';
-import {
-  MLBTrial,
-  MLBkey,
-  NBATrial,
-  NBAkey,
-  NHLTrial,
-  NHLkey,
-  articleKey,
-} from "../../config/src_keys"
+import keys from "../../config/src_keys"
 
+// const {
+//   MLBTrial,
+//   MLBkey,
+//   NBATrial,
+//   NBAkey,
+//   NHLTrial,
+//   NHLkey,
+//   articleKey,
+// } = keys;
 
 const msp = state => ({
 
@@ -33,10 +34,10 @@ const mdp = (dispatch) =>  {
   openModal: (modal) => dispatch(openModal(modal)),
   logout: () => dispatch(logout()),
   fetchGameScore: (sportTrial, event_id, key) => dispatch(fetchGameScore(sportTrial, event_id, key)),
-  mlbScheduleObj: date => dispatch(fetchGameSchedule(MLBTrial, date, MLBkey)),
-  nbaScheduleObj: date => dispatch(fetchGameSchedule(NBATrial, date, NBAkey)),
-  nhlScheduleObj: date => dispatch(fetchGameSchedule(NHLTrial, date, NHLkey)),
-  fetchArticles: () => dispatch(fetchArticles(articleKey)),
+  mlbScheduleObj: date => dispatch(fetchGameSchedule(keys.MLBTrial, date, keys.MLBkey)),
+  nbaScheduleObj: date => dispatch(fetchGameSchedule(keys.NBATrial, date, keys.NBAkey)),
+  nhlScheduleObj: date => dispatch(fetchGameSchedule(keys.NHLTrial, date, keys.NHLkey)),
+  fetchArticles: () => dispatch(fetchArticles(keys.articleKey)),
 }};
 
 export default connect(msp, mdp)(HomePage);
