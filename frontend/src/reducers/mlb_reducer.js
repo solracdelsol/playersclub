@@ -27,7 +27,7 @@ const mlbReducer = (oldState = [], action) => {
         action.sports.data.games.forEach((game) =>
           newState.push({
             scheduled: new Date(game.scheduled),
-            title: game.title, // "Game 4"
+            title: game.ps_round, // "NLWC" THIS KEY IS ONLY AVAILABLE DURING THE PLAYOFFS
             status: game.status, // CHECK OTHER SPORTS TO SEE IF GAMES ARE NECESSARY
             home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
             away: game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE

@@ -17,35 +17,40 @@ class Score extends React.Component {
   mlbGameContainer() {
     
     return this.props.sports.mlb.map((gm, idx) => {
-      if (gm.status !== "unnecessary") { // this is to check if the game is actually happening
-      return (
-        <div className="scores" key={idx}>
-          <div className="game-info">
-            <p className="game-time">{gm.scheduled.toString()}</p>
-            <p className="game-number">{gm.title}</p>
-          </div>
-          <p className="vs">VS</p>
-          <div className="scores-away-container">
-            <div className={gm.away.name.split(" ").join("-")}></div>
-            <div className="scores-away">
-              <p className="scores-away-team">Away: {gm.away.market + " " + gm.away.name}</p>
-              <p className="scores-away-score">
-                {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
-              </p>
+      if (gm.status !== "unnecessary" && gm.status !== "postponed" ) {
+        // this is to check if the game is actually happening
+        return (
+          <div className="scores" key={idx}>
+            <div className="game-info">
+              <p className="game-time">{gm.scheduled.toString()}</p>
+              <p className="game-number">{gm.title}</p>
+            </div>
+            <p className="vs">VS</p>
+            <div className="scores-away-container">
+              <div className={gm.away.name.split(" ").join("-")}></div>
+              <div className="scores-away">
+                <p className="scores-away-team">
+                  Away: {gm.away.market + " " + gm.away.name}
+                </p>
+                <p className="scores-away-score">
+                  {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
+                </p>
+              </div>
+            </div>
+            <div className="scores-home-container">
+              <div className={gm.home.name.split(" ").join("-")}></div>
+              <div className="scores-home">
+                <p className="scores-home-team">
+                  Home: {gm.home.market + " " + gm.home.name}
+                </p>
+                <p className="scores-home-score">
+                  {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
+                </p>
+              </div>
             </div>
           </div>
-          <div className="scores-home-container">
-            <div className={gm.home.name.split(" ").join("-")}></div>
-            <div className="scores-home">
-              <p className="scores-home-team">Home: {gm.home.market + " " + gm.home.name}</p>
-              <p className="scores-home-score">
-                {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
-              </p>
-            </div>
-          </div>
-        </div>
-      );
-    }}
+        );
+      }}
     );
   }
 
