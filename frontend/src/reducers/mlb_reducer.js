@@ -18,12 +18,16 @@ const mlbReducer = (oldState = [], action) => {
         return oldState;
       }
     case RECEIVE_ALL:
-      if (action.sports.headers["x-final-url"].split("/")[3] === "mlb") {        //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
+      if (
+        action.sports.headers["x-final-url"].split("/")[3] === "mlb" &&
+        action.sports.data.games !== undefined
+      ) {
+        //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
 
         action.sports.data.games.forEach((game) =>
           newState.push({
             scheduled: new Date(game.scheduled),
-            title: game.title, // "Game 4"
+            title: game.ps_round, // "NLWC" THIS KEY IS ONLY AVAILABLE DURING THE PLAYOFFS
             status: game.status, // CHECK OTHER SPORTS TO SEE IF GAMES ARE NECESSARY
             home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
             away: game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
