@@ -12,7 +12,7 @@ router.get("/mlb", (req, res) => {
   var date = yyyy + "/" + mm + "/" + dd;
 
   fetch(
-    `http://api.sportradar.us/${keys.MLBTrial}/trial/v7/en/games/${date}/schedule.json?api_key=${keys.MLBkey}`
+    `http://api.sportradar.us/mlb/trial/v7/en/games/${date}/schedule.json?api_key=${keys.MLBkey}`
   )
     .then((result) => result.json())
     .then((result) => res.send(result))
@@ -27,7 +27,7 @@ router.get("/nba", (req, res) => {
   var date = yyyy + "/" + mm + "/" + dd;
 
   fetch(
-    `http://api.sportradar.us/${keys.NBATrial}/trial/v7/en/games/${date}/schedule.json?api_key=${keys.NBAkey}`
+    `http://api.sportradar.us/nba/trial/v7/en/games/${date}/schedule.json?api_key=${keys.NBAkey}`
   )
     .then((result) => result.json())
     .then((result) => res.send(result))
@@ -43,7 +43,7 @@ router.get("/nhl", (req, res) => {
   var date = yyyy + "/" + mm + "/" + dd;
 
   fetch(
-    `http://api.sportradar.us/${keys.NHLTrial}/trial/v7/en/games/${date}/schedule.json?api_key=${keys.NHLkey}`
+    `http://api.sportradar.us/nhl/trial/v7/en/games/${date}/schedule.json?api_key=${keys.NHLkey}`
   )
     .then((result) => result.json())
     .then((result) => res.send(result))

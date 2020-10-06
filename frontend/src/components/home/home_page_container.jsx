@@ -34,9 +34,9 @@ const mdp = (dispatch) =>  {
   openModal: (modal) => dispatch(openModal(modal)),
   logout: () => dispatch(logout()),
   fetchGameScore: (sportTrial, event_id, key) => dispatch(fetchGameScore(sportTrial, event_id, key)),
-  mlbScheduleObj: date => dispatch(fetchGameSchedule(keys.MLBTrial, date, keys.MLBkey)),
-  nbaScheduleObj: date => dispatch(fetchGameSchedule(keys.NBATrial, date, keys.NBAkey)),
-  nhlScheduleObj: date => dispatch(fetchGameSchedule(keys.NHLTrial, date, keys.NHLkey)),
+  mlbScheduleObj: date => dispatch(fetchGameSchedule('mlb', date, keys.MLBkey)),
+  nbaScheduleObj: date => dispatch(fetchGameSchedule('nba', date, keys.NBAkey)),
+  nhlScheduleObj: date => dispatch(fetchGameSchedule('nhl', date, keys.NHLkey)),
   fetchArticles: () => dispatch(fetchArticles(keys.articleKey)),
 }};
 
