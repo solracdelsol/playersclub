@@ -14,8 +14,8 @@ export const clearAllArticles = () => ({
   type: CLEAR_ALL_ARTICLES,
 });
 
-export const fetchArticles = articleKey => dispatch =>
-  APIUTIL.fetchArticles(articleKey)
+export const fetchArticles = () => dispatch =>
+  APIUTIL.fetchArticles()
   .then((articles) => dispatch(receiveAllArticles(articles))
 );
 
