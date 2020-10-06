@@ -19,7 +19,7 @@ const mlbReducer = (oldState = [], action) => {
       }
     case RECEIVE_ALL:
       if (
-        action.sports.headers["x-final-url"].split("/")[3] === "mlb" &&
+        action.sports.data.league.alias === "MLB" &&
         action.sports.data.games !== undefined
       ) {
         //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]

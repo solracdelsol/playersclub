@@ -2,7 +2,7 @@ import React from 'react';
 import './score.css';
 import './team-logos.css'
 import '../../reset.css';
-import { MLBkey, MLBTrial, NBATrial, NBAkey, NHLTrial, NHLkey  } from "../../config/src_keys"
+import APIkeys from "../../config/src_keys";
 
 
 class Score extends React.Component {
@@ -19,6 +19,7 @@ class Score extends React.Component {
     return this.props.sports.mlb.map((gm, idx) => {
       if (gm.status !== "unnecessary" && gm.status !== "postponed" ) {
         // this is to check if the game is actually happening
+        // this.fetchGame(gm.id)
         return (
           <div className="scores" key={idx}>
             <div className="game-info">
@@ -129,10 +130,9 @@ class Score extends React.Component {
     
   // }
 
-  // fetchGame() {
-  //   // this.props.sports.mlb.map((game, idx) => {
-  //   //   setTimeout(() => (this.props.fetchGameScore(MLBTrial, game.id, MLBkey)), 1200 * idx)
-  //   // });
+  // fetchGame(gameID) {
+  //     setTimeout(() => (this.props.fetchGameScore(APIkeys.MLBTrial, gameID, APIkeys.MLBkey)), 1200)
+  //   };
 
   //   this.props.sports.nhl.map((game, idx) => {
   //     setTimeout(() => (this.props.fetchGameScore(NHLTrial, game.id, NHLkey)), 1200 * idx)
