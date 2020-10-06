@@ -50,6 +50,15 @@ router.get("/nhl", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+router.get("/articles", (req, res) => {
+
+  fetch(
+    `https://gnews.io/api/v4/top-headlines?token=${keys.articleKey}&topic=sports&country=US&lang=en&q=NBA%20OR%20NHL%20OR%20MLB`
+  )
+    .then((result) => result.json())
+    .then((result) => res.send(result))
+    .catch((err) => console.log(err));
+});
 
 
 module.exports = router;
