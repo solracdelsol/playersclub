@@ -18,7 +18,7 @@ const nbaReducer = (oldState = [], action) => {
       }
     case RECEIVE_ALL:
       if (
-        action.sports.headers["x-final-url"].split("/")[3] === "nba" &&
+        action.sports.data.league.alias === "NBA" &&
         action.sports.data.games !== undefined
       ) {
         //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]

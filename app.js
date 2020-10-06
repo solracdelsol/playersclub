@@ -7,6 +7,7 @@ const passport = require('passport');
 const keys = require('./config/keys');
 
 const users = require('./routes/api/users');
+const proxy = require("./routes/api/proxy");
 
 const path = require("path");
 if (process.env.NODE_ENV === "production") {
@@ -32,18 +33,7 @@ require('./config/passport')(passport);
 
 app.use("/api/users", users);
 
-// app.get("/proxy/mlb/", (req, res) => {
-
-//     var today = new Date();
-//     var dd = String(today.getDate()).padStart(2, "0");
-//     var mm = String(today.getMonth() + 1).padStart(2, "0");
-//     var yyyy = today.getFullYear();
-//     var date = yyyy + "/" + mm + "/" + dd;
-
-
-//   fetch(`http://api.sportradar.us/${keys.MLBTrial}/en/games/${date}/schedule.json?api_key=${keys.MLBkey}`)
-//     .then(result => result.json()).then(result => (res.send(result))).catch(err => console.log(err));
-// })
+app.use("/api/proxy", proxy);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`))
