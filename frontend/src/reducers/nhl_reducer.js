@@ -1,26 +1,32 @@
 import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 
 
-const nhlReducer = (oldState = [], action) => {
+const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
   // Object.freeze(oldState); // dont need this if we are using array default state
-  let newState = oldState.slice(); //preserves oldState by making a copy we manipulate
-  switch (action.type) { 
+  Object.freeze(oldState);
+  let newState = Object.assign({}, oldState); //preserves oldState by making a copy we manipulate
+  switch (action.type) {
     case RECEIVE_ONE:
-      if (action.sport.headers["x-final-url"].split("/")[3] === "nhl") { 
-        newState.push({
-          home: action.sport.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE 
+      if (action.sport.config.url.split("/")[4] === "nhl") {
+        newState.sport.push({
+          home: action.sport.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
           away: action.sport.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-          scores: [action.sport.home_points, action.sport.away_points] }) // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
+          scores: [action.sport.home_points, action.sport.away_points],
+        }); // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
 
         return newState;
       } else {
         return oldState;
       }
     case RECEIVE_ALL:
-      if (action.sports.data.league.alias === "NHL" && action.sports.data.games !== undefined) {        //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
+      if (
+        action.sports.data.league.alias === "NHL" &&
+        action.sports.data.games !== undefined
+      ) {
+        //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
 
         action.sports.data.games.forEach((game) =>
-          newState.push({
+          newState.sports.push({
             // id: game.id, //will allow us to key into the individual games
             scheduled: new Date(game.scheduled),
             title: game.title, // "Game 4"
@@ -31,12 +37,12 @@ const nhlReducer = (oldState = [], action) => {
           })
         );
 
-        return newState; 
+        return newState;
       } else {
         return oldState;
       }
     case CLEAR_ALL:
-      return [];
+      return {};
 
     default:
       return oldState;

@@ -16,10 +16,11 @@ class Score extends React.Component {
 
   mlbGameContainer() {
     
-    return this.props.sports.mlb.map((gm, idx) => {
+    return this.props.sports.mlb.sports.map((gm, idx) => {
       if (gm.status !== "unnecessary" && gm.status !== "postponed" ) {
         // this is to check if the game is actually happening
         // this.fetchGame(gm.id)
+        // this.props.fetchGameScore(APIkeys.MLBTrial, gm.id, APIkeys.MLBkey)
         return (
           <div className="scores" key={idx}>
             <div className="game-info">
@@ -57,7 +58,7 @@ class Score extends React.Component {
 
 
   nbaGameContainer() {
-    return this.props.sports.nba.map((gm,idx) => {
+    return this.props.sports.nba.sports.map((gm,idx) => {
       if (gm.status !== "unnecessary") { // this is to check if the game is actually happening
       return (
         <div className="scores" key={idx}>
@@ -91,7 +92,7 @@ class Score extends React.Component {
   }
 
   nhlGameContainer() {
-    return this.props.sports.nhl.map((gm, idx) => { 
+    return this.props.sports.nhl.sports.map((gm, idx) => { 
       if (gm.status !== "unnecessary") { // this is to check if the game is actually happening
         // setTimeout(() => (this.props.fetchGameScore(NHLTrial, gm.id, NHLkey)), 1200 * idx) will fetch each individual game score (receiveOne)
         return (

@@ -1,17 +1,19 @@
+import { isValidObjectId } from "mongoose";
 import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 
 
-const mlbReducer = (oldState = [], action) => {
+const mlbReducer = (oldState = {sport: [], sports: []}, action) => {
   // Object.freeze(oldState); // dont need this if we are using array default state
-  let newState = oldState.slice(); //preserves oldState by making a copy we manipulate
+  Object.freeze(oldState);
+  let newState = Object.assign({}, oldState);  //preserves oldState by making a copy we manipulate
   switch (action.type) {
     case RECEIVE_ONE:
-      if (action.sport.headers["x-final-url"].split("/")[3] === "mlb") {
-        newState.push({
-          home: action.sport.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE 
-          away: action.sport.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-          scores: [action.sports.data.game.home.runs, action.sports.data.game.away.runs]
-        }) // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
+      if (action.sport.config.url.split("/")[4] === "mlb") {
+        newState.sport.push({
+          home: action.sport.data.game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
+          away: action.sport.data.game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
+          scores: [action.sport.data.game.home.runs, action.sport.data.game.away.runs],
+        }); // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
 
         return newState;
       } else {
@@ -25,8 +27,9 @@ const mlbReducer = (oldState = [], action) => {
         //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
 
         action.sports.data.games.forEach((game) =>
-          newState.push({
+          newState.sports.push({
             scheduled: new Date(game.scheduled),
+            id: game.id,
             title: game.ps_round, // "NLWC" THIS KEY IS ONLY AVAILABLE DURING THE PLAYOFFS
             status: game.status, // CHECK OTHER SPORTS TO SEE IF GAMES ARE NECESSARY
             home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
@@ -40,7 +43,7 @@ const mlbReducer = (oldState = [], action) => {
         return oldState;
       }
     case CLEAR_ALL:
-      return [];
+      return {};
 
     default:
       return oldState;

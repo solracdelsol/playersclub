@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 
-export const fetchGameScore = (sportTrial, event_id, key) =>
-  axios.get(
-   `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/${sportTrial}/en/games/${event_id}/boxscore.json?api_key=${key}`
-);
+export const fetchGameScore = (sportTrial, event_id, key) => {
+  return axios.get(
+  `/api/proxy/scores/${sportTrial}/${event_id}`
+  );
+}
 
 export const fetchGameSchedule = (sportTrial, date, key) => {
 
