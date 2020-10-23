@@ -20,7 +20,7 @@ const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
       }
     case RECEIVE_ALL:
       if (
-        action.sports.data.league.alias === "NHL" &&
+        action.sports.data.hasOwnProperty("league") && action.sports.data.league.alias === "NHL" &&
         action.sports.data.games !== undefined
       ) {
         //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]

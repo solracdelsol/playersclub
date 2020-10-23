@@ -4,17 +4,7 @@ import {logout} from '../../actions/session_actions';
 import HomePage from './home_page.jsx';
 import { fetchArticles } from '../../actions/article_actions'
 import { fetchGameScore, fetchGameSchedule } from '../../actions/sport_actions';
-import keys from "../../config/src_keys"
-
-// const {
-//   MLBTrial,
-//   MLBkey,
-//   NBATrial,
-//   NBAkey,
-//   NHLTrial,
-//   NHLkey,
-//   articleKey,
-// } = keys;
+import keys from "../../config/src_keys";
 
 const msp = state => ({
 
@@ -37,6 +27,7 @@ const mdp = (dispatch) =>  {
   mlbScheduleObj: date => dispatch(fetchGameSchedule(keys.MLBTrial, date, keys.MLBkey)),
   nbaScheduleObj: date => dispatch(fetchGameSchedule(keys.NBATrial, date, keys.NBAkey)),
   nhlScheduleObj: date => dispatch(fetchGameSchedule(keys.NHLTrial, date, keys.NHLkey)),
+  nflScheduleObj: yyyy => dispatch(fetchGameSchedule(keys.NFLTrial, yyyy, keys.NFLkey)),
   fetchArticles: () => dispatch(fetchArticles(keys.articleKey)),
 }};
 

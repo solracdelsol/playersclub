@@ -18,11 +18,12 @@ class HomePage extends React.Component {
 
 
   componentDidMount(){
-    // if (Object.entries(this.props.sports.mlb).length === 0) {
+    
       this.props.mlbScheduleObj(this.getTodaysDate());
       setTimeout(() => this.props.nhlScheduleObj(this.getTodaysDate()), 1200);
       setTimeout(() => this.props.nbaScheduleObj(this.getTodaysDate()), 2400);
-    //  }
+      setTimeout(() => this.props.nflScheduleObj("2020"), 4800);
+ 
   }
 
   getTodaysDate() {

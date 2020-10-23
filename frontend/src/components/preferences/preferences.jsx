@@ -50,6 +50,16 @@ class PreferencesForm extends React.Component {
                 </span>
               </label>
             </p>
+            <p className="check-box">
+              <label htmlFor="NFL">
+                <input 
+                  id="NFL" 
+                  type="checkbox" 
+                  value="NFL"
+                />
+                <span>NFL</span>
+              </label>
+            </p>
             </div>
             <button onClick={this.props.closeModal} className="subscribe">Subscribe</button>
           </div>

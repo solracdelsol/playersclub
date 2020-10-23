@@ -3,6 +3,7 @@ import { combineReducers } from "redux";
 import nhl from './nhl_reducer';
 import nba from './nba_reducer';
 import mlb from './mlb_reducer';
+import nfl from './nfl_reducer';
 
 
 // export default function SportsReducer (oldState = {}, action) {
@@ -28,6 +29,7 @@ const SportsReducer = combineReducers({
   mlb,
   nba,
   nhl,
+  nfl
 });
 
 export default SportsReducer;

@@ -50,10 +50,24 @@ router.get("/nhl", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.get("/articles", (req, res) => {
+router.get("/nfl", (req, res) => {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, "0");
+  var mm = String(today.getMonth() + 1).padStart(2, "0");
+  var yyyy = today.getFullYear();
+  var date = yyyy + "/" + mm + "/" + dd;
 
   fetch(
-    `https://gnews.io/api/v4/top-headlines?token=${keys.articleKey}&topic=sports&country=US&lang=en&q=NBA%20OR%20NHL%20OR%20MLB`
+    `http://api.sportradar.us/nfl/official/trial/v6/en/games/${yyyy}/REG/schedule.json?api_key=${keys.NFLkey}`
+  )
+    .then((result) => result.json())
+    .then((result) => res.send(result))
+    .catch((err) => console.log(err));
+});
+
+router.get("/articles", (req, res) => {
+  fetch(
+    `https://gnews.io/api/v4/top-headlines?token=${keys.articleKey}&topic=sports&country=US&lang=en&q=NBA%20OR%20NHL%20OR%20MLB%20OR%20NFL`
   )
     .then((result) => result.json())
     .then((result) => res.send(result))

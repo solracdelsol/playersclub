@@ -448,3 +448,25 @@
     height: 40%;
     margin: auto;
 }
+
+.New-York-Giants {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/New_York_Giants.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
+
+.Philadelphia-Eagles {
+    position: relative;
+    display: flex;
+    background-image: url("../../images/team_logos/Philadelphia_Eagles.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+}
