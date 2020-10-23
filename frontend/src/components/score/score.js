@@ -1,212 +1,75 @@
-import React from 'react';
-import './score.css';
-import './team-logos.css'
-import '../../reset.css';
-import APIkeys from "../../config/src_keys";
-
+import React from "react";
+import "./score.css";
+import "./team-logos.css";
+import "../../reset.css";
+import ScoreCard from "./ScoreCard";
 
 class Score extends React.Component {
   constructor(props) {
-    super(props);
-    this.mlbGameContainer = this.mlbGameContainer.bind(this);
-    this.nhlGameContainer = this.nhlGameContainer.bind(this);
-    this.nbaGameContainer = this.nbaGameContainer.bind(this);
-    this.nflGameContainer = this.nflGameContainer.bind(this);
+    super();
   }
-
-  mlbGameContainer() {
-      return this.props.sports.mlb.sports.map((gm, idx) => {
-        // while (idx < this.props.sports.mlb.sports.length) {
-          if (gm.status !== "unnecessary" && gm.status !== "postponed") {
-            // this is to check if the game is actually happening
-            // this.props.fetchGameScore(APIkeys.MLBTrial, gm.id, APIkeys.MLBkey)
-            //  while (idx < this.props.sports.mlb.length)
-            // this.props.fetchGameScore(
-            //       APIkeys.MLBTrial,
-            //       gm.id,
-            //       APIkeys.MLBkey
-            //     )
-            return (
-              <div className="scores" key={idx}>
-                <div className="game-info">
-                  <p className="game-time">{gm.scheduled.toString()}</p>
-                  <p className="game-number">{gm.title}</p>
-                </div>
-                <p className="vs">VS</p>
-                <div className="scores-away-container">
-                  <div className={gm.away.name.split(" ").join("-")}></div>
-                  <div className="scores-away">
-                    <p className="scores-away-team">
-                      Away: {gm.away.market + " " + gm.away.name}
-                    </p>
-                    <p className="scores-away-score">
-                      {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
-                    </p>
-                  </div>
-                </div>
-                <div className="scores-home-container">
-                  <div className={gm.home.name.split(" ").join("-")}></div>
-                  <div className="scores-home">
-                    <p className="scores-home-team">
-                      Home: {gm.home.market + " " + gm.home.name}
-                    </p>
-                    <p className="scores-home-score">
-                      {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          }
-      }
-
-    );
-  }
-
-
-  nbaGameContainer() {
-    return this.props.sports.nba.sports.map((gm,idx) => {
-      if (gm.status !== "unnecessary") { // this is to check if the game is actually happening
-      return (
-        <div className="scores" key={idx}>
-          <div className="game-info">
-            <p className="game-time">{gm.scheduled.toString()}</p>
-            <p className="game-number">{gm.title}</p>
-          </div>
-          <p className="vs">VS</p>
-          <div className="scores-away-container">
-            <div className={gm.away.name.split(" ").join("-")}></div>
-            <div className="scores-away">
-              <p className="scores-away-team">Away: {gm.away.name}</p>
-              <p className="scores-away-score">
-                {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
-              </p>
-            </div>
-          </div>
-          <div className="scores-home-container">
-            <div className={gm.home.name.split(" ").join("-")}></div>
-            <div className="scores-home">
-              <p className="scores-home-team">Home: {gm.home.name}</p>
-              <p className="scores-home-score">
-                {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
-              </p>
-            </div>
-          </div>
-        </div>
-      );
-    }}
-    );
-  }
-
-  nhlGameContainer() {
-    return this.props.sports.nhl.sports.map((gm, idx) => { 
-      if (gm.status !== "unnecessary") { // this is to check if the game is actually happening
-        // setTimeout(() => (this.props.fetchGameScore(NHLTrial, gm.id, NHLkey)), 1200 * idx) will fetch each individual game score (receiveOne)
-        return (
-        <div className="scores" key={idx}>
-          <div className="game-info">
-            <p className="game-time">{gm.scheduled.toString()}</p>
-            <p className="game-number">{gm.title}</p>
-          </div>
-          <p className="vs">VS</p>
-          <div className="scores-away-container">
-            <div className={gm.away.name.split(" ").join("-")}></div>
-            <div className="scores-away">
-              <p className="scores-away-team">Away: {gm.away.name}</p>
-              <p className="scores-away-score">
-                {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
-              </p>
-            </div>
-          </div>
-          <div className="scores-home-container">
-            <div className={gm.home.name.split(" ").join("-")}></div>
-            <div className="scores-home">
-              <p className="scores-home-team">Home: {gm.home.name}</p>
-              <p className="scores-home-score">
-                {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
-              </p>
-            </div>
-          </div>
-        </div>
-      );
-    }}
-    );
-  }
-
-
-  nflGameContainer() {
-    return this.props.sports.nfl.sports.map((gm,idx) => {
-      if (gm.status !== "unnecessary") { // this is to check if the game is actually happening
-      return (
-        <div className="scores" key={idx}>
-          <div className="game-info">
-            <p className="game-time">{gm.scheduled.toString()}</p>
-            <p className="game-number">{gm.title}</p>
-          </div>
-          <p className="vs">VS</p>
-          <div className="scores-away-container">
-            <div className={gm.away.name.split(" ").join("-")}></div>
-            <div className="scores-away">
-              <p className="scores-away-team">Away: {gm.away.name}</p>
-              <p className="scores-away-score">
-                {gm.scores[1] === undefined ? "pending" : gm.scores[1]}
-              </p>
-            </div>
-          </div>
-          <div className="scores-home-container">
-            <div className={gm.home.name.split(" ").join("-")}></div>
-            <div className="scores-home">
-              <p className="scores-home-team">Home: {gm.home.name}</p>
-              <p className="scores-home-score">
-                {gm.scores[0] === undefined ? "pending" : gm.scores[0]}
-              </p>
-            </div>
-          </div>
-        </div>
-      );
-    }}
-    );
-  }
-
-  // componentDidMount() {
-  //   this.fetchGame()
-    
-  // }
-
-  // fetchGame(gameID) {
-  //     setTimeout(() => (this.props.fetchGameScore(APIkeys.MLBTrial, gameID, APIkeys.MLBkey)), 1200)
-  //   };
-
-  //   this.props.sports.nhl.map((game, idx) => {
-  //     setTimeout(() => (this.props.fetchGameScore(NHLTrial, game.id, NHLkey)), 1200 * idx)
-  //   });
-    
-  //   this.props.sports.nba.map((game, idx) => {
-  //     setTimeout(() => (this.props.fetchGameScore(NBATrial, game.id, NBAkey)), 1200 * idx)
-  //   });
-  // }
-
-  // componentWillUnmount() {
-  //   clearInterval(this.interval);
-  // }
 
   render() {
-
-    if (this.props.sports.nba === undefined || this.props.sports.nhl === undefined ) {
-      return null;
-    } else {
-      return (
-        <div className="score-container">
-            <p className="score-header">Latest Scores</p>
-            {this.mlbGameContainer()}
-            {this.nbaGameContainer()}
-            {this.nhlGameContainer()}
-            {this.nflGameContainer()}
-        </div>
-      );
-    }
+    return (
+      <div className="score-container">
+        <p className="score-header">Latest Scores</p>
+        {this.props.sports.nfl.sports.map((gm, idx) => {
+          return (
+            <ScoreCard
+              key={idx}
+              status={gm.status}
+              scheduled={gm.scheduled}
+              homeName={gm.home.name}
+              awayName={gm.away.name}
+              title={gm.title}
+              scores={gm.scores}
+            />
+          );
+        })}
+        {this.props.sports.nba.sports.map((gm, idx) => {
+          return (
+            <ScoreCard
+              key={idx}
+              status={gm.status}
+              scheduled={gm.scheduled}
+              homeName={gm.home.name}
+              awayName={gm.away.name}
+              title={gm.title}
+              scores={gm.scores}
+            />
+          );
+        })}
+        {this.props.sports.nhl.sports.map((gm, idx) => {
+          return (
+            <ScoreCard
+              key={idx}
+              status={gm.status}
+              scheduled={gm.scheduled}
+              homeName={gm.home.name}
+              awayName={gm.away.name}
+              title={gm.title}
+              scores={gm.scores}
+            />
+          );
+        })}
+        {this.props.sports.mlb.sports.map((gm, idx) => {
+          return (
+            <ScoreCard
+              key={idx}
+              status={gm.status}
+              scheduled={gm.scheduled}
+              homeName={gm.home.market + " " + gm.home.name}
+              awayName={gm.away.market + " " + gm.away.name}
+              title={gm.title}
+              scores={gm.scores}
+              classNameAway={gm.away.name.split(" ").join("-")}
+              classNameHome={gm.home.name.split(" ").join("-")}
+            />
+          );
+        })}
+      </div>
+    );
   }
 }
-
 
 export default Score;

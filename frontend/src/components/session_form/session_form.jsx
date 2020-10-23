@@ -3,8 +3,6 @@ import { withRouter } from "react-router-dom";
 import "./session.css";
 import "../../reset.css";
 
-import { openModal } from "../../actions/modal_actions";
-
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -57,9 +55,9 @@ class SessionForm extends React.Component {
   demoLogin(e) {
     // const demo_user = { email: "demo@demo.com", password: "123456" };
     e.preventDefault();
-    this.props.openModal('login')
-    this.state.password = '123456';
-    this.state.email = 'demo@demo.com';
+    this.props.openModal("login");
+    this.setState({password: "123456"});
+    this.setState({email: "demo@demo.com"});
     const demo_user = Object.assign({}, this.state);
     return this.props.login(demo_user);
   }

@@ -3,7 +3,7 @@ import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 const nbaReducer = (oldState = { sport: [], sports: [] }, action) => {
   // Object.freeze(oldState); // dont need this if we are using array default state
   Object.freeze(oldState);
-  let newState = Object.assign({}, oldState) //preserves oldState by making a copy we manipulate
+  let newState = Object.assign({}, oldState); //preserves oldState by making a copy we manipulate
   switch (action.type) {
     case RECEIVE_ONE:
       if (action.sport.config.url.split("/")[4] === "nba") {
@@ -19,7 +19,8 @@ const nbaReducer = (oldState = { sport: [], sports: [] }, action) => {
       }
     case RECEIVE_ALL:
       if (
-        action.sports.data.hasOwnProperty("league") && action.sports.data.league.alias === "NBA" &&
+        action.sports.data.hasOwnProperty("league") &&
+        action.sports.data.league.alias === "NBA" &&
         action.sports.data.games !== undefined
       ) {
         //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
@@ -46,6 +47,5 @@ const nbaReducer = (oldState = { sport: [], sports: [] }, action) => {
       return oldState;
   }
 };
-
 
 export default nbaReducer;

@@ -1,6 +1,5 @@
 import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 
-
 const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
   // Object.freeze(oldState); // dont need this if we are using array default state
   Object.freeze(oldState);
@@ -20,7 +19,8 @@ const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
       }
     case RECEIVE_ALL:
       if (
-        action.sports.data.hasOwnProperty("league") && action.sports.data.league.alias === "NHL" &&
+        action.sports.data.hasOwnProperty("league") &&
+        action.sports.data.league.alias === "NHL" &&
         action.sports.data.games !== undefined
       ) {
         //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
