@@ -29,7 +29,7 @@ class PlayersBar extends React.Component {
             <h6 className="welcome-player">
               Welcome to the Club,{" "}
               {this.props.user.username === undefined
-                ? "demoUser"
+                ? " "
                 : this.props.user.username}
               !
             </h6>

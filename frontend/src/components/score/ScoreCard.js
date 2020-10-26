@@ -1,5 +1,4 @@
 import React from "react";
-import keys from "../../config/src_keys";
 
 function ScoreCard({
   status,

@@ -2,14 +2,6 @@ import React from "react";
 import "./search.css";
 import "../../reset.css";
 import { Link } from "react-router-dom";
-import {
-  MLBkey,
-  MLBTrial,
-  NBATrial,
-  NBAkey,
-  NHLTrial,
-  NHLkey,
-} from "../../config/src_keys";
 import Footer from "../footer/footer";
 
 class Search extends React.Component {
@@ -21,12 +13,12 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchAll(trial, eventId, key);
+
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.props.fetchAll(this.state.trial, this.state.eventId, this.state.key);
+    
   }
 
   update(field) {
