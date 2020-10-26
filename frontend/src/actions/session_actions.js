@@ -74,5 +74,6 @@ export const logout = () => (dispatch) => {
 
 export const demoUser = () => (dispatch) =>
   APIUtil.demoUserLogin().then((currentUser) =>
-    dispatch(receiveCurrentUser(currentUser))
+    dispatch(receiveCurrentUser(currentUser))).then(() => dispatch(closeModal())
+    
   );

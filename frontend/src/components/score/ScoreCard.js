@@ -1,4 +1,5 @@
 import React from "react";
+import keys from "../../config/src_keys";
 
 function ScoreCard({
   status,
@@ -10,13 +11,16 @@ function ScoreCard({
   idx,
   classNameHome,
   classNameAway,
+  progress,
 }) {
   if (status !== "unnecessary") {
-    // this is to check if the game is actually happening
+    /*this is to check if the game is actually happening */
+
     return (
       <div className="scores" key={idx}>
         <div className="game-info">
           <p className="game-time">{scheduled.toString()}</p>
+          <p className="game-status">{status}</p>
           <p className="game-number">{title}</p>
         </div>
         <p className="vs">VS</p>

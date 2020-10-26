@@ -23,7 +23,7 @@ export const fetchGameSchedule = (sportTrial, date, key) => (dispatch) =>
     dispatch(receiveAll(sports))
   );
 
-export const fetchGameScore = (sportTrial, event_id, key) => (dispatch) =>
-  APIUTIL.fetchGameScore(sportTrial, event_id, key).then((sport) =>
+export const fetchGameScore = (sportTrial, event_id) => (dispatch) =>
+  APIUTIL.fetchGameScore(sportTrial, event_id).then((sport) =>
     dispatch(receiveOne(sport))
   );

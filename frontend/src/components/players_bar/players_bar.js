@@ -28,13 +28,13 @@ class PlayersBar extends React.Component {
           {this.props.currentUser ? (
             <h6 className="welcome-player">
               Welcome to the Club,{" "}
-              {Object.keys(this.props.user).length === 0
-                ? ""
+              {this.props.user.username === undefined
+                ? "demoUser"
                 : this.props.user.username}
               !
             </h6>
           ) : (
-            ""
+            " "
           )}
           {this.props.currentUser ? (
             <>

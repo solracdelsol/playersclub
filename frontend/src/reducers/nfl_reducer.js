@@ -8,9 +8,16 @@ const nflReducer = (oldState = { sport: [], sports: [] }, action) => {
     case RECEIVE_ONE:
       if (action.sport.config.url.split("/")[4] === "nfl") {
         newState.sport.push({
-          home: action.sport.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
-          away: action.sport.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-          scores: [action.sport.home_points, action.sport.away_points],
+          id: action.sport.data.id,
+          scheduled: new Date(action.sport.data.scheduled),
+          status: action.sport.data.status,
+          progress: action.sport.data.quarter,
+          home: action.sport.data.summary.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
+          away: action.sport.data.summary.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
+          scores: [
+            action.sport.data.summary.home.points,
+            action.sport.data.summary.away.points,
+          ],
         }); // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
 
         return newState;
@@ -29,15 +36,28 @@ const nflReducer = (oldState = { sport: [], sports: [] }, action) => {
         }
         action.sports.data.weeks.forEach((week) =>
           week.games.forEach((game) => {
-            if (game.scheduled.split("T")[0] === getTodaysDate()) {
+            if (
+              game.scheduled.split("T")[0] === getTodaysDate() &&
+              game.status === "closed"
+            ) {
               newState.sports.push({
-                game: game.id,
+                id: game.id,
                 scheduled: new Date(game.scheduled),
                 // title: game.title, // "Game 4"
                 status: game.status, // CHECK OTHER SPORTS TO SEE IF GAMES ARE NECESSARY
                 home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
                 away: game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
                 scores: [game.scoring.home_points, game.scoring.away_points], // ARRAY OF POINTS
+              });
+            } else if (game.scheduled.split("T")[0] === getTodaysDate()) {
+              newState.sports.push({
+                id: game.id,
+                scheduled: new Date(game.scheduled),
+                // title: game.title, // "Game 4"
+                status: game.status, // CHECK OTHER SPORTS TO SEE IF GAMES ARE NECESSARY
+                home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
+                away: game.away,
+                scores: ["pending", "pending"],
               });
             }
           })

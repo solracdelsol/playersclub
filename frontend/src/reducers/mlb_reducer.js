@@ -8,6 +8,10 @@ const mlbReducer = (oldState = { sport: [], sports: [] }, action) => {
     case RECEIVE_ONE:
       if (action.sport.config.url.split("/")[4] === "mlb") {
         newState.sport.push({
+          id: action.sport.data.game.id,
+          scheduled: new Date(action.sport.data.game.scheduled),
+          status: action.sport.data.game.status,
+          // progress: action.sport.data.game.outcome.current_inning,
           home: action.sport.data.game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
           away: action.sport.data.game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
           scores: [

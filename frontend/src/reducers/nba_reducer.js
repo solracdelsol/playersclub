@@ -8,6 +8,10 @@ const nbaReducer = (oldState = { sport: [], sports: [] }, action) => {
     case RECEIVE_ONE:
       if (action.sport.config.url.split("/")[4] === "nba") {
         newState.sport.push({
+          id: action.sport.data.id,
+          scheduled: new Date(action.sport.data.scheduled),
+          status: action.sport.data.status,
+          progress: action.sport.data.quarter,
           home: action.sport.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
           away: action.sport.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
           scores: [action.sport.home_points, action.sport.away_points],
