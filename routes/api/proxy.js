@@ -5,11 +5,11 @@ const fetch = require("node-fetch");
 
 
 router.get("/mlb", (req, res) => {
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, "0");
-  var mm = String(today.getMonth() + 1).padStart(2, "0");
-  var yyyy = today.getFullYear();
-  var date = yyyy + "/" + mm + "/" + dd;
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, "0");
+  let mm = String(today.getMonth() + 1).padStart(2, "0");
+  let yyyy = today.getFullYear();
+  let date = yyyy + "/" + mm + "/" + dd;
 
   fetch(
     `http://api.sportradar.us/mlb/trial/v7/en/games/${date}/schedule.json?api_key=${keys.MLBkey}`
@@ -20,11 +20,11 @@ router.get("/mlb", (req, res) => {
 });
 
 router.get("/nba", (req, res) => {
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, "0");
-  var mm = String(today.getMonth() + 1).padStart(2, "0");
-  var yyyy = today.getFullYear();
-  var date = yyyy + "/" + mm + "/" + dd;
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, "0");
+  let mm = String(today.getMonth() + 1).padStart(2, "0");
+  let yyyy = today.getFullYear();
+  let date = yyyy + "/" + mm + "/" + dd;
 
   fetch(
     `http://api.sportradar.us/nba/trial/v7/en/games/${date}/schedule.json?api_key=${keys.NBAkey}`
