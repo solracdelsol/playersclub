@@ -3,8 +3,6 @@ import { withRouter } from "react-router-dom";
 import "./session.css";
 import "../../reset.css";
 
-import { openModal } from "../../actions/modal_actions";
-
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +13,7 @@ class SessionForm extends React.Component {
       password2: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.demoLogin = this.demoLogin.bind(this);
+    // this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -54,15 +52,15 @@ class SessionForm extends React.Component {
     });
   }
 
-  demoLogin(e) {
-    // const demo_user = { email: "demo@demo.com", password: "123456" };
-    e.preventDefault();
-    this.props.openModal('login')
-    this.state.password = '123456';
-    this.state.email = 'demo@demo.com';
-    const demo_user = Object.assign({}, this.state);
-    return this.props.login(demo_user);
-  }
+  // demoLogin(e) {
+  //   // const demo_user = { email: "demo@demo.com", password: "123456" };
+  //   e.preventDefault();
+  //   this.props.openModal("login");
+  //   this.props.state.password = "123456";
+  //   this.props.state.email = "demo@demo.com";
+  //   const demo_user = Object.assign({}, this.state);
+  //   return this.props.login(demo_user);
+  // }
 
   //MAKES THE ERRORS RENDER ON SCREEN
   renderErrors() {
@@ -136,11 +134,11 @@ class SessionForm extends React.Component {
                   : this.props.formType
               }
             />
-            <button className="landing-demo-login" onClick={this.demoLogin}>
-              Demo Login
-            </button>
           </div>
         </form>
+        <button className="landing-demo-login" onClick={this.props.demoUser}>
+          Demo Login
+        </button>
       </div>
     );
   }
