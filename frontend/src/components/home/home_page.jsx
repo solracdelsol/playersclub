@@ -5,7 +5,7 @@ import PlayersBar from "../players_bar/players_bar";
 import Footer from "../footer/footer";
 import Article from "../article/article";
 import Score from "../score/score";
-import keys from "../../config/src_keys";
+
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -14,31 +14,31 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.mlbScheduleObj(this.getTodaysDate()).then(() =>
+    this.props.mlbScheduleObj("mlb").then(() =>
       this.props.sports.mlb.sports.map((game, idx) => {
         setTimeout(() => {
-          this.props.fetchGameScore(keys.MLBTrial, game.id);
+          this.props.fetchGameScore("mlb", game.id);
         }, 1000 * idx);
       })
     );
-    this.props.nhlScheduleObj(this.getTodaysDate()).then(() =>
+    this.props.nhlScheduleObj("nhl").then(() =>
       this.props.sports.nhl.sports.map((game, idx) => {
         setTimeout(() => {
-          this.props.fetchGameScore(keys.NHLTrial, game.id);
+          this.props.fetchGameScore("nhl", game.id);
         }, 1500 * idx);
       })
     );
-    this.props.nbaScheduleObj(this.getTodaysDate()).then(() =>
+    this.props.nbaScheduleObj("nba").then(() =>
       this.props.sports.nba.sports.map((game, idx) => {
         setTimeout(() => {
-          this.props.fetchGameScore(keys.NBATrial, game.id);
+          this.props.fetchGameScore("nba", game.id);
         }, 2000 * idx);
       })
     );
-    this.props.nflScheduleObj("2020").then(() =>
+    this.props.nflScheduleObj("nfl").then(() =>
       this.props.sports.nfl.sports.map((game, idx) => {
         setTimeout(() => {
-          this.props.fetchGameScore(keys.NFLTrial, game.id);
+          this.props.fetchGameScore("nfl", game.id);
         }, 2500 * idx);
       })
     );

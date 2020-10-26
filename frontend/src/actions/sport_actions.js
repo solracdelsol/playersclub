@@ -18,8 +18,8 @@ export const clearAll = () => ({
   type: CLEAR_ALL,
 });
 
-export const fetchGameSchedule = (sportTrial, date, key) => (dispatch) =>
-  APIUTIL.fetchGameSchedule(sportTrial, date, key).then((sports) =>
+export const fetchGameSchedule = (sportTrial) => (dispatch) =>
+  APIUTIL.fetchGameSchedule(sportTrial).then((sports) =>
     dispatch(receiveAll(sports))
   );
 
