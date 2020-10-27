@@ -21,17 +21,9 @@ const mdp = (dispatch) => {
     logout: () => dispatch(logout()),
     fetchGameScore: (sportTrial, event_id) =>
       dispatch(fetchGameScore(sportTrial, event_id)),
-    mlbScheduleObj: (sportTrial) =>
-      dispatch(fetchGameSchedule(sportTrial)),
-    nbaScheduleObj: (sportTrial) =>
-      dispatch(fetchGameSchedule(sportTrial)),
-    nhlScheduleObj: (sportTrial) =>
-      dispatch(fetchGameSchedule(sportTrial)),
-    nflScheduleObj: (sportTrial) =>
-      dispatch(fetchGameSchedule(sportTrial)),
-    fetchArticles: () => dispatch(fetchArticles()),
+    scheduleObj: (sportTrial, date) => dispatch(fetchGameSchedule(sportTrial, date)),
+    fetchArticles: (date) => dispatch(fetchArticles(date)),
   };
 };
-
 
 export default connect(msp, mdp)(HomePage);

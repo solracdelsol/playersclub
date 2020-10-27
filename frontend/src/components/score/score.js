@@ -25,7 +25,6 @@ class Score extends React.Component {
               title={gm.title}
               scores={gm.scores}
               gameId={gm.id}
-              fetchGameScore={this.props.fetchGameScore}
             />
           );
         })}
@@ -40,7 +39,6 @@ class Score extends React.Component {
               awayName={gm.away.name}
               title={gm.title}
               scores={gm.scores}
-              fetchGameScore={this.props.fetchGameScore}
               gameId={gm.id}
             />
           );
@@ -57,7 +55,6 @@ class Score extends React.Component {
               title={gm.title}
               scores={gm.scores}
               gameId={gm.id}
-              fetchGameScore={this.props.fetchGameScore}
             />
           );
         })}
@@ -75,7 +72,6 @@ class Score extends React.Component {
               classNameAway={gm.away.name.split(" ").join("-")}
               classNameHome={gm.home.name.split(" ").join("-")}
               gameId={gm.id}
-              fetchGameScore={this.props.fetchGameScore}
             />
           );
         })}

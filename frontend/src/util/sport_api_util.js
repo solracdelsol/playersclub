@@ -7,10 +7,10 @@ export const fetchGameScore = (sportTrial, event_id) => {
   );
 }
 
-export const fetchGameSchedule = (sportTrial) => {
+export const fetchGameSchedule = (sportTrial, date) => {
 
   return axios.get(
-    `/api/proxy/${sportTrial}`
+    `/api/proxy/${sportTrial}/${date}`
     );
   }
 
