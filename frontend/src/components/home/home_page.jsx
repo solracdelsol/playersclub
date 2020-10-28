@@ -24,34 +24,6 @@ class HomePage extends React.Component {
          }, 1000 * idx);
         })
       )});
-    // this.props.mlbScheduleObj("mlb").then(() =>
-    //   this.props.sports.mlb.sports.map((game, idx) => {
-    //     setTimeout(() => {
-    //       this.props.fetchGameScore("mlb", game.id);
-    //     }, 1000 * idx);
-    //   })
-    // );
-    // this.props.nhlScheduleObj("nhl").then(() =>
-    //   this.props.sports.nhl.sports.map((game, idx) => {
-    //     setTimeout(() => {
-    //       this.props.fetchGameScore("nhl", game.id);
-    //     }, 1500 * idx);
-    //   })
-    // );
-    // this.props.nbaScheduleObj("nba").then(() =>
-    //   this.props.sports.nba.sports.map((game, idx) => {
-    //     setTimeout(() => {
-    //       this.props.fetchGameScore("nba", game.id);
-    //     }, 2000 * idx);
-    //   })
-    // );
-    // this.props.nflScheduleObj("nfl").then(() =>
-    //   this.props.sports.nfl.sports.map((game, idx) => {
-    //     setTimeout(() => {
-    //       this.props.fetchGameScore("nfl", game.id);
-    //     }, 2500 * idx);
-    //   })
-    // );
   }
 
   getTodaysDate() {

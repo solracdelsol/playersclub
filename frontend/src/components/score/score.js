@@ -9,7 +9,11 @@ class Score extends React.Component {
     super();
   }
 
-  render() {
+  render() { 
+    if (this.props.sports.mlb.sports.length !== 0 ||
+      this.props.sports.nba.sports.length !== 0 ||
+      this.props.sports.nfl.sports.length !== 0 ||
+      this.props.sports.nhl.sports.length !== 0) {
     return (
       <div className="score-container">
         <p className="score-header">Latest Scores</p>
@@ -76,7 +80,10 @@ class Score extends React.Component {
           );
         })}
       </div>
-    );
+    )}
+    else {
+      return null;
+    }
   }
 }
 

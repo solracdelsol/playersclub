@@ -12,9 +12,9 @@ const nbaReducer = (oldState = { sport: [], sports: [] }, action) => {
           scheduled: new Date(action.sport.data.scheduled),
           status: action.sport.data.status,
           progress: action.sport.data.quarter,
-          home: action.sport.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
-          away: action.sport.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-          scores: [action.sport.home_points, action.sport.away_points],
+          home: action.sport.data.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
+          away: action.sport.data.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
+          scores: [action.sport.data.home.points, action.sport.data.away.points],
         }); // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
 
         return newState;
@@ -31,6 +31,7 @@ const nbaReducer = (oldState = { sport: [], sports: [] }, action) => {
 
         action.sports.data.games.forEach((game) =>
           newState.sports.push({
+            id: game.id,
             scheduled: new Date(game.scheduled),
             title: game.title, // "Game 4"
             status: game.status, // CHECK OTHER SPORTS TO SEE IF GAMES ARE NECESSARY
@@ -45,7 +46,7 @@ const nbaReducer = (oldState = { sport: [], sports: [] }, action) => {
         return oldState;
       }
     case CLEAR_ALL:
-      return {};
+      return { sport: [], sports: [] };
 
     default:
       return oldState;

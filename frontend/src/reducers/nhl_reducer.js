@@ -27,7 +27,7 @@ const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
 
         action.sports.data.games.forEach((game) =>
           newState.sports.push({
-            // id: game.id, //will allow us to key into the individual games
+            id: game.id, //will allow us to key into the individual games
             scheduled: new Date(game.scheduled),
             title: game.title, // "Game 4"
             status: game.status,
@@ -42,7 +42,7 @@ const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
         return oldState;
       }
     case CLEAR_ALL:
-      return {};
+      return { sport: [], sports: [] };
 
     default:
       return oldState;

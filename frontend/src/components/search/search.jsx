@@ -9,25 +9,30 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { sportTrial: "", date: "" };
+    this.state = { sportTrial: "nba", date: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    
+    this.props.clearAll();
   }
 
   handleSubmit(e) {
     e.preventDefault();
     let newDate = this.state.date.split("-").join("/");
-    this.props.scheduleObj(this.state.sportTrial, newDate).then(() =>
-      this.props.sports[this.state.sportTrial].sports.map((game, idx) => {
-        console.log("fetching ...");
-        setTimeout(() => {
-          this.props.fetchGameScore(this.state.sportTrial, game.id);
-        }, 1000 * idx);
-      })
-    ).catch(e => console.log(e));
+    this.props
+      .scheduleObj(this.state.sportTrial, newDate)
+      .then(() =>
+        this.props.sports[this.state.sportTrial].sports.map((game, idx) => {
+          if (game.status !== "unnecessary") {
+            setTimeout(() => {
+              this.props.fetchGameScore(this.state.sportTrial, game.id);
+            }, 3000 * idx);
+          }
+        })
+      )
+      .catch((e) => console.log(e));
+    this.props.clearAll();
   }
 
   update(field) {
@@ -35,23 +40,44 @@ class Search extends React.Component {
   }
 
   render() {
-    const newScoreCard = this.props.sports.mlb.sport.map((game) => {
-        return (
-          <ScoreCard
-            key={game.id}
-            status={game.status}
-            progress={game.progress}
-            scheduled={game.scheduled}
-            homeName={game.home.market + " " + game.home.name}
-            awayName={game.away.market + " " + game.away.name}
-            title={game.title}
-            scores={game.scores}
-            classNameAway={game.away.name.split(" ").join("-")}
-            classNameHome={game.home.name.split(" ").join("-")}
-            gameId={game.id}
-          />
-        );
-    });
+    const newScoreCard = this.props.sports[this.state.sportTrial].sport.map(
+      (game) => {
+        if (
+          this.state.sportTrial === "mlb" ||
+          this.state.sportTrial === "nfl"
+        ) {
+          return (
+            <ScoreCard
+              key={game.id}
+              status={game.status}
+              progress={game.progress}
+              scheduled={game.scheduled}
+              homeName={game.home.market + " " + game.home.name}
+              awayName={game.away.market + " " + game.away.name}
+              title={game.title}
+              scores={game.scores}
+              classNameAway={game.away.name.split(" ").join("-")}
+              classNameHome={game.home.name.split(" ").join("-")}
+              gameId={game.id}
+            />
+          );
+        } else {
+          return (
+            <ScoreCard
+              key={game.id}
+              status={game.status}
+              scheduled={game.scheduled}
+              progress={game.progress}
+              homeName={game.home.name}
+              awayName={game.away.name}
+              title={game.title}
+              scores={game.scores}
+              gameId={game.id}
+            />
+          );
+        }
+      }
+    );
     return (
       <div className="homepage-container">
         <div className="homepage-background">
@@ -83,7 +109,12 @@ class Search extends React.Component {
             <input type="date" onChange={this.update("date")}></input>
             <input className="submit" type="submit" value="Search" />
           </form>
-          {this.props.sports.mlb.sport.length !== 0 ? newScoreCard : " "}
+          {this.props.sports.mlb.sport.length !== 0 ||
+          this.props.sports.nba.sport.length === 0 ||
+          this.props.sports.nfl.sport.length === 0 ||
+          this.props.sports.nhl.sport.length === 0
+            ? newScoreCard
+            : null}
           <Footer />
         </div>
       </div>
