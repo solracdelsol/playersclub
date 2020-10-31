@@ -4,8 +4,6 @@ const keys = require("../../config/keys");
 const fetch = require("node-fetch");
 
 router.get("/mlb/:year/:month/:day", (req, res) => {
-
-
   fetch(
     `http://api.sportradar.us/mlb/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.MLBkey}`
   )
@@ -15,8 +13,6 @@ router.get("/mlb/:year/:month/:day", (req, res) => {
 });
 
 router.get("/nba/:year/:month/:day", (req, res) => {
-
-
   fetch(
     `http://api.sportradar.us/nba/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.NBAkey}`
   )
@@ -26,7 +22,6 @@ router.get("/nba/:year/:month/:day", (req, res) => {
 });
 
 router.get("/nhl/:year/:month/:day", (req, res) => {
-
   fetch(
     `http://api.sportradar.us/nhl/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.NHLkey}`
   )
@@ -36,7 +31,6 @@ router.get("/nhl/:year/:month/:day", (req, res) => {
 });
 
 router.get("/nfl/:year/:month/:day", (req, res) => {
-
   fetch(
     `http://api.sportradar.us/nfl/official/trial/v6/en/games/${req.params.year}/REG/schedule.json?api_key=${keys.NFLkey}`
   )

@@ -11,7 +11,7 @@ const nbaReducer = (oldState = { sport: [], sports: [] }, action) => {
           id: action.sport.data.id,
           scheduled: new Date(action.sport.data.scheduled),
           status: action.sport.data.status,
-          progress: action.sport.data.quarter,
+          // progress: action.sport.data.quarter,
           home: action.sport.data.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
           away: action.sport.data.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
           scores: [action.sport.data.home.points, action.sport.data.away.points],

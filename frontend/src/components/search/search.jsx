@@ -42,40 +42,38 @@ class Search extends React.Component {
   render() {
     const newScoreCard = this.props.sports[this.state.sportTrial].sport.map(
       (game) => {
-        if (
-          this.state.sportTrial === "mlb" ||
-          this.state.sportTrial === "nfl"
-        ) {
+        // if (
+        //   this.state.sportTrial === "mlb" ||
+        //   this.state.sportTrial === "nfl"
+        // ) {
           return (
             <ScoreCard
               key={game.id}
               status={game.status}
               progress={game.progress}
               scheduled={game.scheduled}
-              homeName={game.home.market + " " + game.home.name}
-              awayName={game.away.market + " " + game.away.name}
-              title={game.title}
-              scores={game.scores}
-              classNameAway={game.away.name.split(" ").join("-")}
-              classNameHome={game.home.name.split(" ").join("-")}
-              gameId={game.id}
-            />
-          );
-        } else {
-          return (
-            <ScoreCard
-              key={game.id}
-              status={game.status}
-              scheduled={game.scheduled}
-              progress={game.progress}
-              homeName={game.home.name}
-              awayName={game.away.name}
+              // homeName={game.home.market + " " + game.home.name}
+              // awayName={game.away.market + " " + game.away.name}
               title={game.title}
               scores={game.scores}
               gameId={game.id}
             />
           );
-        }
+        // } else {
+        //   return (
+        //     <ScoreCard
+        //       key={game.id}
+        //       status={game.status}
+        //       scheduled={game.scheduled}
+        //       progress={game.progress}
+        //       homeName={game.home.name}
+        //       awayName={game.away.name}
+        //       title={game.title}
+        //       scores={game.scores}
+        //       gameId={game.id}
+        //     />
+        //   );
+        // }
       }
     );
     return (
