@@ -3,62 +3,36 @@ const router = express.Router();
 const keys = require("../../config/keys");
 const fetch = require("node-fetch");
 
-
-router.get("/mlb", (req, res) => {
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, "0");
-  var mm = String(today.getMonth() + 1).padStart(2, "0");
-  var yyyy = today.getFullYear();
-  var date = yyyy + "/" + mm + "/" + dd;
-
+router.get("/mlb/:year/:month/:day", (req, res) => {
   fetch(
-    `http://api.sportradar.us/mlb/trial/v7/en/games/${date}/schedule.json?api_key=${keys.MLBkey}`
+    `http://api.sportradar.us/mlb/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.MLBkey}`
   )
     .then((result) => result.json())
     .then((result) => res.send(result))
     .catch((err) => console.log(err));
 });
 
-router.get("/nba", (req, res) => {
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, "0");
-  var mm = String(today.getMonth() + 1).padStart(2, "0");
-  var yyyy = today.getFullYear();
-  var date = yyyy + "/" + mm + "/" + dd;
-
+router.get("/nba/:year/:month/:day", (req, res) => {
   fetch(
-    `http://api.sportradar.us/nba/trial/v7/en/games/${date}/schedule.json?api_key=${keys.NBAkey}`
+    `http://api.sportradar.us/nba/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.NBAkey}`
   )
     .then((result) => result.json())
     .then((result) => res.send(result))
     .catch((err) => console.log(err));
 });
 
-
-router.get("/nhl", (req, res) => {
-  let today = new Date();
-  let dd = String(today.getDate()).padStart(2, "0");
-  let mm = String(today.getMonth() + 1).padStart(2, "0");
-  let yyyy = today.getFullYear();
-  let date = yyyy + "/" + mm + "/" + dd;
-
+router.get("/nhl/:year/:month/:day", (req, res) => {
   fetch(
-    `http://api.sportradar.us/nhl/trial/v7/en/games/${date}/schedule.json?api_key=${keys.NHLkey}`
+    `http://api.sportradar.us/nhl/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.NHLkey}`
   )
     .then((result) => result.json())
     .then((result) => res.send(result))
     .catch((err) => console.log(err));
 });
 
-router.get("/nfl", (req, res) => {
-  let today = new Date();
-  let dd = String(today.getDate()).padStart(2, "0");
-  let mm = String(today.getMonth() + 1).padStart(2, "0");
-  let yyyy = today.getFullYear();
-  let date = yyyy + "/" + mm + "/" + dd;
-
+router.get("/nfl/:year/:month/:day", (req, res) => {
   fetch(
-    `http://api.sportradar.us/nfl/official/trial/v6/en/games/${yyyy}/REG/schedule.json?api_key=${keys.NFLkey}`
+    `http://api.sportradar.us/nfl/official/trial/v6/en/games/${req.params.year}/REG/schedule.json?api_key=${keys.NFLkey}`
   )
     .then((result) => result.json())
     .then((result) => res.send(result))
@@ -84,10 +58,9 @@ router.get(`/scores/mlb/:id`, (req, res) => {
 });
 
 router.get(`/scores/nfl/:id`, (req, res) => {
-
   fetch(
     `http://api.sportradar.us/nfl/official/trial/v6/en/games/${req.params.id}/boxscore.json?api_key=${keys.NFLkey}`
-  ) 
+  )
     .then((result) => result.json())
     .then((result) => res.send(result))
     .catch((err) => console.log(err));
@@ -95,7 +68,7 @@ router.get(`/scores/nfl/:id`, (req, res) => {
 
 router.get(`/scores/nhl/:id`, (req, res) => {
   fetch(
-    `http://api.sportradar.us/nhl/trial/v7/en/games/${req.params.id}/boxscore.json?api_key=${keys.NHLkey}` 
+    `http://api.sportradar.us/nhl/trial/v7/en/games/${req.params.id}/boxscore.json?api_key=${keys.NHLkey}`
   )
     .then((result) => result.json())
     .then((result) => res.send(result))
@@ -110,6 +83,5 @@ router.get(`/scores/nba/:id`, (req, res) => {
     .then((result) => res.send(result))
     .catch((err) => console.log(err));
 });
-
 
 module.exports = router;

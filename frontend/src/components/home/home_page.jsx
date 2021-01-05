@@ -6,7 +6,6 @@ import Footer from "../footer/footer";
 import Article from "../article/article";
 import Score from "../score/score";
 
-
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
@@ -14,34 +13,17 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.mlbScheduleObj("mlb").then(() =>
-      this.props.sports.mlb.sports.map((game, idx) => {
-        setTimeout(() => {
-          this.props.fetchGameScore("mlb", game.id);
-        }, 1000 * idx);
-      })
-    );
-    this.props.nhlScheduleObj("nhl").then(() =>
-      this.props.sports.nhl.sports.map((game, idx) => {
-        setTimeout(() => {
-          this.props.fetchGameScore("nhl", game.id);
-        }, 1500 * idx);
-      })
-    );
-    this.props.nbaScheduleObj("nba").then(() =>
-      this.props.sports.nba.sports.map((game, idx) => {
-        setTimeout(() => {
-          this.props.fetchGameScore("nba", game.id);
-        }, 2000 * idx);
-      })
-    );
-    this.props.nflScheduleObj("nfl").then(() =>
-      this.props.sports.nfl.sports.map((game, idx) => {
-        setTimeout(() => {
-          this.props.fetchGameScore("nfl", game.id);
-        }, 2500 * idx);
-      })
-    );
+    let sportNames = ["mlb", "nfl", "nba", "nhl"];
+
+    sportNames.map((name) => {
+      return this.props.scheduleObj(name, this.getTodaysDate()).then(() =>
+        this.props.sports[name].sports.map((game, idx) => {
+          return setTimeout(() => {
+            this.props.fetchGameScore(name, game.id);
+          }, 1000 * idx);
+        })
+      );
+    });
   }
 
   getTodaysDate() {
@@ -72,10 +54,7 @@ class HomePage extends React.Component {
               this.props.sports.nba.sport.length !== 0 ||
               this.props.sports.nfl.sport.length !== 0 ||
               this.props.sports.nhl.sport.length !== 0 ? (
-                <Score
-                  sports={this.props.sports}
-                  fetchGameScore={this.props.fetchGameScore}
-                />
+                <Score sports={this.props.sports} />
               ) : null}
             </div>
             <Footer />

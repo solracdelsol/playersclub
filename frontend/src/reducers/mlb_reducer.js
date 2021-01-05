@@ -49,7 +49,7 @@ const mlbReducer = (oldState = { sport: [], sports: [] }, action) => {
         return oldState;
       }
     case CLEAR_ALL:
-      return {};
+      return { sport: [], sports: [] };
 
     default:
       return oldState;

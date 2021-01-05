@@ -9,7 +9,11 @@ class Score extends React.Component {
     super();
   }
 
-  render() {
+  render() { 
+    if (this.props.sports.mlb.sports.length !== 0 ||
+      this.props.sports.nba.sports.length !== 0 ||
+      this.props.sports.nfl.sports.length !== 0 ||
+      this.props.sports.nhl.sports.length !== 0) {
     return (
       <div className="score-container">
         <p className="score-header">Latest Scores</p>
@@ -25,7 +29,6 @@ class Score extends React.Component {
               title={gm.title}
               scores={gm.scores}
               gameId={gm.id}
-              fetchGameScore={this.props.fetchGameScore}
             />
           );
         })}
@@ -40,7 +43,6 @@ class Score extends React.Component {
               awayName={gm.away.name}
               title={gm.title}
               scores={gm.scores}
-              fetchGameScore={this.props.fetchGameScore}
               gameId={gm.id}
             />
           );
@@ -57,7 +59,6 @@ class Score extends React.Component {
               title={gm.title}
               scores={gm.scores}
               gameId={gm.id}
-              fetchGameScore={this.props.fetchGameScore}
             />
           );
         })}
@@ -75,12 +76,14 @@ class Score extends React.Component {
               classNameAway={gm.away.name.split(" ").join("-")}
               classNameHome={gm.home.name.split(" ").join("-")}
               gameId={gm.id}
-              fetchGameScore={this.props.fetchGameScore}
             />
           );
         })}
       </div>
-    );
+    )}
+    else {
+      return null;
+    }
   }
 }
 
