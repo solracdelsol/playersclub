@@ -14,7 +14,6 @@ function ScoreCard({
 }) {
   if (status !== "unnecessary") {
     /*this is to check if the game is actually happening */
-
     return (
       <div className="scores" key={idx}>
         <div className="game-info">
