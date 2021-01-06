@@ -46,19 +46,19 @@ class Search extends React.Component {
         //   this.state.sportTrial === "mlb" ||
         //   this.state.sportTrial === "nfl"
         // ) {
-          return (
-            <ScoreCard
-              key={game.id}
-              status={game.status}
-              progress={game.progress}
-              scheduled={game.scheduled}
-              // homeName={game.home.market + " " + game.home.name}
-              // awayName={game.away.market + " " + game.away.name}
-              title={game.title}
-              scores={game.scores}
-              gameId={game.id}
-            />
-          );
+        return (
+          <ScoreCard
+            key={game.id}
+            status={game.status}
+            progress={game.progress}
+            scheduled={game.scheduled}
+            homeName={game.home.market + " " + game.home.name}
+            awayName={game.away.market + " " + game.away.name}
+            title={game.title}
+            scores={game.scores}
+            gameId={game.id}
+          />
+        );
         // } else {
         //   return (
         //     <ScoreCard
