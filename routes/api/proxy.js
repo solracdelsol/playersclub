@@ -32,9 +32,12 @@ router.get("/nhl/:year/:month/:day", (req, res) => {
 
 router.get("/nfl/:year/:month/:day", (req, res) => {
   fetch(
+
+    // temporary solution until sportsRadar fixes their code to take in req.params.year
     `http://api.sportradar.us/nfl/official/trial/v6/en/games/2020/PST/schedule.json?api_key=${keys.NFLkey}`
-    )
+  )
     // `http://api.sportradar.us/nfl/official/trial/v6/en/games/${req.params.year}/REG/schedule.json?api_key=${keys.NFLkey}`
+
     .then((result) => result.json())
     .then((result) => res.send(result))
     .catch((err) => console.log(err));
