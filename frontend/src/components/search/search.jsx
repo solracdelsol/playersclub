@@ -9,11 +9,20 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { sportTrial: "nba", date: "" };
+    this.state = {
+      sportTrial: "nba",
+      date: "",
+      loading: true, // will use this to implement a loading spinner
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
+    this.props.clearAll();
+  }
+
+  componentWillUnmount() {
+    // temporary solution until we can figure out how to cancel network requests that have not been fulfilled reason why? if a person creates a search and all the data is not in our state and we go to the home page we will see the data that is being returned
     this.props.clearAll();
   }
 
@@ -42,10 +51,6 @@ class Search extends React.Component {
   render() {
     const newScoreCard = this.props.sports[this.state.sportTrial].sport.map(
       (game) => {
-        // if (
-        //   this.state.sportTrial === "mlb" ||
-        //   this.state.sportTrial === "nfl"
-        // ) {
         return (
           <ScoreCard
             key={game.id}
@@ -59,22 +64,13 @@ class Search extends React.Component {
             gameId={game.id}
           />
         );
-        // } else {
-        //   return (
-        //     <ScoreCard
-        //       key={game.id}
-        //       status={game.status}
-        //       scheduled={game.scheduled}
-        //       progress={game.progress}
-        //       homeName={game.home.name}
-        //       awayName={game.away.name}
-        //       title={game.title}
-        //       scores={game.scores}
-        //       gameId={game.id}
-        //     />
-        //   );
-        // }
       }
+    );
+    // this is a temporary fix until we can style a card to display a message upon hitting the search page
+    const message = (
+      <h3 style={{ color: "white" }}>
+        Please select a sport and date you want to search
+      </h3>
     );
     return (
       <div className="homepage-container">
@@ -97,22 +93,28 @@ class Search extends React.Component {
               <option disabled value>
                 Please select one
               </option>
-              <option value="0">All</option>
+              <option value="0" disabled value>
+                All (coming soon)
+              </option>
               <option value="nba">NBA</option>
               <option value="nhl">NHL</option>
               <option value="mlb">MLB</option>
-              <option value="nfl">NFL</option>
+              <option value="nfl" disabled value>
+                NFL (coming soon)
+              </option>
             </select>
             <label className="search-btn">Select Date:</label>
             <input type="date" onChange={this.update("date")}></input>
             <input className="submit" type="submit" value="Search" />
           </form>
-          {this.props.sports.mlb.sport.length !== 0 ||
-          this.props.sports.nba.sport.length === 0 ||
-          this.props.sports.nfl.sport.length === 0 ||
-          this.props.sports.nhl.sport.length === 0
-            ? newScoreCard
-            : null}
+          <div className="score-container-search">
+            {this.props.sports.mlb.sport.length !== 0 ||
+            this.props.sports.nba.sport.length !== 0 ||
+            this.props.sports.nfl.sport.length !== 0 ||
+            this.props.sports.nhl.sport.length !== 0
+              ? newScoreCard
+              : message}
+          </div>
           <Footer />
         </div>
       </div>
