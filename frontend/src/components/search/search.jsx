@@ -2,6 +2,7 @@ import React from "react";
 import "./search.css";
 import "../../reset.css";
 import { Link } from "react-router-dom";
+import Loader from "react-loader-spinner";
 import ScoreCard from "../score/ScoreCard";
 import Footer from "../footer/footer";
 
@@ -41,6 +42,7 @@ class Search extends React.Component {
         })
       )
       .catch((e) => console.log(e));
+    this.setState({ loading: false });
     this.props.clearAll();
   }
 
@@ -68,9 +70,18 @@ class Search extends React.Component {
     );
     // this is a temporary fix until we can style a card to display a message upon hitting the search page
     const message = (
-      <h3 style={{ color: "white" }}>
-        Please select a sport and date you want to search
-      </h3>
+      <div className="loading">
+        <h3>
+          Please select a sport and date
+          <Loader
+            type="Oval"
+            color="#00BFFF"
+            height={100}
+            width={100}
+            timeout={15000}
+          />
+        </h3>
+      </div>
     );
     return (
       <div className="homepage-container">
