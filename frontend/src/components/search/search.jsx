@@ -32,15 +32,17 @@ class Search extends React.Component {
     let newDate = this.state.date.split("-").join("/");
     this.props
       .scheduleObj(this.state.sportTrial, newDate)
-      .then(() =>
-        this.props.sports[this.state.sportTrial].sports.map((game, idx) => {
-          if (game.status !== "unnecessary") {
-            setTimeout(() => {
-              this.props.fetchGameScore(this.state.sportTrial, game.id);
-            }, 3000 * idx);
+      .then(() => {
+        return this.props.sports[this.state.sportTrial].sports.map(
+          (game, idx) => {
+            if (game.status !== "unnecessary" && game.status !== "postponed") {
+              setTimeout(() => {
+                this.props.fetchGameScore(this.state.sportTrial, game.id);
+              }, 3000 * idx);
+            }
           }
-        })
-      )
+        );
+      })
       .catch((e) => console.log(e));
     this.setState({ loading: false });
     this.props.clearAll();
@@ -104,15 +106,15 @@ class Search extends React.Component {
               <option disabled value>
                 Please select one
               </option>
-              <option value="0" disabled value>
+              {/* <option value="0" disabled value>
                 All (coming soon)
-              </option>
+              </option> */}
               <option value="nba">NBA</option>
               <option value="nhl">NHL</option>
               <option value="mlb">MLB</option>
-              <option value="nfl" disabled value>
+              {/* <option value="nfl" disabled value>
                 NFL (coming soon)
-              </option>
+              </option> */}
             </select>
             <label className="search-btn">Select Date:</label>
             <input type="date" onChange={this.update("date")}></input>

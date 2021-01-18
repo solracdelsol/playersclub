@@ -14,7 +14,10 @@ const nbaReducer = (oldState = { sport: [], sports: [] }, action) => {
           // progress: action.sport.data.quarter,
           home: action.sport.data.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
           away: action.sport.data.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-          scores: [action.sport.data.home.points, action.sport.data.away.points],
+          scores: [
+            action.sport.data.home.points,
+            action.sport.data.away.points,
+          ],
         }); // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
 
         return newState;

@@ -12,13 +12,13 @@ function ScoreCard({
   classNameAway,
   progress,
 }) {
-  if (status !== "unnecessary") {
+  if (status !== "unnecessary" || status !== "postponed") {
     /*this is to check if the game is actually happening */
     return (
       <div className="scores" key={idx}>
         <div className="game-info">
           <p className="game-time">{scheduled.toString()}</p>
-          <p className="game-status">{status}</p>
+          {/* <p className="game-status">{status}</p> */}
           <p className="game-number">{title}</p>
         </div>
         <p className="vs">VS</p>
