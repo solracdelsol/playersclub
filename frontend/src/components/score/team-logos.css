@@ -86,10 +86,98 @@
   margin: auto;
 }
 
+.Boston-Bruins {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Boston_Bruins.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Buffalo-Sabres {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Buffalo_Sabres.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Calgary-Flames {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Calgary_Flames.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Chicago-Blackhawks {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Chicago_Blackhawks.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Colorado-Avalanche {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Colorado_Avalanche.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Columbus-Blue-Jackets {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Columbus_Blue_Jackets.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Detroit-Red-Wings {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Detroit_Red_Wings.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
 .Edmonton-Oilers {
   position: relative;
   display: flex;
   background-image: url("../../images/team_logos/Edmonton_Oilers.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Los-Angeles-Kings {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Los_Angeles_Kings.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -112,6 +200,70 @@
   position: relative;
   display: flex;
   background-image: url("../../images/team_logos/Montreal_Canadiens.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Nashville-Predators {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Nashville_Predators.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.New-Jersey-Devils {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/New_Jersey_Devils.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.New-York-Rangers {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/New_York_Rangers.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Ottawa-Senators {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Ottawa_Senators.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+.Pittsburgh-Penguins {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Pittsburgh_Penguins.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+.Philadelphia-Flyers {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Philadelphia_Flyers.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -156,6 +308,27 @@
   position: relative;
   display: flex;
   background-image: url("../../images/team_logos/Vancouver_Canucks.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Washington-Capitals {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Washington_Capitals.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+.Winnipeg-Jets {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Winnipeg_Jets.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
