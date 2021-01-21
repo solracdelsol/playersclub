@@ -13,7 +13,7 @@ class Search extends React.Component {
     this.state = {
       sportTrial: "nba",
       date: "",
-      loading: true, // will use this to implement a loading spinner
+      loading: false, // will use this to implement a loading spinner
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -29,6 +29,15 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (
+      document.querySelector(".dateSelector").value === "" ||
+      document.querySelector(".options").value === "DEFAULT"
+    ) {
+      this.setState({ loading: false });
+      return "";
+    }
+
+    this.setState({ loading: true });
     let newDate = this.state.date.split("-").join("/");
     this.props
       .scheduleObj(this.state.sportTrial, newDate)
@@ -44,7 +53,6 @@ class Search extends React.Component {
         );
       })
       .catch((e) => console.log(e));
-    this.setState({ loading: false });
     this.props.clearAll();
   }
 
@@ -74,14 +82,18 @@ class Search extends React.Component {
     const message = (
       <div className="loading">
         <h3>
-          Please select a sport and date
-          <Loader
-            type="Oval"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            timeout={15000}
-          />
+          Please select a sport and date!!
+          {this.state.loading === false ? (
+            " "
+          ) : (
+            <Loader
+              type="Oval"
+              color="#00BFFF"
+              height={100}
+              width={100}
+              timeout={15000}
+            />
+          )}
         </h3>
       </div>
     );
@@ -97,6 +109,7 @@ class Search extends React.Component {
             </Link>
             <label className="search-btn">Choose a Sport:</label>
             <select
+              className="options"
               defaultValue={"DEFAULT"}
               onChange={this.update("sportTrial")}
             >
@@ -117,7 +130,11 @@ class Search extends React.Component {
               </option> */}
             </select>
             <label className="search-btn">Select Date:</label>
-            <input type="date" onChange={this.update("date")}></input>
+            <input
+              className="dateSelector"
+              type="date"
+              onChange={this.update("date")}
+            ></input>
             <input className="submit" type="submit" value="Search" />
           </form>
           <div className="score-container-search">

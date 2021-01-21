@@ -20,7 +20,7 @@ function ScoreCard({
           <p className="game-time">{scheduled}</p>
           <p className="game-status">
             {status === "inprogress"
-              ? progress
+              ? progress // if the game is in progress there's quarter and clock we
               : status === "closed" || status === "complete"
               ? "Final"
               : `Start: ${scheduled.split(" ").slice(-2).join(" ")}`}
@@ -29,11 +29,7 @@ function ScoreCard({
         </div>
         <p className="vs">VS</p>
         <div className="scores-away-container">
-          <div
-            className={
-              classNameAway ? classNameAway : awayName.split(" ").join("-")
-            }
-          ></div>
+          <div className={awayName.split(" ").join("-")}></div>
           <div className="scores-away">
             <p className="scores-away-team">Away: {awayName}</p>
             <p className="scores-away-score">
@@ -42,11 +38,7 @@ function ScoreCard({
           </div>
         </div>
         <div className="scores-home-container">
-          <div
-            className={
-              classNameHome ? classNameHome : homeName.split(" ").join("-")
-            }
-          ></div>
+          <div className={homeName.split(" ").join("-")}></div>
           <div className="scores-home">
             <p className="scores-home-team">Home: {homeName}</p>
             <p className="scores-home-score">
