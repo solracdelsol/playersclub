@@ -23,7 +23,7 @@ const nflReducer = (oldState = { sport: [], sports: [] }, action) => {
             new Date(action.sport.data.scheduled)
           ),
           status: action.sport.data.status,
-          progress: action.sport.data.quarter,
+          progress: `Quarter: ${action.sport.data.quarter} Clock: ${action.sport.data.clock}`,
           home: action.sport.data.summary.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
           away: action.sport.data.summary.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
           scores: [

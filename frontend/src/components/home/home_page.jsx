@@ -27,11 +27,15 @@ class HomePage extends React.Component {
   }
 
   getTodaysDate() {
+    // check if it's before noon and if so then return yesterday's games, otherwise today's
     let today = new Date();
-    let dd = String(today.getDate()).padStart(2, "0");
-    let mm = String(today.getMonth() + 1).padStart(2, "0");
-    let yyyy = today.getFullYear();
-    return (today = yyyy + "/" + mm + "/" + dd);
+    let yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    let day = today.getHours() > 12 ? today : yesterday;
+    let dd = String(day.getDate()).padStart(2, "0");
+    let mm = String(day.getMonth() + 1).padStart(2, "0");
+    let yyyy = day.getFullYear();
+    return `${yyyy}/${mm}/${dd}`;
   }
 
   render() {

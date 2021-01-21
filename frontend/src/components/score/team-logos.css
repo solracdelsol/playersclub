@@ -64,6 +64,105 @@
   margin: auto;
 }
 
+.Anaheim-Ducks {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Anaheim_Ducks.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Arizona-Coyotes {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Arizona_Coyotes.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Edmonton-Oilers {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Edmonton_Oilers.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Minnesota-Wild {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Minnesota_Wild.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Montreal-Canadiens {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Montreal_Canadiens.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.San-Jose-Sharks {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/San_Jose_Sharks.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.St\.-Louis-Blues {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/St_Louis_Blues.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Toronto-Maple-Leafs {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Toronto_Maple_Leafs.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Vancouver-Canucks {
+  position: relative;
+  display: flex;
+  background-image: url("../../images/team_logos/Vancouver_Canucks.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
 .Cardinals {
   position: relative;
   display: flex;
@@ -800,5 +899,3 @@
   height: 40%;
   margin: auto;
 }
-
-

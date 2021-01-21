@@ -18,7 +18,13 @@ function ScoreCard({
       <div className="scores" key={idx}>
         <div className="game-info">
           <p className="game-time">{scheduled}</p>
-          {/* <p className="game-status">{status}</p> */}
+          <p className="game-status">
+            {status === "inprogress"
+              ? progress
+              : status === "closed" || status === "complete"
+              ? "Final"
+              : `Start: ${scheduled.split(" ").slice(-2).join(" ")}`}
+          </p>
           <p className="game-number">{title}</p>
         </div>
         <p className="vs">VS</p>
@@ -31,7 +37,7 @@ function ScoreCard({
           <div className="scores-away">
             <p className="scores-away-team">Away: {awayName}</p>
             <p className="scores-away-score">
-              {scores[1] === 0 ? " " : scores[1]}
+              {scores[1] === undefined ? " " : scores[1]}
             </p>
           </div>
         </div>
@@ -44,7 +50,7 @@ function ScoreCard({
           <div className="scores-home">
             <p className="scores-home-team">Home: {homeName}</p>
             <p className="scores-home-score">
-              {scores[0] === 0 ? " " : scores[0]}
+              {scores[0] === undefined ? " " : scores[0]}
             </p>
           </div>
         </div>

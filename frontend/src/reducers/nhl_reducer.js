@@ -23,7 +23,7 @@ const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
             new Date(action.sport.data.scheduled)
           ),
           status: action.sport.data.status,
-          // progress: action.sport.data.quarter,
+          progress: `Period: ${action.sport.data.period} Clock: ${action.sport.data.clock}`,
           home: action.sport.data.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
           away: action.sport.data.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
           scores: [
