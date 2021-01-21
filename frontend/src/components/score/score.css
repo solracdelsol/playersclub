@@ -161,3 +161,22 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
+
+.score-container-search {
+  position: relative;
+  width: 80%;
+  height: 70%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1.5px solid #fd5901;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: auto;
+  margin-left: 10%;
+  /* animation-name: score;
+    animation-duration: 7s;
+    animation-delay: 3s;
+    animation-fill-mode: forward;
+    animation-play-state: ease-in-out; */
+}

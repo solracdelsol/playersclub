@@ -132,3 +132,19 @@ select {
   border: 2px solid #fd5901;
   font-size: 15px;
 }
+
+.loading {
+  position: relative;
+  display: flex;
+  width: 99%;
+  height: 45%;
+  flex-direction: row;
+  background: white;
+  border-radius: 10px;
+  border: 1.5px solid black;
+  padding-top: 10px;
+  margin-top: 10px;
+  margin-left: 1px;
+  align-items: center;
+  justify-content: space-around;
+}

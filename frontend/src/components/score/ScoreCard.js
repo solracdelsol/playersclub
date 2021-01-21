@@ -12,39 +12,37 @@ function ScoreCard({
   classNameAway,
   progress,
 }) {
-  if (status !== "unnecessary") {
+  if (status !== "unnecessary" || status !== "postponed") {
     /*this is to check if the game is actually happening */
     return (
       <div className="scores" key={idx}>
         <div className="game-info">
-          <p className="game-time">{scheduled.toString()}</p>
-          <p className="game-status">{status}</p>
+          <p className="game-time">{scheduled}</p>
+          <p className="game-status">
+            {status === "inprogress"
+              ? progress // if the game is in progress there's quarter and clock we
+              : status === "closed" || status === "complete"
+              ? "Final"
+              : `Start: ${scheduled.split(" ").slice(-2).join(" ")}`}
+          </p>
           <p className="game-number">{title}</p>
         </div>
         <p className="vs">VS</p>
         <div className="scores-away-container">
-          <div
-            className={
-              classNameAway ? classNameAway : awayName.split(" ").join("-")
-            }
-          ></div>
+          <div className={awayName.split(" ").join("-")}></div>
           <div className="scores-away">
             <p className="scores-away-team">Away: {awayName}</p>
             <p className="scores-away-score">
-              {scores[1] === 0 ? " " : scores[1]}
+              {scores[1] === undefined ? " " : scores[1]}
             </p>
           </div>
         </div>
         <div className="scores-home-container">
-          <div
-            className={
-              classNameHome ? classNameHome : homeName.split(" ").join("-")
-            }
-          ></div>
+          <div className={homeName.split(" ").join("-")}></div>
           <div className="scores-home">
             <p className="scores-home-team">Home: {homeName}</p>
             <p className="scores-home-score">
-              {scores[0] === 0 ? " " : scores[0]}
+              {scores[0] === undefined ? " " : scores[0]}
             </p>
           </div>
         </div>

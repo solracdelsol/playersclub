@@ -1,6 +1,16 @@
 import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 
 const nflReducer = (oldState = { sport: [], sports: [] }, action) => {
+  const options = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    weekday: "long",
+    hour: "numeric",
+    minute: "numeric",
+  };
+
+  const locale = navigator.language;
   // Object.freeze(oldState); // dont need this if we are using array default state
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState); //preserves oldState by making a copy we manipulate
@@ -9,9 +19,11 @@ const nflReducer = (oldState = { sport: [], sports: [] }, action) => {
       if (action.sport.config.url.split("/")[4] === "nfl") {
         newState.sport.push({
           id: action.sport.data.id,
-          scheduled: new Date(action.sport.data.scheduled),
+          scheduled: Intl.DateTimeFormat(locale, options).format(
+            new Date(action.sport.data.scheduled)
+          ),
           status: action.sport.data.status,
-          progress: action.sport.data.quarter,
+          progress: `Quarter: ${action.sport.data.quarter} Clock: ${action.sport.data.clock}`,
           home: action.sport.data.summary.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
           away: action.sport.data.summary.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
           scores: [
@@ -42,7 +54,9 @@ const nflReducer = (oldState = { sport: [], sports: [] }, action) => {
             ) {
               newState.sports.push({
                 id: game.id,
-                scheduled: new Date(game.scheduled),
+                scheduled: Intl.DateTimeFormat(locale, options).format(
+                  new Date(game.scheduled)
+                ),
                 // title: game.title, // "Game 4"
                 status: game.status, // CHECK OTHER SPORTS TO SEE IF GAMES ARE NECESSARY
                 home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE

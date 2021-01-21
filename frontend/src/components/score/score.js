@@ -10,77 +10,38 @@ class Score extends React.Component {
   }
 
   render() {
+    const { sports } = this.props;
+    let sportNames = ["mlb", "nfl", "nba", "nhl"];
     if (
-      this.props.sports.mlb.sports.length !== 0 ||
-      this.props.sports.nba.sports.length !== 0 ||
-      this.props.sports.nfl.sports.length !== 0 ||
-      this.props.sports.nhl.sports.length !== 0
+      sports.mlb.sports.length !== 0 ||
+      sports.nba.sports.length !== 0 ||
+      sports.nfl.sports.length !== 0 ||
+      sports.nhl.sports.length !== 0
     ) {
       return (
         <div className="score-container">
           <p className="score-header">Latest Scores</p>
-          {this.props.sports.nfl.sport.map((gm, idx) => {
-            return (
-              <ScoreCard
-                key={idx}
-                status={gm.status}
-                scheduled={gm.scheduled}
-                progress={gm.progress}
-                homeName={gm.home.market + " " + gm.home.name}
-                awayName={gm.away.market + " " + gm.away.name}
-                title={gm.title}
-                scores={gm.scores}
-                gameId={gm.id}
-              />
-            );
-          })}
-          {this.props.sports.nba.sport.map((gm, idx) => {
-            return (
-              <ScoreCard
-                key={idx}
-                status={gm.status}
-                scheduled={gm.scheduled}
-                progress={gm.progress}
-                homeName={gm.home.market + " " + gm.home.name}
-                awayName={gm.away.market + " " + gm.away.name}
-                title={gm.title}
-                scores={gm.scores}
-                gameId={gm.id}
-              />
-            );
-          })}
-          {this.props.sports.nhl.sport.map((gm, idx) => {
-            return (
-              <ScoreCard
-                key={idx}
-                status={gm.status}
-                scheduled={gm.scheduled}
-                progress={gm.progress}
-                homeName={gm.home.name}
-                awayName={gm.away.name}
-                title={gm.title}
-                scores={gm.scores}
-                gameId={gm.id}
-              />
-            );
-          })}
-          {this.props.sports.mlb.sport.map((gm, idx) => {
-            return (
-              <ScoreCard
-                key={idx}
-                status={gm.status}
-                progress={gm.progress}
-                scheduled={gm.scheduled}
-                homeName={gm.home.market + " " + gm.home.name}
-                awayName={gm.away.market + " " + gm.away.name}
-                title={gm.title}
-                scores={gm.scores}
-                classNameAway={gm.away.name.split(" ").join("-")}
-                classNameHome={gm.home.name.split(" ").join("-")}
-                gameId={gm.id}
-              />
-            );
-          })}
+          {sportNames.map((name) =>
+            sports[name].sport.map((gm, idx) => {
+              if (gm.status !== "postponed" && gm.status !== "unnecessary") {
+                return (
+                  <ScoreCard
+                    key={idx}
+                    status={gm.status}
+                    scheduled={gm.scheduled}
+                    progress={gm.progress}
+                    homeName={gm.home.market + " " + gm.home.name}
+                    awayName={gm.away.market + " " + gm.away.name}
+                    title={gm.title}
+                    scores={gm.scores}
+                    gameId={gm.id}
+                  />
+                );
+              } else {
+                return null;
+              }
+            })
+          )}
         </div>
       );
     } else {
