@@ -1,6 +1,14 @@
 import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 
 const mlbReducer = (oldState = { sport: [], sports: [] }, action) => {
+  const options = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    weekday: "long",
+    hour: "numeric",
+    minute: "numeric",
+  };
   // Object.freeze(oldState); // dont need this if we are using array default state
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState); //preserves oldState by making a copy we manipulate
@@ -9,7 +17,9 @@ const mlbReducer = (oldState = { sport: [], sports: [] }, action) => {
       if (action.sport.config.url.split("/")[4] === "mlb") {
         newState.sport.push({
           id: action.sport.data.game.id,
-          scheduled: new Date(action.sport.data.game.scheduled),
+          scheduled: Intl.DateTimeFormat("en-US", options).format(
+            new Date(action.sport.data.game.scheduled)
+          ),
           status: action.sport.data.game.status,
           // progress: action.sport.data.game.outcome.current_inning,
           home: action.sport.data.game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
@@ -34,7 +44,9 @@ const mlbReducer = (oldState = { sport: [], sports: [] }, action) => {
 
         action.sports.data.games.forEach((game) =>
           newState.sports.push({
-            scheduled: new Date(game.scheduled),
+            scheduled: Intl.DateTimeFormat("en-US", options).format(
+              new Date(game.scheduled)
+            ),
             id: game.id,
             title: game.ps_round, // "NLWC" THIS KEY IS ONLY AVAILABLE DURING THE PLAYOFFS
             status: game.status, // CHECK OTHER SPORTS TO SEE IF GAMES ARE NECESSARY

@@ -17,7 +17,7 @@ function ScoreCard({
     return (
       <div className="scores" key={idx}>
         <div className="game-info">
-          <p className="game-time">{scheduled.toString()}</p>
+          <p className="game-time">{scheduled}</p>
           {/* <p className="game-status">{status}</p> */}
           <p className="game-number">{title}</p>
         </div>

@@ -1,6 +1,14 @@
 import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
 
 const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
+  const options = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    weekday: "long",
+    hour: "numeric",
+    minute: "numeric",
+  };
   // Object.freeze(oldState); // dont need this if we are using array default state
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState); //preserves oldState by making a copy we manipulate
@@ -9,12 +17,17 @@ const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
       if (action.sport.config.url.split("/")[4] === "nhl") {
         newState.sport.push({
           id: action.sport.data.id,
-          scheduled: new Date(action.sport.data.scheduled),
+          scheduled: Intl.DateTimeFormat("en-US", options).format(
+            new Date(action.sport.data.scheduled)
+          ),
           status: action.sport.data.status,
           // progress: action.sport.data.quarter,
           home: action.sport.data.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
           away: action.sport.data.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-          scores: [action.sport.data.home.points, action.sport.data.away.points],
+          scores: [
+            action.sport.data.home.points,
+            action.sport.data.away.points,
+          ],
         }); // ARRAY OF POINTS, separate from home and away to normalize the object keys across all sports JSON
 
         return newState;
@@ -32,7 +45,9 @@ const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
         action.sports.data.games.forEach((game) =>
           newState.sports.push({
             id: game.id, //will allow us to key into the individual games
-            scheduled: new Date(game.scheduled),
+            scheduled: Intl.DateTimeFormat("en-US", options).format(
+              new Date(game.scheduled)
+            ),
             title: game.title, // "Game 4"
             status: game.status,
             home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
