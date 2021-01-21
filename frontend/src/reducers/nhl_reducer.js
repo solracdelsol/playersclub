@@ -9,6 +9,8 @@ const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
     hour: "numeric",
     minute: "numeric",
   };
+
+  const locale = navigator.language;
   // Object.freeze(oldState); // dont need this if we are using array default state
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState); //preserves oldState by making a copy we manipulate
@@ -17,7 +19,7 @@ const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
       if (action.sport.config.url.split("/")[4] === "nhl") {
         newState.sport.push({
           id: action.sport.data.id,
-          scheduled: Intl.DateTimeFormat("en-US", options).format(
+          scheduled: Intl.DateTimeFormat(locale, options).format(
             new Date(action.sport.data.scheduled)
           ),
           status: action.sport.data.status,
@@ -45,7 +47,7 @@ const nhlReducer = (oldState = { sport: [], sports: [] }, action) => {
         action.sports.data.games.forEach((game) =>
           newState.sports.push({
             id: game.id, //will allow us to key into the individual games
-            scheduled: Intl.DateTimeFormat("en-US", options).format(
+            scheduled: Intl.DateTimeFormat(locale, options).format(
               new Date(game.scheduled)
             ),
             title: game.title, // "Game 4"
