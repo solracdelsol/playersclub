@@ -8,8 +8,6 @@ function ScoreCard({
   title,
   scores,
   idx,
-  classNameHome,
-  classNameAway,
   progress,
 }) {
   if (status !== "unnecessary" || status !== "postponed") {
@@ -20,8 +18,8 @@ function ScoreCard({
           <p className="game-time">{scheduled}</p>
           <p className="game-status">
             {status === "inprogress"
-              ? progress // if the game is in progress there's quarter and clock we
-              : status === "closed" || status === "complete"
+              ? progress // if the game is in progress there's quarter and clock we have access to
+              : status === "closed" || status === "complete" // else it's closed or complete we can return 'final'
               ? "Final"
               : `Start: ${scheduled.split(" ").slice(-2).join(" ")}`}
           </p>
