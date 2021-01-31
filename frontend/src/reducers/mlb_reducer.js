@@ -1,13 +1,13 @@
-import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from "../actions/sport_actions";
+import { RECEIVE_ONE, RECEIVE_ALL, CLEAR_ALL } from '../actions/sport_actions';
 
 const mlbReducer = (oldState = { sport: [], sports: [] }, action) => {
   const options = {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
-    hour: "numeric",
-    minute: "numeric",
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    weekday: 'long',
+    hour: 'numeric',
+    minute: 'numeric',
   };
 
   const locale = navigator.language;
@@ -16,7 +16,7 @@ const mlbReducer = (oldState = { sport: [], sports: [] }, action) => {
   let newState = Object.assign({}, oldState); //preserves oldState by making a copy we manipulate
   switch (action.type) {
     case RECEIVE_ONE:
-      if (action.sport.config.url.split("/")[4] === "mlb") {
+      if (action.sport.config.url.split('/')[4] === 'mlb') {
         newState.sport.push({
           id: action.sport.data.game.id,
           scheduled: Intl.DateTimeFormat(locale, options).format(
@@ -38,13 +38,13 @@ const mlbReducer = (oldState = { sport: [], sports: [] }, action) => {
       }
     case RECEIVE_ALL:
       if (
-        action.sports.data.hasOwnProperty("league") &&
-        action.sports.data.league.alias === "MLB" &&
+        action.sports.data.hasOwnProperty('league') &&
+        action.sports.data.league.alias === 'MLB' &&
         action.sports.data.games !== undefined
       ) {
         //FINAL STATE LOOKS LIKE [ {home,away, [scores]}, {home, away, [scores]}, {home, away, [scores]} ]
 
-        action.sports.data.games.forEach((game) =>
+        action.sports.data.games.forEach(game =>
           newState.sports.push({
             scheduled: Intl.DateTimeFormat(locale, options).format(
               new Date(game.scheduled)
@@ -54,7 +54,7 @@ const mlbReducer = (oldState = { sport: [], sports: [] }, action) => {
             status: game.status, // CHECK OTHER SPORTS TO SEE IF GAMES ARE NECESSARY
             home: game.home, // FROM HERE YOU CAN CALL ANY HOME TEAM VALUE
             away: game.away, // FROM HERE YOU CAN CALL ANY AWAY TEAM VALUE
-            scores: [game.home.runs, game.away.runs], // ARRAY OF POINTS
+            venue: game.venue.name, // venue
           })
         );
 

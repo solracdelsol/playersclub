@@ -804,7 +804,7 @@
   margin: auto;
 }
 
-.Los-Angeles-Clippers {
+.LA-Clippers {
   position: relative;
   display: flex;
   background-image: url('../../images/team_logos/Los_Angeles_Clippers.svg');
@@ -852,6 +852,17 @@
   position: relative;
   display: flex;
   background-image: url('../../images/team_logos/Miami_Heat.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Minnesota-Timberwolves {
+  position: relative;
+  display: flex;
+  background-image: url('../../images/team_logos/Minnesota_Timberwolves.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -969,7 +980,7 @@
   margin: auto;
 }
 
-.Utah_Jazz {
+.Utah-Jazz {
   position: relative;
   display: flex;
   background-image: url('../../images/team_logos/Utah_Jazz.svg');
@@ -980,7 +991,7 @@
   margin: auto;
 }
 
-.Washington_Wizards {
+.Washington-Wizards {
   position: relative;
   display: flex;
   background-image: url('../../images/team_logos/Washington_Wizards.svg');
