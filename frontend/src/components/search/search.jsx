@@ -1,18 +1,18 @@
-import React from "react";
-import "./search.css";
-import "../../reset.css";
-import { Link } from "react-router-dom";
-import Loader from "react-loader-spinner";
-import ScoreCard from "../score/ScoreCard";
-import Footer from "../footer/footer";
+import React from 'react';
+import './search.css';
+import '../../reset.css';
+import { Link } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
+import ScoreCard from '../score/ScoreCard';
+import Footer from '../footer/footer';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      sportTrial: "nba",
-      date: "",
+      sportTrial: 'nba',
+      date: '',
       loading: false, // will use this to implement a loading spinner
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,21 +30,21 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (
-      document.querySelector(".dateSelector").value === "" ||
-      document.querySelector(".options").value === "DEFAULT"
+      document.querySelector('.dateSelector').value === '' ||
+      document.querySelector('.options').value === 'DEFAULT'
     ) {
       this.setState({ loading: false });
-      return "";
+      return '';
     }
 
     this.setState({ loading: true });
-    let newDate = this.state.date.split("-").join("/");
+    let newDate = this.state.date.split('-').join('/');
     this.props
       .scheduleObj(this.state.sportTrial, newDate)
       .then(() => {
         return this.props.sports[this.state.sportTrial].sports.map(
           (game, idx) => {
-            if (game.status !== "unnecessary" && game.status !== "postponed") {
+            if (game.status !== 'unnecessary' && game.status !== 'postponed') {
               setTimeout(() => {
                 this.props.fetchGameScore(this.state.sportTrial, game.id);
               }, 3000 * idx);
@@ -52,25 +52,25 @@ class Search extends React.Component {
           }
         );
       })
-      .catch((e) => console.log(e));
+      .catch(e => console.log(e));
     this.props.clearAll();
   }
 
   update(field) {
-    return (e) => this.setState({ [field]: e.target.value });
+    return e => this.setState({ [field]: e.target.value });
   }
 
   render() {
     const newScoreCard = this.props.sports[this.state.sportTrial].sport.map(
-      (game) => {
+      game => {
         return (
           <ScoreCard
             key={game.id}
             status={game.status}
             progress={game.progress}
             scheduled={game.scheduled}
-            homeName={game.home.market + " " + game.home.name}
-            awayName={game.away.market + " " + game.away.name}
+            homeName={game.home.market + ' ' + game.home.name}
+            awayName={game.away.market + ' ' + game.away.name}
             title={game.title}
             scores={game.scores}
             gameId={game.id}
@@ -84,7 +84,7 @@ class Search extends React.Component {
         <h3>
           Please select a sport and date!!
           {this.state.loading === false ? (
-            " "
+            ' '
           ) : (
             <Loader
               type="Oval"
@@ -110,8 +110,8 @@ class Search extends React.Component {
             <label className="search-btn">Choose a Sport:</label>
             <select
               className="options"
-              defaultValue={"DEFAULT"}
-              onChange={this.update("sportTrial")}
+              defaultValue={'DEFAULT'}
+              onChange={this.update('sportTrial')}
             >
               <option value="DEFAULT" disabled hidden>
                 Sports
@@ -119,13 +119,13 @@ class Search extends React.Component {
               <option disabled value>
                 Please select one
               </option>
-              {/* <option value="0" disabled value>
+              {/* <option value="all" value>
                 All (coming soon)
               </option> */}
               <option value="nba">NBA</option>
               <option value="nhl">NHL</option>
               <option value="mlb">MLB</option>
-              {/* <option value="nfl" disabled value>
+              {/* <option value="nfl" value>
                 NFL (coming soon)
               </option> */}
             </select>
@@ -133,7 +133,7 @@ class Search extends React.Component {
             <input
               className="dateSelector"
               type="date"
-              onChange={this.update("date")}
+              onChange={this.update('date')}
             ></input>
             <input className="submit" type="submit" value="Search" />
           </form>

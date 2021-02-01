@@ -3,7 +3,7 @@
 .Anaheim-Ducks {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Anaheim_Ducks.svg");
+  background-image: url('../../images/team_logos/Anaheim_Ducks.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -14,7 +14,7 @@
 .Arizona-Coyotes {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Arizona_Coyotes.svg");
+  background-image: url('../../images/team_logos/Arizona_Coyotes.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -25,7 +25,7 @@
 .Boston-Bruins {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Boston_Bruins.svg");
+  background-image: url('../../images/team_logos/Boston_Bruins.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -36,7 +36,7 @@
 .Buffalo-Sabres {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Buffalo_Sabres.svg");
+  background-image: url('../../images/team_logos/Buffalo_Sabres.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -47,7 +47,18 @@
 .Calgary-Flames {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Calgary_Flames.svg");
+  background-image: url('../../images/team_logos/Calgary_Flames.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Carolina-Hurricanes {
+  position: relative;
+  display: flex;
+  background-image: url('../../images/team_logos/Carolina_Hurricanes.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -58,7 +69,7 @@
 .Chicago-Blackhawks {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Chicago_Blackhawks.svg");
+  background-image: url('../../images/team_logos/Chicago_Blackhawks.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -69,7 +80,7 @@
 .Colorado-Avalanche {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Colorado_Avalanche.svg");
+  background-image: url('../../images/team_logos/Colorado_Avalanche.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -80,7 +91,7 @@
 .Columbus-Blue-Jackets {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Columbus_Blue_Jackets.svg");
+  background-image: url('../../images/team_logos/Columbus_Blue_Jackets.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -91,7 +102,7 @@
 .Dallas-Stars {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Dallas_Stars.svg");
+  background-image: url('../../images/team_logos/Dallas_Stars.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -102,7 +113,7 @@
 .Detroit-Red-Wings {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Detroit_Red_Wings.svg");
+  background-image: url('../../images/team_logos/Detroit_Red_Wings.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -113,7 +124,18 @@
 .Edmonton-Oilers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Edmonton_Oilers.svg");
+  background-image: url('../../images/team_logos/Edmonton_Oilers.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Florida-Panthers {
+  position: relative;
+  display: flex;
+  background-image: url('../../images/team_logos/Florida_Panthers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -124,7 +146,7 @@
 .Los-Angeles-Kings {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Los_Angeles_Kings.svg");
+  background-image: url('../../images/team_logos/Los_Angeles_Kings.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -135,7 +157,7 @@
 .Minnesota-Wild {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Minnesota_Wild.svg");
+  background-image: url('../../images/team_logos/Minnesota_Wild.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -146,7 +168,7 @@
 .Montreal-Canadiens {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Montreal_Canadiens.svg");
+  background-image: url('../../images/team_logos/Montreal_Canadiens.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -157,7 +179,7 @@
 .Nashville-Predators {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Nashville_Predators.svg");
+  background-image: url('../../images/team_logos/Nashville_Predators.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -168,7 +190,7 @@
 .New-Jersey-Devils {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_Jersey_Devils.svg");
+  background-image: url('../../images/team_logos/New_Jersey_Devils.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -179,7 +201,7 @@
 .New-York-Islanders {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_York_Islanders.svg");
+  background-image: url('../../images/team_logos/New_York_Islanders.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -190,7 +212,7 @@
 .New-York-Rangers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_York_Rangers.svg");
+  background-image: url('../../images/team_logos/New_York_Rangers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -201,7 +223,7 @@
 .Ottawa-Senators {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Ottawa_Senators.svg");
+  background-image: url('../../images/team_logos/Ottawa_Senators.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -211,7 +233,7 @@
 .Pittsburgh-Penguins {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Pittsburgh_Penguins.svg");
+  background-image: url('../../images/team_logos/Pittsburgh_Penguins.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -221,7 +243,7 @@
 .Philadelphia-Flyers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Philadelphia_Flyers.svg");
+  background-image: url('../../images/team_logos/Philadelphia_Flyers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -232,7 +254,7 @@
 .San-Jose-Sharks {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/San_Jose_Sharks.svg");
+  background-image: url('../../images/team_logos/San_Jose_Sharks.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -243,7 +265,7 @@
 .St\.-Louis-Blues {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/St_Louis_Blues.svg");
+  background-image: url('../../images/team_logos/St_Louis_Blues.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -254,7 +276,7 @@
 .Tampa-Bay-Lightning {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Tampa_Bay_Lightning.svg");
+  background-image: url('../../images/team_logos/Tampa_Bay_Lightning.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -265,7 +287,7 @@
 .Toronto-Maple-Leafs {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Toronto_Maple_Leafs.svg");
+  background-image: url('../../images/team_logos/Toronto_Maple_Leafs.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -276,7 +298,7 @@
 .Vancouver-Canucks {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Vancouver_Canucks.svg");
+  background-image: url('../../images/team_logos/Vancouver_Canucks.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -287,7 +309,7 @@
 .Vegas-Golden-Knights {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Vegas_Golden_Knights.svg");
+  background-image: url('../../images/team_logos/Vegas_Golden_Knights.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -298,7 +320,7 @@
 .Washington-Capitals {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Washington_Capitals.svg");
+  background-image: url('../../images/team_logos/Washington_Capitals.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -308,7 +330,7 @@
 .Winnipeg-Jets {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Winnipeg_Jets.svg");
+  background-image: url('../../images/team_logos/Winnipeg_Jets.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -321,7 +343,7 @@
 .Atlanta-Braves {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Atlanta_Braves.svg");
+  background-image: url('../../images/team_logos/Atlanta_Braves.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -332,7 +354,7 @@
 .Arizona-Diamondbacks {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Arizona_Diamondbacks.svg");
+  background-image: url('../../images/team_logos/Arizona_Diamondbacks.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -343,7 +365,7 @@
 .Baltimore-Orioles {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Baltimore_Orioles.svg");
+  background-image: url('../../images/team_logos/Baltimore_Orioles.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -354,7 +376,7 @@
 .Boston-Red-Sox {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Boston_Red_Sox.svg");
+  background-image: url('../../images/team_logos/Boston_Red_Sox.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -365,7 +387,7 @@
 .Chicago-Cubs {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Chicago_Cubs.svg");
+  background-image: url('../../images/team_logos/Chicago_Cubs.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -376,7 +398,7 @@
 .Chicago-White-Sox {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Chicago_White_Sox.svg");
+  background-image: url('../../images/team_logos/Chicago_White_Sox.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -387,7 +409,7 @@
 .Cincinnati-Reds {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Cincinnati_Reds.svg");
+  background-image: url('../../images/team_logos/Cincinnati_Reds.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -398,7 +420,7 @@
 .Cleveland-Indians {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Cleveland_Indians.svg");
+  background-image: url('../../images/team_logos/Cleveland_Indians.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -409,7 +431,7 @@
 .Colorado-Rockies {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Colorado_Rockies.svg");
+  background-image: url('../../images/team_logos/Colorado_Rockies.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -420,7 +442,7 @@
 .Detroit-Tigers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Detroit_Tigers.svg");
+  background-image: url('../../images/team_logos/Detroit_Tigers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -431,7 +453,7 @@
 .Houston-Astros {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Houston-Astros.svg");
+  background-image: url('../../images/team_logos/Houston-Astros.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -442,7 +464,7 @@
 .Kansas-City-Royals {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Kansas_City_Royals.svg");
+  background-image: url('../../images/team_logos/Kansas_City_Royals.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -453,7 +475,7 @@
 .Los-Angeles-Angels {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Los_Angeles_Angels.svg");
+  background-image: url('../../images/team_logos/Los_Angeles_Angels.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -464,7 +486,7 @@
 .Los-Angeles-Dodgers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Los_Angeles_Dodgers.svg");
+  background-image: url('../../images/team_logos/Los_Angeles_Dodgers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -475,7 +497,7 @@
 .Miami-Marlins {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Miami_Marlins.svg");
+  background-image: url('../../images/team_logos/Miami_Marlins.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -486,7 +508,7 @@
 .Milwaukee-Brewers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Milwaukee_Brewers.svg");
+  background-image: url('../../images/team_logos/Milwaukee_Brewers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -497,7 +519,7 @@
 .Minnesota-Twins {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Minnesota_Twins.svg");
+  background-image: url('../../images/team_logos/Minnesota_Twins.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -508,7 +530,7 @@
 .New-York-Mets {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_York_Mets.svg");
+  background-image: url('../../images/team_logos/New_York_Mets.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -519,7 +541,7 @@
 .New-York-Yankees {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_York_Yankees.svg");
+  background-image: url('../../images/team_logos/New_York_Yankees.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -530,7 +552,7 @@
 .Oakland-Athletics {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Oakland_Athletics.svg");
+  background-image: url('../../images/team_logos/Oakland_Athletics.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -541,7 +563,7 @@
 .Pittsburgh-Pirates {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Pittsburgh_Pirates.svg");
+  background-image: url('../../images/team_logos/Pittsburgh_Pirates.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -552,7 +574,7 @@
 .Philadelphia-Phillies {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Philadelphia_Phillies.svg");
+  background-image: url('../../images/team_logos/Philadelphia_Phillies.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -563,7 +585,7 @@
 .San-Diego-Padres {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/San_Diego_Padres.svg");
+  background-image: url('../../images/team_logos/San_Diego_Padres.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -574,7 +596,7 @@
 .San-Francisco-Giants {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/San_Francisco_Giants.svg");
+  background-image: url('../../images/team_logos/San_Francisco_Giants.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -585,7 +607,7 @@
 .Seattle-Mariners {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Seattle_Mariners.svg");
+  background-image: url('../../images/team_logos/Seattle_Mariners.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -596,7 +618,7 @@
 .St\.-Louis-Cardinals {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/St_Louis_Cardinals.svg");
+  background-image: url('../../images/team_logos/St_Louis_Cardinals.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -607,7 +629,7 @@
 .Tampa-Bay-Rays {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Tampa_Bay_Rays.svg");
+  background-image: url('../../images/team_logos/Tampa_Bay_Rays.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -618,7 +640,7 @@
 .Texas-Rangers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Texas_Rangers.svg");
+  background-image: url('../../images/team_logos/Texas_Rangers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -629,7 +651,7 @@
 .Toronto-Blue-Jays {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Toronto_Blue_Jays.svg");
+  background-image: url('../../images/team_logos/Toronto_Blue_Jays.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -640,7 +662,7 @@
 .Washington-Nationals {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Washington_Nationals.svg");
+  background-image: url('../../images/team_logos/Washington_Nationals.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -653,7 +675,7 @@
 .Atlanta-Hawks {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Atlanta_Hawks.svg");
+  background-image: url('../../images/team_logos/Atlanta_Hawks.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -664,7 +686,7 @@
 .Boston-Celtics {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Boston_Celtics.svg");
+  background-image: url('../../images/team_logos/Boston_Celtics.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -675,7 +697,7 @@
 .Brooklyn-Nets {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Brooklyn_Nets.svg");
+  background-image: url('../../images/team_logos/Brooklyn_Nets.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -686,7 +708,7 @@
 .Charlotte-Hornets {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Charlotte_Hornets.svg");
+  background-image: url('../../images/team_logos/Charlotte_Hornets.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -697,7 +719,7 @@
 .Chicago-Bulls {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Chicago_Bulls.svg");
+  background-image: url('../../images/team_logos/Chicago_Bulls.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -708,7 +730,7 @@
 .Cleveland-Cavaliers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Cleveland_Cavaliers.svg");
+  background-image: url('../../images/team_logos/Cleveland_Cavaliers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -719,7 +741,7 @@
 .Dallas-Mavericks {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Dallas_Mavericks.svg");
+  background-image: url('../../images/team_logos/Dallas_Mavericks.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -730,7 +752,7 @@
 .Detroit-Pistons {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Detroit_Pistons.svg");
+  background-image: url('../../images/team_logos/Detroit_Pistons.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -741,7 +763,7 @@
 .Denver-Nuggets {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Denver_Nuggets.svg");
+  background-image: url('../../images/team_logos/Denver_Nuggets.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -752,7 +774,7 @@
 .Golden-State-Warriors {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Golden_State_Warriors.svg");
+  background-image: url('../../images/team_logos/Golden_State_Warriors.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -763,7 +785,7 @@
 .Houston-Rockets {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Houston_Rockets.svg");
+  background-image: url('../../images/team_logos/Houston_Rockets.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -774,7 +796,7 @@
 .Indiana-Pacers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Indiana_Pacers.svg");
+  background-image: url('../../images/team_logos/Indiana_Pacers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -782,10 +804,10 @@
   margin: auto;
 }
 
-.Los-Angeles-Clippers {
+.LA-Clippers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Los_Angeles_Clippers.svg");
+  background-image: url('../../images/team_logos/Los_Angeles_Clippers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -796,7 +818,7 @@
 .Los-Angeles-Lakers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Los_Angeles_Lakers.svg");
+  background-image: url('../../images/team_logos/Los_Angeles_Lakers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -807,7 +829,7 @@
 .Memphis-Grizzlies {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Memphis_Grizzlies.svg");
+  background-image: url('../../images/team_logos/Memphis_Grizzlies.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -818,7 +840,7 @@
 .Milwaukee-Bucks {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Milwaukee_Bucks.svg");
+  background-image: url('../../images/team_logos/Milwaukee_Bucks.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -829,7 +851,18 @@
 .Miami-Heat {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Miami_Heat.svg");
+  background-image: url('../../images/team_logos/Miami_Heat.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
+.Minnesota-Timberwolves {
+  position: relative;
+  display: flex;
+  background-image: url('../../images/team_logos/Minnesota_Timberwolves.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -840,7 +873,7 @@
 .New-Orleans-Pelicans {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_Orleans_Pelicans.svg");
+  background-image: url('../../images/team_logos/New_Orleans_Pelicans.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -851,7 +884,7 @@
 .New-York-Knicks {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_York_Knicks.svg");
+  background-image: url('../../images/team_logos/New_York_Knicks.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -862,101 +895,111 @@
 .Oklahoma-City-Thunder {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Oklahoma_City_Thunder.svg");
+  background-image: url('../../images/team_logos/Oklahoma_City_Thunder.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
   height: 40%;
+  margin: auto;
 }
 
 .Orlando-Magic {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Orlando_Magic.svg");
+  background-image: url('../../images/team_logos/Orlando_Magic.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
   height: 40%;
+  margin: auto;
 }
 
 .Philadelphia-76ers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Philadelphia_76ers.svg");
+  background-image: url('../../images/team_logos/Philadelphia_76ers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
   height: 40%;
+  margin: auto;
 }
 
 .Phoenix-Suns {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Phoenix_Suns.svg");
+  background-image: url('../../images/team_logos/Phoenix_Suns.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
   height: 40%;
+  margin: auto;
 }
 
 .Portland-Trail-Blazers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Portland_Trail_Blazers.svg");
+  background-image: url('../../images/team_logos/Portland_Trail_Blazers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
   height: 40%;
+  margin: auto;
 }
 
 .Sacramento-Kings {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Sacramento_Kings.svg");
+  background-image: url('../../images/team_logos/Sacramento_Kings.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
   height: 40%;
+  margin: auto;
 }
 
 .San-Antonio-Spurs {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/San_Antonio_Spurs.svg");
+  background-image: url('../../images/team_logos/San_Antonio_Spurs.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
   height: 40%;
+  margin: auto;
 }
 
 .Toronto-Raptors {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Toronto_Raptors.svg");
+  background-image: url('../../images/team_logos/Toronto_Raptors.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
   height: 40%;
+  margin: auto;
 }
 
-.Utah_Jazz {
+.Utah-Jazz {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Utah_Jazz.svg");
+  background-image: url('../../images/team_logos/Utah_Jazz.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
   height: 40%;
+  margin: auto;
 }
 
-.Washington_Wizards {
+.Washington-Wizards {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Washington_Wizards.svg");
+  background-image: url('../../images/team_logos/Washington_Wizards.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
   height: 40%;
+  margin: auto;
 }
 
 /* NFL */
@@ -964,7 +1007,7 @@
 .Arizona-Cardinals {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Arizona_Cardinals.svg");
+  background-image: url('../../images/team_logos/Arizona_Cardinals.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -975,7 +1018,7 @@
 .Atlanta-Falcons {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Atlant_Falcons.svg");
+  background-image: url('../../images/team_logos/Atlant_Falcons.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -986,7 +1029,7 @@
 .Baltimore-Ravens {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Baltimore_Ravens.svg");
+  background-image: url('../../images/team_logos/Baltimore_Ravens.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -997,7 +1040,7 @@
 .Buffalo-Bills {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Buffalo_Bills.svg");
+  background-image: url('../../images/team_logos/Buffalo_Bills.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1008,7 +1051,7 @@
 .Carolina-Panthers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Carolina_Panthers.svg");
+  background-image: url('../../images/team_logos/Carolina_Panthers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1019,7 +1062,7 @@
 .Chicago-Bears {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Chicago_Bears.svg");
+  background-image: url('../../images/team_logos/Chicago_Bears.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1030,7 +1073,7 @@
 .Cincinnati-Bengals {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Cincinnati_Bengals.svg");
+  background-image: url('../../images/team_logos/Cincinnati_Bengals.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1041,7 +1084,7 @@
 .Cleveland-Browns {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Cleveland_Browns.svg");
+  background-image: url('../../images/team_logos/Cleveland_Browns.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1052,7 +1095,7 @@
 .Dallas-Cowboys {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Dallas_Cowboys.svg");
+  background-image: url('../../images/team_logos/Dallas_Cowboys.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1063,7 +1106,7 @@
 .Denver-Broncos {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Denver_Broncos.svg");
+  background-image: url('../../images/team_logos/Denver_Broncos.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1074,7 +1117,7 @@
 .Detroit-Lions {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Detroit_Lions.svg");
+  background-image: url('../../images/team_logos/Detroit_Lions.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1085,7 +1128,7 @@
 .Green-Bay-Packers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Green_Bay_Packers.svg");
+  background-image: url('../../images/team_logos/Green_Bay_Packers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1096,7 +1139,7 @@
 .Houston-Texans {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Houston_Texans.svg");
+  background-image: url('../../images/team_logos/Houston_Texans.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1107,7 +1150,7 @@
 .Indianapolis-Colts {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Indianapolis_Colts.svg");
+  background-image: url('../../images/team_logos/Indianapolis_Colts.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1118,7 +1161,7 @@
 .Jacksonville-Jaguars {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Jacksonville_Jaguars.svg");
+  background-image: url('../../images/team_logos/Jacksonville_Jaguars.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1129,7 +1172,7 @@
 .Kansas-City-Chiefs {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Kansas_City_Chiefs.svg");
+  background-image: url('../../images/team_logos/Kansas_City_Chiefs.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1140,7 +1183,7 @@
 .Las-Vegas-Raiders {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Las_Vegas_Raiders.svg");
+  background-image: url('../../images/team_logos/Las_Vegas_Raiders.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1151,7 +1194,7 @@
 .Los-Angeles-Rams {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Los_Angeles_Rams_.svg");
+  background-image: url('../../images/team_logos/Los_Angeles_Rams_.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1162,7 +1205,7 @@
 .Los-Angeles-Chargers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Los_Angeles_Chargers.svg");
+  background-image: url('../../images/team_logos/Los_Angeles_Chargers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1173,7 +1216,7 @@
 .Miami-Dolphins {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Miami_Dolphins.svg");
+  background-image: url('../../images/team_logos/Miami_Dolphins.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1184,7 +1227,7 @@
 .Minnesota-Vikings {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Minnesota_Vikings.svg");
+  background-image: url('../../images/team_logos/Minnesota_Vikings.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1195,7 +1238,7 @@
 .New-England-Patriots {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_England_Patriots.svg");
+  background-image: url('../../images/team_logos/New_England_Patriots.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1206,7 +1249,7 @@
 .New-Orleans-Saints {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_Orleans_Saints.svg");
+  background-image: url('../../images/team_logos/New_Orleans_Saints.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1217,7 +1260,7 @@
 .New-York-Jets {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_York_Jets.svg");
+  background-image: url('../../images/team_logos/New_York_Jets.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1228,7 +1271,7 @@
 .New-York-Giants {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/New_York_Giants.svg");
+  background-image: url('../../images/team_logos/New_York_Giants.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1239,7 +1282,7 @@
 .Philadelphia-Eagles {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Philadelphia_Eagles.svg");
+  background-image: url('../../images/team_logos/Philadelphia_Eagles.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1250,7 +1293,7 @@
 .Pittsburgh-Steelers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Pittsburgh_Steelers.svg");
+  background-image: url('../../images/team_logos/Pittsburgh_Steelers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1261,7 +1304,7 @@
 .San-Francisco-49ers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/San_Francisco_49ers.svg");
+  background-image: url('../../images/team_logos/San_Francisco_49ers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1272,7 +1315,7 @@
 .Seattle-Seahawks {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Seattle_Seahawks.svg");
+  background-image: url('../../images/team_logos/Seattle_Seahawks.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1283,7 +1326,7 @@
 .Tampa-Bay-Buccaneers {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Tampa_Bay_Buccaneers.svg");
+  background-image: url('../../images/team_logos/Tampa_Bay_Buccaneers.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1294,7 +1337,7 @@
 .Tennessee-Titans {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Tennessee_Titans.svg");
+  background-image: url('../../images/team_logos/Tennessee_Titans.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -1305,7 +1348,7 @@
 .Washington-Football-Team {
   position: relative;
   display: flex;
-  background-image: url("../../images/team_logos/Washington_Football_Team.svg");
+  background-image: url('../../images/team_logos/Washington_Football_Team.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
