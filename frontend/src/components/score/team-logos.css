@@ -852,6 +852,7 @@
   position: relative;
   display: flex;
   background-image: url('../../images/team_logos/Miami_Heat.svg');
+<<<<<<< HEAD
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
@@ -863,6 +864,8 @@
   position: relative;
   display: flex;
   background-image: url('../../images/team_logos/Minnesota_Timberwolves.svg');
+=======
+>>>>>>> a6f09909a8ce8e8b40ca2cea4adf24f0b485e788
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
