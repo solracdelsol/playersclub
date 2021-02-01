@@ -859,6 +859,17 @@
   margin: auto;
 }
 
+.Minnesota-Timberwolves {
+  position: relative;
+  display: flex;
+  background-image: url('../../images/team_logos/Minnesota_Timberwolves.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+}
+
 .New-Orleans-Pelicans {
   position: relative;
   display: flex;
