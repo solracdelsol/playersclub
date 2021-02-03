@@ -543,9 +543,9 @@ export default function team_index({ fetchTeamProfile, clearAll }) {
   return (
     <div className="homepage-container">
       <div className="homepage-background">
-        <div className="team-label">
-          <h1 className="team-logo-label">PlayersClub</h1>
-        </div>
+        {/* <div className="team-label"> */}
+        {/* <h1 className="team-logo-label">PlayersClub</h1> */}
+        {/* </div> */}
         {eachSport}
       </div>
     </div>
