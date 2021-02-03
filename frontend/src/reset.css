@@ -167,7 +167,7 @@ select {
   height: 100vh;
 } */
 
-.homepage-background {
+.background {
   position: relative;
   display: flex;
   flex-direction: column;

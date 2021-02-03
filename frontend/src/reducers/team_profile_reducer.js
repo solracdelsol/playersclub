@@ -7,6 +7,9 @@ const teamProfileReducer = (oldState = {}, action) => {
     case receiveTeamProfile:
       newState = {
         data: action.teamProfile.data,
+        id: action.teamProfile.data.id,
+        name: action.teamProfile.data.name,
+        market: action.teamProfile.data.market,
         coaches:
           action.teamProfile.data.coaches || action.teamProfile.data.staff,
         division: action.teamProfile.data.division.name,
@@ -16,6 +19,8 @@ const teamProfileReducer = (oldState = {}, action) => {
         venueName: action.teamProfile.data.venue.name,
         venueCapacity: action.teamProfile.data.venue.capacity,
         roster: action.teamProfile.data.players,
+        // league: action.teamProfile.data.league.name,
+        sport: action.teamProfile.config.url.split('/')[3],
       };
       return newState;
     //NFL example: name, market, venue.name, venue.capacity, division.name, conference.name, coaches || staff[full_name, position], players[name || full_name, jersey, position, birth_date || birthdate, weight, height]

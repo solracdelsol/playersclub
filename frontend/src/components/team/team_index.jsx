@@ -527,7 +527,7 @@ export default function team_index({ fetchTeamProfile, clearAll }) {
         </Link>
         <ul>
           {sport.teams.map(team => (
-            <Link to={`/teams/${team.name}`} key={team.name}>
+            <Link to={`/teams/${sport.sportName}/${team.name}`} key={team.name}>
               <li
                 className={team.name.split(' ').join('-')}
                 onClick={() => fetchTeamProfile(sport.sportName, team.id)}
@@ -542,12 +542,7 @@ export default function team_index({ fetchTeamProfile, clearAll }) {
   });
   return (
     <div className="homepage-container">
-      <div className="homepage-background">
-        {/* <div className="team-label"> */}
-        {/* <h1 className="team-logo-label">PlayersClub</h1> */}
-        {/* </div> */}
-        {eachSport}
-      </div>
+      <div className="homepage-background">{eachSport}</div>
     </div>
   );
 }

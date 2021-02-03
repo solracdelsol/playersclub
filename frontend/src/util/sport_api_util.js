@@ -11,3 +11,7 @@ export const fetchGameSchedule = (sportTrial, date) => {
 export const fetchTeamProfile = (sportTrial, teamId) => {
   return axios.get(`api/proxy/teams/${sportTrial}/${teamId}`);
 };
+
+export const fetchPlayerProfile = (sportTrial, playerId) => {
+  return axios.get(`api/proxy/${sportTrial}/players/${playerId}`);
+};

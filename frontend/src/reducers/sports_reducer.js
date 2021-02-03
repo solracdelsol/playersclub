@@ -5,6 +5,7 @@ import nba from './nba_reducer';
 import mlb from './mlb_reducer';
 import nfl from './nfl_reducer';
 import teamProfile from './team_profile_reducer';
+import playerProfile from './player_profile_reducer';
 
 // export default function SportsReducer (oldState = {}, action) {
 //   Object.freeze(oldState)
@@ -31,6 +32,7 @@ const SportsReducer = combineReducers({
   nhl,
   nfl,
   teamProfile,
+  playerProfile,
 });
 
 export default SportsReducer;

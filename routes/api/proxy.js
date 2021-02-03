@@ -127,4 +127,24 @@ router.get(`/teams/nfl/:teamId`, (req, res) => {
     .catch(err => console.log(err));
 });
 
+// Get Player Profile (does not work for NFL at the moment)
+router.get(`/:sport/players/:playerId`, (req, res) => {
+  fetch(
+    `http://api.sportradar.us/${req.params.sport}/trial/v7/en/players/${
+      req.params.playerId
+    }/profile.json?api_key=${
+      req.params.sport === 'nba'
+        ? keys.NBAkey
+        : req.params.sport === 'mlb'
+        ? keys.MLBkey
+        : req.params.sport === 'nhl'
+        ? keys.NHLkey
+        : ''
+    }`
+  )
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
+});
+
 module.exports = router;
