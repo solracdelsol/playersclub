@@ -24,7 +24,7 @@ class Score extends React.Component {
           <p className="score-header">Latest Scores</p>
           {sportNames.map(name =>
             sports[name].sport.map((gm, idx) => {
-              if (gm.status !== 'postponed' && gm.status !== 'unnecessary') {
+              if (gm.status !== 'unnecessary') {
                 return (
                   <ScoreCard
                     key={idx}
