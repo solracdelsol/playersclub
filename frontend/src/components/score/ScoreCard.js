@@ -10,7 +10,7 @@ function ScoreCard({
   idx,
   progress,
 }) {
-  if (status !== 'unnecessary' || status !== 'postponed') {
+  if (status !== 'unnecessary') {
     /*this is to check if the game is actually happening */
     return (
       <div className="scores" key={idx}>
@@ -21,6 +21,10 @@ function ScoreCard({
               ? progress // if the game is in progress there's quarter and clock we have access to
               : status === 'closed' || status === 'complete' // else it's closed or complete we can return 'final'
               ? 'Final'
+              : status === 'postponed'
+              ? 'Postponed'
+              : status === 'halftime'
+              ? 'Halftime'
               : `Start: ${scheduled.split(' ').slice(-2).join(' ')}`}
           </p>
           <p className="game-number">{title}</p>
@@ -33,6 +37,7 @@ function ScoreCard({
             <p className="scores-away-score">
               {status === 'scheduled' ||
               status === 'created' ||
+              status === 'postponed' ||
               scores[1] === undefined
                 ? ' '
                 : scores[1]}
@@ -46,6 +51,7 @@ function ScoreCard({
             <p className="scores-home-score">
               {status === 'scheduled' ||
               status === 'created' ||
+              status === 'postponed' ||
               scores[0] === undefined
                 ? ' '
                 : scores[0]}

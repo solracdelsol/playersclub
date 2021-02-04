@@ -1,90 +1,150 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const keys = require("../../config/keys");
-const fetch = require("node-fetch");
+const keys = require('../../config/keys');
+const fetch = require('node-fetch');
 
-router.get("/mlb/:year/:month/:day", (req, res) => {
+// Get Scheduled Games
+router.get('/mlb/:year/:month/:day', (req, res) => {
   fetch(
     `http://api.sportradar.us/mlb/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.MLBkey}`
   )
-    .then((result) => result.json())
-    .then((result) => res.send(result))
-    .catch((err) => console.log(err));
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
 });
 
-router.get("/nba/:year/:month/:day", (req, res) => {
+router.get('/nba/:year/:month/:day', (req, res) => {
   fetch(
     `http://api.sportradar.us/nba/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.NBAkey}`
   )
-    .then((result) => result.json())
-    .then((result) => res.send(result))
-    .catch((err) => console.log(err));
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
 });
 
-router.get("/nhl/:year/:month/:day", (req, res) => {
+router.get('/nhl/:year/:month/:day', (req, res) => {
   fetch(
     `http://api.sportradar.us/nhl/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.NHLkey}`
   )
-    .then((result) => result.json())
-    .then((result) => res.send(result))
-    .catch((err) => console.log(err));
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
 });
 
-router.get("/nfl/:year/:month/:day", (req, res) => {
+router.get('/nfl/:year/:month/:day', (req, res) => {
   fetch(
     // temporary solution until sportsRadar fixes their code to take in req.params.year
     `http://api.sportradar.us/nfl/official/trial/v6/en/games/2020/PST/schedule.json?api_key=${keys.NFLkey}`
   )
     // `http://api.sportradar.us/nfl/official/trial/v6/en/games/${req.params.year}/REG/schedule.json?api_key=${keys.NFLkey}`
 
-    .then((result) => result.json())
-    .then((result) => res.send(result))
-    .catch((err) => console.log(err));
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
 });
 
-router.get("/articles", (req, res) => {
+// Get Articles
+router.get('/articles', (req, res) => {
   fetch(
     `https://gnews.io/api/v4/top-headlines?token=${keys.articleKey}&topic=sports&country=US&lang=en&q=NBA%20OR%20NHL%20OR%20MLB%20OR%20NFL`
   )
-    .then((result) => result.json())
-    .then((result) => res.send(result))
-    .catch((err) => console.log(err));
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
 });
 
+// Get Individual Game Scores
 router.get(`/scores/mlb/:id`, (req, res) => {
   fetch(
     `http://api.sportradar.us/mlb/trial/v7/en/games/${req.params.id}/boxscore.json?api_key=${keys.MLBkey}`
   )
-    .then((result) => result.json())
-    .then((result) => res.send(result))
-    .catch((err) => console.log(err));
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
 });
 
 router.get(`/scores/nfl/:id`, (req, res) => {
   fetch(
     `http://api.sportradar.us/nfl/official/trial/v6/en/games/${req.params.id}/boxscore.json?api_key=${keys.NFLkey}`
   )
-    .then((result) => result.json())
-    .then((result) => res.send(result))
-    .catch((err) => console.log(err));
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
 });
 
 router.get(`/scores/nhl/:id`, (req, res) => {
   fetch(
     `http://api.sportradar.us/nhl/trial/v7/en/games/${req.params.id}/boxscore.json?api_key=${keys.NHLkey}`
   )
-    .then((result) => result.json())
-    .then((result) => res.send(result))
-    .catch((err) => console.log(err));
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
 });
 
 router.get(`/scores/nba/:id`, (req, res) => {
   fetch(
     `http://api.sportradar.us/nba/trial/v7/en/games/${req.params.id}/boxscore.json?api_key=${keys.NBAkey}`
   )
-    .then((result) => result.json())
-    .then((result) => res.send(result))
-    .catch((err) => console.log(err));
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
+});
+
+// Get Team Profiles
+router.get(`/teams/nba/:teamId`, (req, res) => {
+  fetch(
+    `http://api.sportradar.us/nba/trial/v7/en/teams/${req.params.teamId}/profile.json?api_key=${keys.NBAkey}`
+  )
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
+});
+
+router.get(`/teams/mlb/:teamId`, (req, res) => {
+  fetch(
+    `http://api.sportradar.us/mlb/trial/v7/en/teams/${req.params.teamId}/profile.json?api_key=${keys.MLBkey}`
+  )
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
+});
+
+router.get(`/teams/nhl/:teamId`, (req, res) => {
+  fetch(
+    `http://api.sportradar.us/nhl/trial/v7/en/teams/${req.params.teamId}/profile.json?api_key=${keys.NHLkey}`
+  )
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
+});
+
+router.get(`/teams/nfl/:teamId`, (req, res) => {
+  fetch(
+    `http://api.sportradar.us/nfl/official/trial/v6/en/teams/${req.params.teamId}/profile.json?api_key=${keys.NFLkey}`
+  )
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
+});
+
+// Get Player Profile (does not work for NFL at the moment)
+router.get(`/:sport/players/:playerId`, (req, res) => {
+  fetch(
+    `http://api.sportradar.us/${req.params.sport}/trial/v7/en/players/${
+      req.params.playerId
+    }/profile.json?api_key=${
+      req.params.sport === 'nba'
+        ? keys.NBAkey
+        : req.params.sport === 'mlb'
+        ? keys.MLBkey
+        : req.params.sport === 'nhl'
+        ? keys.NHLkey
+        : ''
+    }`
+  )
+    .then(result => result.json())
+    .then(result => res.send(result))
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

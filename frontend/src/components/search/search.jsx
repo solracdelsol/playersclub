@@ -100,13 +100,13 @@ class Search extends React.Component {
     return (
       <div className="homepage-container">
         <div className="homepage-background">
-          <div className="search-logo">
+          {/* <div className="search-logo">
             <h1 className="search-logo-label">PlayersClub</h1>
-          </div>
+          </div> */}
           <form className="search-form" onSubmit={this.handleSubmit}>
-            <Link className="nav-btn-home" to="/">
+            {/* <Link className="nav-btn-home" to="/">
               Home
-            </Link>
+            </Link> */}
             <label className="search-btn">Choose a Sport:</label>
             <select
               className="options"

@@ -1,7 +1,7 @@
-import React from "react";
-import "./players_bar.css";
-import "../../reset.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './players_bar.css';
+import '../../reset.css';
+import { Link } from 'react-router-dom';
 
 class PlayersBar extends React.Component {
   render() {
@@ -15,7 +15,9 @@ class PlayersBar extends React.Component {
             Home
           </Link>
           <h3 className="nav-btn">Sports</h3>
-          <h4 className="nav-btn">Teams</h4>
+          <Link className="nav-btn" to="/teams">
+            Teams
+          </Link>
           <h5>
             <Link to="/search">
               <input
@@ -27,19 +29,19 @@ class PlayersBar extends React.Component {
           </h5>
           {this.props.currentUser ? (
             <h6 className="welcome-player">
-              Welcome to the Club,{" "}
+              Welcome to the Club,{' '}
               {this.props.user.username === undefined
-                ? " "
+                ? ' '
                 : this.props.user.username}
               !
             </h6>
           ) : (
-            " "
+            ' '
           )}
           {this.props.currentUser ? (
             <>
               <button
-                onClick={() => this.props.openModal("preferences")}
+                onClick={() => this.props.openModal('preferences')}
                 className="gear"
               >
                 <i className="fa fa-gear fa-2x"></i>
@@ -53,7 +55,7 @@ class PlayersBar extends React.Component {
             </>
           ) : (
             <button
-              onClick={() => this.props.openModal("signup")}
+              onClick={() => this.props.openModal('signup')}
               className="nav-signup"
             >
               Join Club
