@@ -23,6 +23,8 @@ function ScoreCard({
               ? 'Final'
               : status === 'postponed'
               ? 'Postponed'
+              : status === 'halftime'
+              ? 'Halftime'
               : `Start: ${scheduled.split(' ').slice(-2).join(' ')}`}
           </p>
           <p className="game-number">{title}</p>

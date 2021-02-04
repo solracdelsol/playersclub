@@ -5,8 +5,9 @@ function team_show_index({ teamProfile, fetchPlayerProfile }) {
   if (Object.keys(teamProfile).length !== 0) {
     let coach = teamProfile.coaches.map(coach => coach.full_name);
     let playerName = teamProfile.roster.map(player => {
+      let full_name = player.name || player.full_name;
       return (
-        <Link to={`/players/${teamProfile.sport}/${player.id}`} key={player.id}>
+        <Link to={`/players/${teamProfile.sport}/${full_name}`} key={player.id}>
           <li
             onClick={() =>
               fetchPlayerProfile(teamProfile.sport.toLowerCase(), player.id)
