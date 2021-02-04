@@ -7,6 +7,7 @@ import Modal from './modal/modal.jsx';
 import SearchContainer from './search/search_container';
 import TeamContainer from './team/team_container';
 import TeamShowContainer from './team/team_show_container';
+import PlayerContainer from './player/player_container';
 import '../reset.css';
 // import SportContainer from './sports/sports_container';
 
@@ -26,7 +27,7 @@ const App = () => (
       {/* <ProtectedRoute path="/sports" component={SportContainer} /> */}
       <Route exact path="/teams" component={TeamContainer} />
       <Route path="/teams/:sport/:teamID" component={TeamShowContainer} />
-      {/* <Route path="/:sport/players/:playerId" component={PlayerContainer} /> */}
+      <Route path="/players/:sport/:playerId" component={PlayerContainer} />
       <Route path="/search" component={SearchContainer} />
       <Route path="/" component={HomePageContainer} />
     </Switch>

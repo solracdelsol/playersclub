@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import TeamIndex from './team_index';
 import { fetchTeamProfile, clearAll } from '../../actions/sport_actions';
 
-const mapStateToProps = state => ({ teamProfile: state.teamProfile });
+const mapStateToProps = state => ({ teamProfile: state.sports.teamProfile });
 
 const mapDispatchToProps = dispatch => ({
   fetchTeamProfile: (sportTrial, team_id) =>
