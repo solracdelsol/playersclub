@@ -31,8 +31,16 @@ class Score extends React.Component {
                     status={gm.status}
                     scheduled={gm.scheduled}
                     progress={gm.progress}
-                    homeName={gm.home.market + ' ' + gm.home.name}
-                    awayName={gm.away.market + ' ' + gm.away.name}
+                    homeName={
+                      name === 'nba'
+                        ? gm.home.name
+                        : gm.home.market + ' ' + gm.home.name
+                    }
+                    awayName={
+                      name === 'nba'
+                        ? gm.away.name
+                        : gm.away.market + ' ' + gm.away.name
+                    }
                     title={gm.title}
                     scores={gm.scores}
                     gameId={gm.id}
