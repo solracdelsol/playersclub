@@ -14,7 +14,7 @@ import '../reset.css';
 import PreferencesContainer from '../components/preferences/preferences_container';
 
 const App = () => (
-  <div className="background">
+  <>
     <header>
       <PlayersBar />
     </header>
@@ -31,7 +31,7 @@ const App = () => (
       <Route path="/search" component={SearchContainer} />
       <Route path="/" component={HomePageContainer} />
     </Switch>
-  </div>
+  </>
 );
 
 export default App;

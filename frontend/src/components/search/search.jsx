@@ -1,7 +1,7 @@
 import React from 'react';
 import './search.css';
 import '../../reset.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import ScoreCard from '../score/ScoreCard';
 import Footer from '../footer/footer';

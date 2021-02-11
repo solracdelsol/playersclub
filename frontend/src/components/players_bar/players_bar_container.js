@@ -5,6 +5,8 @@ import { logout } from '../../actions/session_actions';
 
 const msp = state => ({
   sports: state.sports,
+  currentUser: state.session.user,
+  isAuthenticated: state.session.isAuthenticated,
 });
 
 const mdp = dispatch => ({

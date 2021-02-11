@@ -25,7 +25,6 @@ const playerProfileReducer = (oldState = {}, action) => {
             // league: action.playerProfile.data?.league.name || '',
             team: action.playerProfile.data.team,
             draft: action.playerProfile.data.draft,
-            seasons: action.playerProfile.data.seasons,
           })
         : (newState = {
             data: action.playerProfile.data.player,
