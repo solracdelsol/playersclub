@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 class PlayersBar extends React.Component {
   render() {
+    const { isAuthenticated, currentUser } = this.props;
     return (
       <>
         <div className="logo">
@@ -27,18 +28,14 @@ class PlayersBar extends React.Component {
               ></input>
             </Link>
           </h5>
-          {this.props.currentUser ? (
+          {isAuthenticated ? (
             <h6 className="welcome-player">
-              Welcome to the Club,{' '}
-              {this.props.user.username === undefined
-                ? ' '
-                : this.props.user.username}
-              !
+              Welcome to the Club, {currentUser.username}!
             </h6>
           ) : (
             ' '
           )}
-          {this.props.currentUser ? (
+          {isAuthenticated ? (
             <>
               <button
                 onClick={() => this.props.openModal('preferences')}

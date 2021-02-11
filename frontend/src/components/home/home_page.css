@@ -6,7 +6,7 @@
   height: 100vh;
 }
 
-.homepage-background {
+#root {
   position: relative;
   display: flex;
   flex-direction: column;
