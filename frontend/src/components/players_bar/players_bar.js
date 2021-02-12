@@ -8,7 +8,6 @@ const PlayersBar = ({ isAuthenticated, currentUser, openModal, logout }) => {
   const processClick = e => {
     myStorage.setItem('nextPath', e.currentTarget.id);
     openModal('signup');
-    console.log('clicked');
   };
   if (isAuthenticated) {
     return (
