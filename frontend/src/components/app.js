@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { ProtectedRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
 import HomePageContainer from './home/home_page_container';
 import PlayersBar from './players_bar/players_bar_container';

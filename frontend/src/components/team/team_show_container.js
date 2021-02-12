@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TeamShow from './team_show_index';
-import { fetchPlayerProfile, clearAll } from '../../actions/sport_actions';
+import { fetchPlayerProfile } from '../../actions/sport_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {

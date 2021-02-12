@@ -42,7 +42,8 @@ class Search extends React.Component {
     this.props
       .scheduleObj(this.state.sportTrial, newDate)
       .then(() => {
-        return this.props.sports[this.state.sportTrial].sports.map(
+        return this.props.sports[this.state.sportTrial].sports.forEach(
+          //changed to forEach
           (game, idx) => {
             if (game.status !== 'unnecessary' && game.status !== 'postponed') {
               setTimeout(() => {
