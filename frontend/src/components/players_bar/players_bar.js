@@ -4,11 +4,12 @@ import '../../reset.css';
 import { Link } from 'react-router-dom';
 
 const PlayersBar = ({ isAuthenticated, currentUser, openModal, logout }) => {
-  // let myStorage = window.localStorage;
-  // const processClick = e => {
-  //   myStorage.setItem('nextPath', e.currentTarget.id);
-  //   openModal('signup');
-  // };
+  let myStorage = window.localStorage;
+  const processClick = e => {
+    myStorage.setItem('nextPath', e.currentTarget.id);
+    openModal('signup');
+    console.log('clicked');
+  };
   if (isAuthenticated) {
     return (
       <>
@@ -57,11 +58,7 @@ const PlayersBar = ({ isAuthenticated, currentUser, openModal, logout }) => {
             Home
           </Link>
           <h3 className="nav-btn">Sports</h3>
-          <button
-            id="/teams"
-            className="nav-btn"
-            onClick={() => openModal('signup')}
-          >
+          <button id="/teams" className="nav-btn" onClick={processClick}>
             Teams
           </button>
           <h5>
@@ -70,7 +67,7 @@ const PlayersBar = ({ isAuthenticated, currentUser, openModal, logout }) => {
               className="search"
               type="text"
               placeholder="Search the Club"
-              onClick={() => openModal('signup')}
+              onClick={processClick}
             ></input>
           </h5>
           <button className="nav-signup" onClick={() => openModal('signup')}>

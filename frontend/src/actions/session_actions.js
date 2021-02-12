@@ -75,5 +75,5 @@ export const logout = () => dispatch => {
 export const demoUser = () => dispatch =>
   APIUtil.demoUserLogin()
     .then(currentUser => dispatch(receiveCurrentUser(currentUser)))
-    .then(() => dispatch(closeModal()));
-// .then(() => dispatch(push('/teams')));
+    .then(() => dispatch(closeModal()))
+    // .then(() => history.push(localStorage.getItem('nextPath')));
