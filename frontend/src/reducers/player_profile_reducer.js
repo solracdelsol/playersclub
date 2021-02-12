@@ -45,7 +45,6 @@ const playerProfileReducer = (oldState = {}, action) => {
             // league: action.playerProfile.data?.league.name || '',
             team: action.playerProfile.data.player.team,
             draft: action.playerProfile.data.player.draft,
-            seasons: action.playerProfile.data.player.seasons,
           });
       return newState;
     //NFL example: name, market, venue.name, venue.capacity, division.name, conference.name, coaches || staff[full_name, position], players[name || full_name, jersey, position, birth_date || birthdate, weight, height]

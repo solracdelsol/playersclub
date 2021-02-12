@@ -11,8 +11,6 @@ import PlayerContainer from './player/player_container';
 import '../reset.css';
 // import SportContainer from './sports/sports_container';
 
-import PreferencesContainer from '../components/preferences/preferences_container';
-
 const App = () => (
   <>
     <header>
@@ -21,14 +19,18 @@ const App = () => (
     <Modal />
     {/* // will render the first component to match */}
 
-    {/* <PreferencesContainer/> */}
-
     <Switch>
       {/* <ProtectedRoute path="/sports" component={SportContainer} /> */}
-      <Route exact path="/teams" component={TeamContainer} />
-      <Route path="/teams/:sport/:teamID" component={TeamShowContainer} />
-      <Route path="/players/:sport/:playerId" component={PlayerContainer} />
-      <Route path="/search" component={SearchContainer} />
+      <ProtectedRoute exact path="/teams" component={TeamContainer} />
+      <ProtectedRoute
+        path="/teams/:sport/:teamID"
+        component={TeamShowContainer}
+      />
+      <ProtectedRoute
+        path="/players/:sport/:playerId"
+        component={PlayerContainer}
+      />
+      <ProtectedRoute path="/search" component={SearchContainer} />
       <Route path="/" component={HomePageContainer} />
     </Switch>
   </>

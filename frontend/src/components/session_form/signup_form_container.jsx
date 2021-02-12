@@ -1,28 +1,28 @@
-import { connect } from "react-redux";
-import React from "react";
-import { login, signup, clearErrors } from "../../actions/session_actions";
-import { openModal, closeModal } from "../../actions/modal_actions";
-import SessionForm from "./session_form";
-import { demoUser } from "../../actions/session_actions";
+import { connect } from 'react-redux';
+import React from 'react';
+import { login, signup, clearErrors } from '../../actions/session_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
+import SessionForm from './session_form';
+import { demoUser } from '../../actions/session_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     errors: state.errors.session,
-    formType: "Join the Club",
+    formType: 'Join the Club',
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    processForm: (user) => dispatch(signup(user)),
-    login: (user) => dispatch(login(user)), //added this
+    processForm: user => dispatch(signup(user)),
+    login: user => dispatch(login(user)), //added this
     otherForm: () => {
       return (
         <button
           className="session-btn"
           onClick={() => {
             dispatch(clearErrors());
-            return dispatch(openModal("login"));
+            return dispatch(openModal('login'));
           }}
         >
           Login
@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch) => {
       );
     },
     closeModal: () => dispatch(closeModal()),
-    openModal: (modal) => dispatch(openModal(modal)),
+    openModal: modal => dispatch(openModal(modal)),
     clearErrors: () => dispatch(clearErrors()),
     demoUser: () => dispatch(demoUser()),
   };
