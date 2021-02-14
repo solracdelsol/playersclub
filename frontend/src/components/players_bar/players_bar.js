@@ -69,7 +69,7 @@ const PlayersBar = ({ isAuthenticated, currentUser, openModal, logout }) => {
               onClick={processClick}
             ></input>
           </h5>
-          <button className="nav-signup" onClick={() => openModal('signup')}>
+          <button id="/" className="nav-signup" onClick={processClick}>
             Join Club
           </button>
         </div>

@@ -13,7 +13,6 @@ class SessionForm extends React.Component {
       password2: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -30,9 +29,7 @@ class SessionForm extends React.Component {
   //IF NO ERRORS, SHOULD CLOSE MODAL, KEEP OPEN IF ERROR
   handleSubmit(e) {
     e.preventDefault();
-    // this.props
-    //   .demoUser()
-    //   .then(this.props.closeModal())
+
     if (e.currentTarget.id !== 'demo-login') {
       const user = Object.assign({}, this.state);
       this.props.processForm(user).then(() => {
@@ -41,34 +38,18 @@ class SessionForm extends React.Component {
           this.props.errors.length === 0
         ) {
           return this.props.openModal('preferences');
-          // } else {
-          // return this.props.closeModal;
         }
-
-        // if(this.props.formType === "Enter") {
-        //   this.props.processForm(user)
-        // }}
-        // ,
-        // () => { if(!this.props.errors.session){ return this.props.closeModal}});
       });
     } else {
       this.props.demoUser();
     }
-    setTimeout(
-      () => this.props.history.push(localStorage.getItem('nextPath')),
-      1000
-    );
+    if (this.props.location.pathname !== localStorage.getItem('nextPath')) {
+      setTimeout(
+        () => this.props.history.push(localStorage.getItem('nextPath')),
+        1000
+      );
+    }
   }
-
-  // demoLogin(e) {
-  //   // const demo_user = { email: "demo@demo.com", password: "123456" };
-  //   e.preventDefault();
-  //   this.props.openModal("login");
-  //   this.props.state.password = "123456";
-  //   this.props.state.email = "demo@demo.com";
-  //   const demo_user = Object.assign({}, this.state);
-  //   return this.props.login(demo_user);
-  // }
 
   //MAKES THE ERRORS RENDER ON SCREEN
   renderErrors() {
