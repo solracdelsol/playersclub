@@ -16,13 +16,16 @@ class HomePage extends React.Component {
     let sportNames = ['mlb', 'nfl', 'nba', 'nhl'];
 
     sportNames.forEach(name => {
-      return this.props.scheduleObj(name, this.getTodaysDate()).then(() =>
-        this.props.sports[name].sports.forEach((game, idx) => {
-          return setTimeout(() => {
-            this.props.fetchGameScore(name, game.id);
-          }, 1000 * idx);
-        })
-      );
+      return this.props
+        .scheduleObj(name, this.getTodaysDate())
+        .then(() =>
+          this.props.sports[name].sports.forEach((game, idx) => {
+            return setTimeout(() => {
+              this.props.fetchGameScore(name, game.id);
+            }, 1000 * idx);
+          })
+        )
+        .catch(err => console.error(`Sorry! There was a ${err.message}`));
     });
   }
 
