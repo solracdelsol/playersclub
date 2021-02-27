@@ -18,6 +18,7 @@ router.get('/nba/:year/:month/:day', (req, res) => {
     `http://api.sportradar.us/nba/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.NBAkey}`
   )
     .then(result => result.json())
+    .catch(result => console.log(result))
     .then(result => res.send(result))
     .catch(err => console.log(err));
 });
@@ -26,7 +27,10 @@ router.get('/nhl/:year/:month/:day', (req, res) => {
   fetch(
     `http://api.sportradar.us/nhl/trial/v7/en/games/${req.params.year}/${req.params.month}/${req.params.day}/schedule.json?api_key=${keys.NHLkey}`
   )
-    .then(result => result.json())
+    .then(result => {
+      if (result.status !== 200) return;
+      return result.json();
+    }) // temporary check; if we get back a 500 status code we return early and do not even bother trying to send the info to the frontend
     .then(result => res.send(result))
     .catch(err => console.log(err));
 });

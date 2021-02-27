@@ -15,9 +15,9 @@ class HomePage extends React.Component {
   componentDidMount() {
     let sportNames = ['mlb', 'nfl', 'nba', 'nhl'];
 
-    sportNames.map(name => {
+    sportNames.forEach(name => {
       return this.props.scheduleObj(name, this.getTodaysDate()).then(() =>
-        this.props.sports[name].sports.map((game, idx) => {
+        this.props.sports[name].sports.forEach((game, idx) => {
           return setTimeout(() => {
             this.props.fetchGameScore(name, game.id);
           }, 1000 * idx);
