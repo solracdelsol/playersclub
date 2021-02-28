@@ -25,7 +25,7 @@ class HomePage extends React.Component {
             }, 1000 * idx);
           })
         )
-        .catch(err => console.error(`Sorry! There was a ${err.message}`));
+        .catch(err => console.error(`Sorry! ${err.message}`));
     });
   }
 
@@ -57,10 +57,9 @@ class HomePage extends React.Component {
                 fetchArticles={this.props.fetchArticles}
                 articles={this.props.articles}
               />
-              {this.props.sports.mlb.sport.length !== 0 ||
-              this.props.sports.nba.sport.length !== 0 ||
-              this.props.sports.nfl.sport.length !== 0 ||
-              this.props.sports.nhl.sport.length !== 0 ? (
+              {Object.keys(this.props.sports).some(
+                sportName => sportName.sport?.length !== 0
+              ) ? (
                 <Score sports={this.props.sports} />
               ) : null}
             </div>
