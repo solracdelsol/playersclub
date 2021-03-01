@@ -7,31 +7,28 @@ import './modal.css';
 import '../../reset.css';
 import PreferencesContainer from '../../components/preferences/preferences_container';
 
-
-
 // Modal presentational and container component on same page
-function Modal({modal, closeModal}){
-  if(!modal){
+function Modal({ modal, closeModal }) {
+  if (!modal) {
     return null;
   }
 
   let component;
-  switch(modal) {
+  switch (modal) {
     case 'login':
-      component = <LoginFormContainer/>;
+      component = <LoginFormContainer />;
       break;
     case 'signup':
-      component = <SignupFormContainer/>;
+      component = <SignupFormContainer />;
       break;
     case 'preferences':
-      component = <PreferencesContainer/>
+      component = <PreferencesContainer />;
       break;
     default:
       return null;
   }
 
   return (
-    
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
         {component}
@@ -40,14 +37,13 @@ function Modal({modal, closeModal}){
   );
 }
 
-
 // mapping container to props to use above
 const msp = state => ({
-  modal: state.ui.modal
-})
+  modal: state.ui.modal,
+});
 
 const mdp = dispatch => ({
-  closeModal: () => dispatch(closeModal()), 
+  closeModal: () => dispatch(closeModal()),
 });
 
 export default connect(msp, mdp)(Modal);

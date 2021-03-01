@@ -15,14 +15,17 @@ class HomePage extends React.Component {
   componentDidMount() {
     let sportNames = ['mlb', 'nfl', 'nba', 'nhl'];
 
-    sportNames.map(name => {
-      return this.props.scheduleObj(name, this.getTodaysDate()).then(() =>
-        this.props.sports[name].sports.map((game, idx) => {
-          return setTimeout(() => {
-            this.props.fetchGameScore(name, game.id);
-          }, 1000 * idx);
-        })
-      );
+    sportNames.forEach(name => {
+      return this.props
+        .scheduleObj(name, this.getTodaysDate())
+        .then(() =>
+          this.props.sports[name].sports.forEach((game, idx) => {
+            return setTimeout(() => {
+              this.props.fetchGameScore(name, game.id);
+            }, 1000 * idx);
+          })
+        )
+        .catch(err => console.error(`Sorry! ${err.message}`));
     });
   }
 
@@ -54,10 +57,9 @@ class HomePage extends React.Component {
                 fetchArticles={this.props.fetchArticles}
                 articles={this.props.articles}
               />
-              {this.props.sports.mlb.sport.length !== 0 ||
-              this.props.sports.nba.sport.length !== 0 ||
-              this.props.sports.nfl.sport.length !== 0 ||
-              this.props.sports.nhl.sport.length !== 0 ? (
+              {Object.keys(this.props.sports).some(
+                sportName => sportName.sport?.length !== 0
+              ) ? (
                 <Score sports={this.props.sports} />
               ) : null}
             </div>
