@@ -3,7 +3,6 @@ const router = express.Router();
 const keys = require('../../config/keys');
 const fetch = require('node-fetch');
 
-
 // Get Scheduled Games
 router.get('/:sport/:year/:month/:day', (req, res) => {
   fetch(
