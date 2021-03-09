@@ -530,7 +530,7 @@ export default function team_index({ fetchTeamProfile, clearAll }) {
             <Link to={`/teams/${sport.sportName}/${team.name}`} key={team.name}>
               <li
                 className={team.name.split(' ').join('-')}
-                onClick={() => fetchTeamProfile(sport.sportName, team.id)}
+                onClick={() => fetchTeamProfile(sport.sportName.toLowerCase(), team.id)}
               >
                 {team.name}
               </li>
