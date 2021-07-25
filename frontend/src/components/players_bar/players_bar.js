@@ -25,11 +25,11 @@ const PlayersBar = ({ isAuthenticated, currentUser, openModal, logout }) => {
           </Link>
           <h5>
             <Link to="/search">
-              <input
+              <button
                 className="search"
                 type="text"
                 placeholder="Search the Club"
-              ></input>
+              >Search</button>
             </Link>
           </h5>
           <h6 className="welcome-player">
@@ -61,13 +61,12 @@ const PlayersBar = ({ isAuthenticated, currentUser, openModal, logout }) => {
             Teams
           </button>
           <h5>
-            <input
+            <button
               id="/search"
               className="search"
               type="text"
-              placeholder="Search the Club"
               onClick={processClick}
-            ></input>
+            >Search</button>
           </h5>
           <button id="/" className="nav-signup" onClick={processClick}>
             Join Club
